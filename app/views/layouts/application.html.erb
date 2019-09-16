@@ -1,15 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html class="has-background-light">
   <head>
-    <title>MyPortfolio</title>
+    <title>Dennis Cope</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="is-family-monospace">
+      <%= yield %>
+    </div>
   </body>
 </html>
