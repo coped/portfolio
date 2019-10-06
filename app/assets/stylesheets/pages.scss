@@ -2,16 +2,25 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-html {
-    scroll-behavior: smooth;
+hr {
+    background: black;
 }
 
-hr {
-    color: black;
+.paragraph {
+    margin-bottom: 1rem;
 }

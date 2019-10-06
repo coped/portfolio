@@ -11,10 +11,8 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="has-background-light">
-    <div class="is-family-monospace">
-      <%= yield %>
-    </div>
+  <body>
+    <%= yield %>
     <script>
       document.querySelector(".navbar-burger").addEventListener("click", () => {
         document.querySelector(".navbar-burger").classList.toggle("is-active");

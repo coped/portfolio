@@ -7,7 +7,7 @@
                 <h1 class="title center has-text-weight-light is-size-1">
                     Dennis Cope
                 </h1>
-                <h2 class="subtitle center">
+                <h2 class="subtitle center has-text-weight-light">
                     Jr Fullstack Developer
                 </h2>
             </section>
@@ -33,14 +33,11 @@
 <%= render 'layouts/navbar' %>
 <section class="section">
     <div class="container">
-        <p class="center">
-            /* This portfolio is currently a work in progress */
+        <h2 class="is-size-2 has-text-weight-light center title">About Me</h2>
+        <hr>
+        <p class="paragraph">
+            I'm a self-taught developer, and I like making web applications.
         </p>
-    </div>
-</section>
-<section class="section">
-    <div class="container">
-        <h2 class="is-size-3 has-text-weight-light center title">About me</h2>
         <p>Some of my interests include:</p>
         <ul>
             <li>Learning challenging concepts</li>
@@ -53,17 +50,17 @@
 </section>
 <section class="section">
     <div class="container">
-        <h2 class="is-size-3 has-text-weight-light center title">Skills & Technologies</h2>
+        <h2 class="is-size-2 has-text-weight-light center title">My Favorite Tools</h2>
+        <hr>
         <div class="columns">
             <div class="column">
                 <div class="notification has-text-centered">
                     <h3 class="subtitle">Back end</h3>
-                    <div class="has-text-left">
-                        <p>Ruby</p>
-                        <p>Ruby on Rails</p>
-                        <p>RSpec</p>
-                        <p>SQL</p>
-                        <p>PostgreSQL</p>
+                    <div class="has-text-left has-text-justified">
+                        <p><%= image_tag("/assets/icons/ruby-logo.png", { size: "40x40", alt: "Ruby logo" }) %>Ruby</p>
+                        <p><%= image_tag("/assets/icons/rails-logo.png", { size: "40x40", alt: "Rails logo" }) %>Ruby on Rails</p>
+                        <p><%= image_tag("/assets/icons/rspec-logo-trans.png", { size: "40x40", alt: "RSpec logo" }) %>RSpec</p>
+                        <p><%= image_tag("/assets/icons/postgresql-logo.png", { size: "40x40", alt: "PostgreSQL logo" }) %>PostgreSQL</p>
                     </div>
                 </div>
             </div>
@@ -71,10 +68,11 @@
                 <div class="notification has-text-centered">
                     <h3 class="subtitle">Front end</h3>
                     <div class="has-text-left">
-                        <p>HTML5 / CSS</p>
-                        <p>Sass</p>
-                        <p>JavaScript</p>
-                        <p>Bulma</p>
+                        <p><%= image_tag("/assets/icons/HTML5-logo.png", { size: "40x40", alt: "HTML logo" }) %>HTML5</p>
+                        <p><%= image_tag("/assets/icons/css-logo.png", { size: "40x40", alt: "CSS logo" }) %>CSS</p>
+                        <p><%= image_tag("/assets/icons/sass-logo.png", { size: "40x40", alt: "Sass logo" }) %>Sass</p>
+                        <p><%= image_tag("/assets/icons/javascript-logo.png", { size: "40x40", alt: "Javascript logo" }) %>JavaScript</p>
+                        <p><%= image_tag("/assets/icons/bulma-logo.png", { size: "40x40", alt: "Bulma logo" }) %>Bulma</p>
                     </div>
                 </div>
             </div>
@@ -82,9 +80,9 @@
                 <div class="notification has-text-centered">
                     <h3 class="subtitle">Miscellaneous</h3>
                         <div class="has-text-left">
-                        <p>Linux</p>
-                        <p>Git</p>
-                        <p>Heroku</p>
+                        <p><%= image_tag("/assets/icons/linux-logo.png", { size: "40x40", alt: "Linux logo" }) %>Linux</p>
+                        <p><%= image_tag("/assets/icons/git-logo.png", { size: "40x40", alt: "Git logo" }) %>Git</p>
+                        <p><%= image_tag("/assets/icons/heroku-logo.png", { size: "40x40", alt: "Heroku logo" }) %>Heroku</p>
                     </div>
                 </div>
             </div>
@@ -93,29 +91,35 @@
 </section>
 <section class="section">
     <div class="container">
-        <h2 class="is-size-3 has-text-weight-light center title">Projects</h2>
-        <h3 class="subtitle">Trike World Limited</h3>
+        <h2 class="is-size-2 has-text-weight-light center title">Projects</h2>
+        <hr>
+        <h3 class="subtitle is-size-3">Trike World Limited</h3>
         <div class="columns">
-            <%= link_to(
-                    image_tag("/assets/trikeworldltd.png", { alt: "Trike world limited homepage" }),
-                "https://trikeworldlimited.herokuapp.com", { class: "column" }) %>
+            <div class="notification column">
+                <%= link_to(
+                        image_tag("/assets/trikeworldltd.png", { alt: "Trike world limited homepage" }),
+                    "https://trikeworldlimited.herokuapp.com") %>
+            </div>
             <div class="column">
-                <p>
-                    Trike world limited is the website I'm currently building for my dad's V8 trike 
+                <p class="paragraph">
+                    Trike World Limited is the website I'm currently building for my dad's V8 trike 
                     motorcycle business which, in my opinion, looks a little cleaner than the 
                     <%= link_to("website he was using before", "http://trikeworldltd.com/") %>.
                 </p>
-                <br>
-                <p>
+                <p class="paragraph">
                     The website is made with Rails 6, and features an authentication and blogging 
                     system (currently in development), allowing my dad to sign in and 
-                    create/edit/delete blog posts at his discretion. The Bulma CSS framework is used on the frontend.
+                    create/edit/delete blog posts on the site at his discretion. The Bulma CSS framework is used for styling.
                 </p>
-                <br>
-                <p><%= link_to("https://trikeworldlimited.herokuapp.com", "https://trikeworldlimited.herokuapp.com") %></p>
-                <br>
+                <p class="paragraph"><%= link_to("https://trikeworldlimited.herokuapp.com", "https://trikeworldlimited.herokuapp.com") %></p>
                 <p><%= link_to("View project on github", "https://github.com/coped/v8-trikes") %></p>
             </div>
         </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+        <h2 class="is-size-2 has-text-weight-light center title">Contact</h2>
+        <hr>
     </div>
 </section>
