@@ -13,16 +13,22 @@
             </section>
             <section class="section">
                 <div class="columns center">
-                    <%= link_to image_tag("GitHub-Mark-Light-120px-plus-scaled.png", { class: "column", size: "100x100", alt: "Link to github" } ), "https://github.com/coped" %>
-                    <%= link_to image_tag("linkedin-dark-scaled.png", { class: "column", size: "100x100", alt: "Link to linkedin" } ), "https://www.linkedin.com/in/dennis-cope-548824164/" %>
-                    <%= mail_to "coped@tutanota.com", image_tag("email-logo-dark-scaled.png", { class: "column", size: "100x100", alt: "coped@tutanota" } ) %>
+                    <%= link_to(
+                            image_tag("GitHub-Mark-Light-120px-plus-scaled.png",
+                            { class: "column", size: "100x100", alt: "Link to github" } ),
+                        "https://github.com/coped") %>
+                    <%= link_to(
+                            image_tag("linkedin-dark-scaled.png",
+                            { class: "column", size: "100x100", alt: "Link to linkedin" } ),
+                        "https://www.linkedin.com/in/dennis-cope-548824164/") %>
+                    <%= mail_to("coped@tutanota.com", image_tag("email-logo-dark-scaled.png",
+                                                      { class: "column", size: "100x100", alt: "coped@tutanota" } )) %>
                 </div>
             </section>
             <section class="section">
                 <h2 class="subtitle has-text-centered is-italic">
-                    <a href="#navbar">
-                        Let's build something.
-                    </a>
+                    <%= link_to("Let's build something", "#navbar",
+                        { class: "button is-inverted is-dark is-rounded is-outlined" }) %>
                 </h2>
             </section>
         </div>
@@ -57,10 +63,18 @@
                 <div class="notification has-text-centered">
                     <h3 class="subtitle">Back end</h3>
                     <div class="has-text-left has-text-justified">
-                        <p><%= image_tag("icons/ruby-logo.png", { size: "40x40", alt: "Ruby logo" }) %>Ruby</p>
-                        <p><%= image_tag("icons/rails-logo.png", { size: "40x40", alt: "Rails logo" }) %>Ruby on Rails</p>
-                        <p><%= image_tag("icons/rspec-logo-trans.png", { size: "40x40", alt: "RSpec logo" }) %>RSpec</p>
-                        <p><%= image_tag("icons/postgresql-logo.png", { size: "40x40", alt: "PostgreSQL logo" }) %>PostgreSQL</p>
+                        <p class="is-vertical-center">
+                            <%= image_tag("icons/ruby-logo.png", { size: "40x40", alt: "Ruby logo" }) %>Ruby
+                        </p>
+                        <p class="is-vertical-center">
+                            <%= image_tag("icons/rails-logo.png", { size: "40x40", alt: "Rails logo" }) %>Ruby on Rails
+                        </p>
+                        <p class="is-vertical-center">
+                            <%= image_tag("icons/rspec-logo-trans.png", { size: "40x40", alt: "RSpec logo" }) %>RSpec
+                        </p>
+                        <p class="is-vertical-center">
+                            <%= image_tag("icons/postgresql-logo.png", { size: "40x40", alt: "PostgreSQL logo" }) %>PostgreSQL
+                        </p>
                     </div>
                 </div>
             </div>
@@ -68,11 +82,21 @@
                 <div class="notification has-text-centered">
                     <h3 class="subtitle">Front end</h3>
                     <div class="has-text-left">
-                        <p><%= image_tag("icons/HTML5-logo.png", { size: "40x40", alt: "HTML logo" }) %>HTML5</p>
-                        <p><%= image_tag("icons/css-logo.png", { size: "40x40", alt: "CSS logo" }) %>CSS</p>
-                        <p><%= image_tag("icons/sass-logo.png", { size: "40x40", alt: "Sass logo" }) %>Sass</p>
-                        <p><%= image_tag("icons/javascript-logo.png", { size: "40x40", alt: "Javascript logo" }) %>JavaScript</p>
-                        <p><%= image_tag("icons/bulma-logo.png", { size: "40x40", alt: "Bulma logo" }) %>Bulma</p>
+                        <p class="is-vertical-center">
+                            <%= image_tag("icons/HTML5-logo.png", { size: "40x40", alt: "HTML logo" }) %>HTML5
+                        </p>
+                        <p class="is-vertical-center">
+                            <%= image_tag("icons/css-logo.png", { size: "40x40", alt: "CSS logo" }) %>CSS
+                        </p>
+                        <p class="is-vertical-center">
+                            <%= image_tag("icons/sass-logo.png", { size: "40x40", alt: "Sass logo" }) %>Sass
+                        </p>
+                        <p class="is-vertical-center">
+                            <%= image_tag("icons/javascript-logo.png", { size: "40x40", alt: "Javascript logo" }) %>JavaScript
+                        </p>
+                        <p class="is-vertical-center">
+                            <%= image_tag("icons/bulma-logo.png", { size: "40x40", alt: "Bulma logo" }) %>Bulma
+                        </p>
                     </div>
                 </div>
             </div>
@@ -80,9 +104,15 @@
                 <div class="notification has-text-centered">
                     <h3 class="subtitle">Miscellaneous</h3>
                         <div class="has-text-left">
-                        <p><%= image_tag("icons/linux-logo.png", { size: "40x40", alt: "Linux logo" }) %>Linux</p>
-                        <p><%= image_tag("icons/git-logo.png", { size: "40x40", alt: "Git logo" }) %>Git</p>
-                        <p><%= image_tag("icons/heroku-logo.png", { size: "40x40", alt: "Heroku logo" }) %>Heroku</p>
+                        <p class="is-vertical-center">
+                            <%= image_tag("icons/linux-logo.png", { size: "40x40", alt: "Linux logo" }) %>Linux
+                        </p>
+                        <p class="is-vertical-center">
+                            <%= image_tag("icons/git-logo.png", { size: "40x40", alt: "Git logo" }) %>Git
+                        </p>
+                        <p class="is-vertical-center">
+                            <%= image_tag("icons/heroku-logo.png", { size: "40x40", alt: "Heroku logo" }) %>Heroku
+                        </p>
                     </div>
                 </div>
             </div>
@@ -93,7 +123,7 @@
     <div class="container">
         <h2 class="is-size-2 has-text-weight-light center title">Projects</h2>
         <hr>
-        <h3 class="subtitle is-size-3">Trike World Limited</h3>
+        <h3 class="subtitle is-size-3">trikeworldltd.com</h3>
         <div class="columns">
             <div class="notification column">
                 <%= link_to(
@@ -101,10 +131,11 @@
                     "https://trikeworldlimited.herokuapp.com") %>
             </div>
             <div class="column">
+                <p class="paragraph">(domain yet to transfer)</p>
                 <p class="paragraph">
-                    Trike World Limited is the website I'm currently building for my dad's V8 trike 
-                    motorcycle business which, in my opinion, looks a little cleaner than the 
-                    <%= link_to("website he was using before", "http://trikeworldltd.com/") %>.
+                    trikeworldlimited.com is the website I'm currently building for my dad's V8 trike 
+                    motorcycle business, Trike World Limited. In my opinion, it looks a little cleaner than the 
+                    <%= link_to("website he had before", "http://trikeworldltd.com/") %>.
                 </p>
                 <p class="paragraph">
                     The website is made with Rails 6, and features an authentication and blogging 
