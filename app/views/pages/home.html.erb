@@ -49,6 +49,7 @@
                     I started teaching myself how to program in the first few months of 2019, and I made it a goal of mine 
                     to become a professional developer before the year's end.
                 </p>
+                <p class="paragraph">/* This bio is still a work in progress */</p>
                 <p class="paragraph">Some of my interests include:</p>
                 <ul class="paragraph">
                     <li>Learning challenging concepts</li>
@@ -131,6 +132,10 @@
                                 <p class="column is-7">Git</p>
                             </div>
                             <div class="columns is-vertical-center">
+                                <%= image_tag("icons/github-logo.png", { style: "max-width: 65px", alt: "GitHub logo", class: "column"}) %>
+                                <p class="column is-7">Github</p>
+                            </div>
+                            <div class="columns is-vertical-center">
                                 <%= image_tag("icons/heroku-logo.png", { style: "max-width: 65px", alt: "Heroku logo", class: "column" }) %>
                                 <p class="column is-7">Heroku</p>
                             </div>
@@ -179,7 +184,8 @@
             <div class="column"></div>
             <div class="column is-two-thirds">
                 <p class="paragraph">
-                    Questions or concerns? I can be contacted by <%= link_to("github", "https://github.com/coped") %> or by 
+                    Questions or concerns? I can be contacted by <%= link_to("GitHub", "https://github.com/coped") %>, 
+                    <%= link_to("Linkedin", "https://www.linkedin.com/in/dennis-cope-548824164/") %>, or by 
                     <%= mail_to("coped@tutanota.com", "email") %> at <strong>coped@tutanota.com</strong>. You can also use 
                     the form below to email me directly.
                     I'll reply promptly.
