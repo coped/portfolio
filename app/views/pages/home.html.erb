@@ -1,4 +1,4 @@
-<section class="hero is-dark is-bold is-fullheight">
+<section id="header" class="hero is-dark is-bold is-fullheight">
     <div class="hero-head">
     </div>
     <div class="hero-body">
@@ -37,89 +37,111 @@
     </div>
 </section>
 <%= render 'layouts/navbar' %>
-<section class="section">
+<section id="about" class="section">
     <div class="container">
         <h2 class="is-size-2 has-text-weight-light center title">About Me</h2>
         <hr>
-        <p class="paragraph">
-            I'm a self-taught developer, and I like making web applications.
-        </p>
-        <p>Some of my interests include:</p>
-        <ul>
-            <li>Learning challenging concepts</li>
-            <li>Slammin' keys on my piano</li>
-            <li>Showing affection to pets</li>
-            <li>Developing a bangin' website</li>
-        </ul>
-        <p>Catch me next time when I decide to update this page.</p>
+        <div class="columns">
+            <div class="column"></div>
+            <div class="column is-two-thirds">
+                <p class="paragraph">
+                    I'm a self-taught developer, and I like making Rails applications (though any new tech is fun to learn). 
+                    I started teaching myself how to program in the first few months of 2019, and I made it a goal of mine 
+                    to become a professional developer before the year's end.
+                </p>
+                <p class="paragraph">Some of my interests include:</p>
+                <ul class="paragraph">
+                    <li>Learning challenging concepts</li>
+                    <li>Slammin' keys on my piano</li>
+                    <li>Showing affection to pets</li>
+                    <li>Developing a bangin' website</li>
+                </ul>
+                <p>Catch me next time when I decide to update this page.</p>
+            </div>
+            <div class="column"></div>
+        </div>
     </div>
 </section>
-<section class="section">
+<section id="tools" class="section">
     <div class="container">
         <h2 class="is-size-2 has-text-weight-light center title">My Favorite Tools</h2>
         <hr>
         <div class="columns">
             <div class="column">
-                <div class="notification has-text-centered">
-                    <h3 class="subtitle">Back end</h3>
-                    <div class="has-text-left has-text-justified">
-                        <p class="is-vertical-center">
-                            <%= image_tag("icons/ruby-logo.png", { size: "40x40", alt: "Ruby logo" }) %>Ruby
-                        </p>
-                        <p class="is-vertical-center">
-                            <%= image_tag("icons/rails-logo.png", { size: "40x40", alt: "Rails logo" }) %>Ruby on Rails
-                        </p>
-                        <p class="is-vertical-center">
-                            <%= image_tag("icons/rspec-logo-trans.png", { size: "40x40", alt: "RSpec logo" }) %>RSpec
-                        </p>
-                        <p class="is-vertical-center">
-                            <%= image_tag("icons/postgresql-logo.png", { size: "40x40", alt: "PostgreSQL logo" }) %>PostgreSQL
-                        </p>
+                <div class="notification">
+                    <h3 class="subtitle has-text-centered">Back end</h3>
+                    <div class="has-text-left has-text-weight-bold">
+                        <div class="columns is-vertical-center">
+                            <%= image_tag("icons/ruby-logo.png", { style: "max-width: 65px", alt: "Ruby logo", class: "column" }) %>
+                            <p class="column is-7">Ruby</p>
+                        </div>
+                        <div class="columns is-vertical-center">
+                            <%= image_tag("icons/rails-logo.png", { style: "max-width: 65px", alt: "Rails logo", class: "column" }) %>
+                            <p class="column is-7">Ruby on Rails</p>
+                        </div>
+                        <div class="columns is-vertical-center">
+                            <%= image_tag("icons/rspec-logo-trans.png", { style: "max-width: 65px", alt: "RSpec logo", class: "column" }) %>
+                            <p class="column is-7">RSpec</p>
+                        </div>
+                        <div class="columns is-vertical-center">
+                            <%= image_tag("icons/postgresql-logo.png", { style: "max-width: 65px", alt: "PostgreSQL logo", class: "column" }) %>
+                            <p class="column is-7">PostgreSQL</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="column">
-                <div class="notification has-text-centered">
-                    <h3 class="subtitle">Front end</h3>
-                    <div class="has-text-left">
-                        <p class="is-vertical-center">
-                            <%= image_tag("icons/HTML5-logo.png", { size: "40x40", alt: "HTML logo" }) %>HTML5
-                        </p>
-                        <p class="is-vertical-center">
-                            <%= image_tag("icons/css-logo.png", { size: "40x40", alt: "CSS logo" }) %>CSS
-                        </p>
-                        <p class="is-vertical-center">
-                            <%= image_tag("icons/sass-logo.png", { size: "40x40", alt: "Sass logo" }) %>Sass
-                        </p>
-                        <p class="is-vertical-center">
-                            <%= image_tag("icons/javascript-logo.png", { size: "40x40", alt: "Javascript logo" }) %>JavaScript
-                        </p>
-                        <p class="is-vertical-center">
-                            <%= image_tag("icons/bulma-logo.png", { size: "40x40", alt: "Bulma logo" }) %>Bulma
-                        </p>
+                <div class="notification">
+                    <h3 class="subtitle has-text-centered">Front end</h3>
+                    <div class="has-text-left has-text-weight-bold">
+                        <div class="columns is-vertical-center">
+                            <%= image_tag("icons/HTML5-logo.png", { style: "max-width: 65px", alt: "HTML logo", class: "column" }) %>
+                            <p class="column is-7">HTML5</p>
+                        </div>
+                        <div class="columns is-vertical-center">
+                            <%= image_tag("icons/javascript-logo.png", { style: "max-width: 65px", alt: "Javascript logo", class: "column" }) %>
+                            <p class="column is-7">JavaScript</p>
+                        </div>
+                        <div class="columns is-vertical-center">
+                            <%= image_tag("icons/css-logo.png", { style: "max-width: 65px", alt: "CSS logo", class: "column" }) %>
+                            <p class="column is-7">CSS</p>
+                        </div>
+                        <div class="columns is-vertical-center">
+                            <%= image_tag("icons/sass-logo.png", { style: "max-width: 65px", alt: "Sass logo", class: "column" }) %>
+                            <p class="column is-7">Sass</p>
+                        </div>
+
+                        <div class="columns is-vertical-center">
+                            <%= image_tag("icons/bulma-logo.png", { style: "max-width: 65px", alt: "Bulma logo", class: "column" }) %>
+                            <p class="column is-7">Bulma</p>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="column">
-                <div class="notification has-text-centered">
-                    <h3 class="subtitle">Miscellaneous</h3>
-                        <div class="has-text-left">
-                        <p class="is-vertical-center">
-                            <%= image_tag("icons/linux-logo.png", { size: "40x40", alt: "Linux logo" }) %>Linux
-                        </p>
-                        <p class="is-vertical-center">
-                            <%= image_tag("icons/git-logo.png", { size: "40x40", alt: "Git logo" }) %>Git
-                        </p>
-                        <p class="is-vertical-center">
-                            <%= image_tag("icons/heroku-logo.png", { size: "40x40", alt: "Heroku logo" }) %>Heroku
-                        </p>
+                <div class="notification">
+                    <h3 class="subtitle has-text-centered">Miscellaneous</h3>
+                        <div class="has-text-weight-bold">
+                            <div class="columns is-vertical-center">
+                                <%= image_tag("icons/linux-logo.png", { style: "max-width: 65px", alt: "Linux logo", class: "column" }) %>
+                                <p class="column is-7">Linux</p>
+                            </div>
+                            <div class="columns is-vertical-center">
+                                <%= image_tag("icons/git-logo.png", { style: "max-width: 65px", alt: "Git logo", class: "column" }) %>
+                                <p class="column is-7">Git</p>
+                            </div>
+                            <div class="columns is-vertical-center">
+                                <%= image_tag("icons/heroku-logo.png", { style: "max-width: 65px", alt: "Heroku logo", class: "column" }) %>
+                                <p class="column is-7">Heroku</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section class="section">
+<section id="projects" class="section">
     <div class="container">
         <h2 class="is-size-2 has-text-weight-light center title">Projects</h2>
         <hr>
@@ -131,7 +153,7 @@
                     "https://trikeworldlimited.herokuapp.com") %>
             </div>
             <div class="column">
-                <p class="paragraph">(domain yet to transfer)</p>
+                <p class="paragraph">(domain yet to be transferred)</p>
                 <p class="paragraph">
                     trikeworldlimited.com is the website I'm currently building for my dad's V8 trike 
                     motorcycle business, Trike World Limited. In my opinion, it looks a little cleaner than the 
@@ -148,9 +170,50 @@
         </div>
     </div>
 </section>
-<section class="section">
+<section id="contact" class="section">
     <div class="container">
         <h2 class="is-size-2 has-text-weight-light center title">Contact</h2>
         <hr>
+        <%= render "layouts/flash" %>
+        <div class="columns">
+            <div class="column"></div>
+            <div class="column is-two-thirds">
+                <p class="paragraph">
+                    Questions or concerns? I can be contacted by <%= link_to("github", "https://github.com/coped") %> or by 
+                    <%= mail_to("coped@tutanota.com", "email") %> at <strong>coped@tutanota.com</strong>. You can also use 
+                    the form below to email me directly.
+                    I'll reply promptly.
+                </p>
+                <%= form_with(scope: :contact, url: contact_path) do |f| %>
+                    <div class="field">
+                        <%= f.label :name, { class: "label" } %>
+                        <div class="control">
+                            <%= f.text_field :name, { class: "input", placeholder: "John Doe", required: "true" } %>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <%= f.label :email, { class: "label" } %>
+                        <div class="control">
+                            <%= f.email_field :email, { class: "input", placeholder: "example@email.com", required: "true" } %>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <%= f.label :message, { class: "label"} %>
+                        <div class="control">
+                            <%= f.text_area :message, { class: "textarea", rows: "7", placeholder: "Hello!", required: "true" } %>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <div class="control">
+                            <%= f.submit :submit, { class: "button is-link" } %>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+            <div class="column"></div>
+        </div>
     </div>
 </section>
