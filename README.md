@@ -1,24 +1,9 @@
-# README
+# My Portfolio
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### About
+This is the application behind my portfolio site, coped.dev.
 
-Things you may want to cover:
+Powered by Rails 6, styled with the Bulma CSS framework.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Author
+Dennis Cope, https://coped.dev
