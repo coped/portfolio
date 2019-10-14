@@ -6,14 +6,26 @@ html {
     scroll-behavior: smooth;
 }
 
+.blue {
+    color: #5AF;
+}
+
+.logo {
+    min-height: 2rem;
+}
+
+.resume {
+    margin-right: 1rem;
+}
+
 .center {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-hr {
-    background-color: black;
+.hr {
+    background-color: #ADF;
 }
 
 .paragraph {

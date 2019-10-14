@@ -5,10 +5,10 @@
         <div class="container">
             <section class="section">
                 <h1 class="title has-text-centered has-text-weight-light is-size-1">
-                    Dennis Cope
+                    Dennis <span class="blue">Cope</span>
                 </h1>
                 <h2 class="subtitle has-text-centered has-text-weight-light">
-                    Jr Fullstack Developer
+                    Jr Fullstack <span class="blue">Developer</span>
                 </h2>
             </section>
             <section class="section">
@@ -40,9 +40,12 @@
 <section id="about" class="section">
     <div class="container">
         <h2 class="is-size-2 has-text-weight-light center title">About Me</h2>
-        <hr>
-        <div class="columns">
-            <div class="column"></div>
+        <div class="columns center">
+            <div class="column is-two-thirds">
+                <hr class="hr">
+            </div>
+        </div>
+        <div class="columns center">
             <div class="column is-two-thirds">
                 <p class="paragraph">
                     I'm a self-taught developer, and I like making Rails applications (though any new tech is fun to learn). 
@@ -59,14 +62,17 @@
                 </ul>
                 <p>Catch me next time when I decide to update this page.</p>
             </div>
-            <div class="column"></div>
         </div>
     </div>
 </section>
 <section id="tools" class="section">
     <div class="container">
         <h2 class="is-size-2 has-text-weight-light center title">My Favorite Tools</h2>
-        <hr>
+        <div class="columns center">
+            <div class="column">
+                <hr class="hr">
+            </div>
+        </div>
         <div class="columns">
             <div class="column">
                 <div class="notification">
@@ -148,7 +154,11 @@
 <section id="projects" class="section">
     <div class="container">
         <h2 class="is-size-2 has-text-weight-light center title">Projects</h2>
-        <hr>
+        <div class="columns center">
+            <div class="column">
+                <hr class="hr">
+            </div>
+        </div>
         <h3 class="subtitle is-size-3">trikeworldltd.com</h3>
         <div class="columns">
             <div class="notification column">
@@ -201,10 +211,13 @@
 <section id="contact" class="section">
     <div class="container">
         <h2 class="is-size-2 has-text-weight-light center title">Contact</h2>
-        <hr>
+        <div class="columns center">
+            <div class="column is-two-thirds">
+                <hr class="hr">
+            </div>
+        </div>
         <%= render "layouts/flash" %>
-        <div class="columns">
-            <div class="column"></div>
+        <div class="columns center">
             <div class="column is-two-thirds">
                 <p class="paragraph">
                     Questions or concerns? I can be contacted by <%= link_to("GitHub", "https://github.com/coped") %>, 
@@ -213,36 +226,37 @@
                     the form below to email me directly.
                     I'll reply promptly.
                 </p>
-                <%= form_with(scope: :contact, url: contact_path) do |f| %>
+                <%= form_with(scope: :contact, url: contact_path, id: "contact-form" ) do |f| %>
                     <div class="field">
                         <%= f.label :name, { class: "label" } %>
                         <div class="control">
-                            <%= f.text_field :name, { class: "input", placeholder: "John Doe", required: "true" } %>
+                            <%= f.text_field :name, { class: "input", placeholder: "John Doe"} %>
                         </div>
                     </div>
 
                     <div class="field">
                         <%= f.label :email, { class: "label" } %>
                         <div class="control">
-                            <%= f.email_field :email, { class: "input", placeholder: "example@email.com", required: "true" } %>
+                            <%= f.email_field :email, { class: "input", placeholder: "example@email.com"} %>
                         </div>
                     </div>
 
                     <div class="field">
                         <%= f.label :message, { class: "label"} %>
                         <div class="control">
-                            <%= f.text_area :message, { class: "textarea", rows: "7", placeholder: "Hello!", required: "true" } %>
+                            <%= f.text_area :message, { class: "textarea", rows: "7", placeholder: "Hello!"} %>
                         </div>
                     </div>
 
+                    <p class="paragraph">(All fields are required)</p>
+
                     <div class="field">
                         <div class="control">
-                            <%= f.submit :submit, { class: "button is-link" } %>
+                            <%= f.submit :submit, class: "button is-link" %>
                         </div>
                     </div>
                 <% end %>
             </div>
-            <div class="column"></div>
         </div>
     </div>
 </section>
