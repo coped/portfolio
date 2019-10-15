@@ -200,6 +200,10 @@
                     class and the Heroku SendGrid add-on.
                 </p>
                 <p class="paragraph">
+                    The contact form also uses Google's reCAPTCHA verification system, because I recieved spam 
+                    messages within the first day of implementing the form.
+                </p>
+                <p class="paragraph">
                     <%= link_to("https://coped.dev", "https://coped.dev") %>
                 </p>
                 <p class="paragraph">
@@ -217,7 +221,9 @@
                 <hr class="hr">
             </div>
         </div>
-        <%= render "layouts/flash" %>
+        <div class="paragraph center">
+            <%= render 'layouts/flash' %>
+        </div>
         <div class="columns center">
             <div class="column is-two-thirds">
                 <p class="paragraph">
@@ -227,30 +233,32 @@
                     the form below to email me directly.
                     I'll reply promptly.
                 </p>
-                <%= form_with(scope: :contact, url: contact_path, id: "contact-form" ) do |f| %>
+                <%= form_with(scope: :contact, local: true, url: home_path, id: "contact-form" ) do |f| %>
                     <div class="field">
-                        <%= f.label :name, { class: "label" } %>
+                        <%= f.label "Name *", { class: "label" } %>
                         <div class="control">
-                            <%= f.text_field :name, { class: "input", placeholder: "John Doe"} %>
+                            <%= f.text_field :name, { class: "input", placeholder: "John Doe", required: "true" } %>
                         </div>
                     </div>
 
                     <div class="field">
-                        <%= f.label :email, { class: "label" } %>
+                        <%= f.label "Email *", { class: "label" } %>
                         <div class="control">
-                            <%= f.email_field :email, { class: "input", placeholder: "example@email.com"} %>
+                            <%= f.email_field :email, { class: "input", placeholder: "example@email.com", required: "true" } %>
                         </div>
                     </div>
 
                     <div class="field">
-                        <%= f.label :message, { class: "label"} %>
+                        <%= f.label "Message *", { class: "label"} %>
                         <div class="control">
-                            <%= f.text_area :message, { class: "textarea", rows: "7", placeholder: "Hello!"} %>
+                            <%= f.text_area :message, { class: "textarea", rows: "7", placeholder: "Hello!", required: "true" } %>
                         </div>
                     </div>
 
-                    <p class="paragraph">(All fields are required)</p>
-
+                    <div class="captcha">
+                        <%= recaptcha_tags %>
+                    </div>
+                        
                     <div class="field">
                         <div class="control">
                             <%= f.submit :submit, class: "button is-link" %>

@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.4'
 
+gem 'dotenv-rails', groups: [:development, :test]
 gem 'rails',                      '~> 6.0.0'
 gem 'pg',                         '~> 1.1', '>= 1.1.4'
 gem 'puma',                       '~> 3.11'
@@ -12,6 +13,8 @@ gem 'turbolinks',                 '~> 5'
 gem 'jbuilder',                   '~> 2.7'
 gem 'bootsnap',                   '>= 1.4.2', require: false
 gem "bulma-rails",                '~> 0.7.5'
+gem 'recaptcha',                  '~> 5.2', '>= 5.2.1'
+gem 'rubyzip',                    '>= 1.3.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -27,10 +30,10 @@ group :development, :test do
 end
 
 group :development do
-  gem 'sqlite3', '~> 1.4'
-  gem 'listen',  '>= 3.0.5', '< 3.2'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
+  gem 'sqlite3',               '~> 1.4'
+  gem 'listen',                '>= 3.0.5', '< 3.2'
+  gem 'web-console',           '>= 3.3.0'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end

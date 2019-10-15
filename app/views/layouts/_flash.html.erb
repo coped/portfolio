@@ -1,5 +1,3 @@
-<div class="center">
-    <% flash.each do |type, message| %>
-        <span class="tag is-<%= type %> is-medium"><%= message %></span>
-    <% end %>
-</div>
+<% flash.each do |type, message| %>
+    <span class="tag is-<%= type %> is-medium"><%= message %></span>
+<% end %>

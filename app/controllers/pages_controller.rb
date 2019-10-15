@@ -1,15 +1,13 @@
-class PagesController < ApplicationController
+class PagesController < ApplicationController    
     def home
     end
 
     def contact_mailer
-        if ContactMailer.contact(contact_details).deliver_now
-            flash[:success] = "Message successfully sent"
-            redirect_to root_url(anchor: "contact")
-        else
-            flash[:warning] = "Something went wrong. Message not sent."
-            redirect_to root_url(anchor: "contact")
+        if verify_recaptcha
+            ContactMailer.contact(contact_details).deliver_now
+            flash[:success] = "Message sent"
         end
+        redirect_to root_url(anchor: "contact")
     end
 
     private
