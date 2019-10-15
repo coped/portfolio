@@ -1,3 +1,4 @@
+<% provide(:page, "home") %>
 <section id="header" class="hero is-dark is-bold is-fullheight">
     <div class="hero-head">
     </div>
@@ -12,24 +13,24 @@
                 </h2>
             </section>
             <section class="section">
-                <div class="columns center">
+                <div class="center">
                     <%= link_to(
                             image_tag("GitHub-Mark-Light-120px-plus-scaled.png",
-                            { class: "column", size: "100x100", alt: "Link to github" } ),
+                            { class: "banner-icon", size: "100x100", alt: "Link to github" } ),
                         "https://github.com/coped") %>
                     <%= link_to(
                             image_tag("linkedin-dark-scaled.png",
-                            { class: "column", size: "100x100", alt: "Link to linkedin" } ),
+                            { class: "banner-icon", size: "100x100", alt: "Link to linkedin" } ),
                         "https://www.linkedin.com/in/dennis-cope/") %>
-                    <%= mail_to("coped@tutanota.com", image_tag("email-logo-dark-scaled.png",
-                                                      { class: "column", size: "100x100", alt: "coped@tutanota" } )) %>
+                    <%= mail_to("coped@tutanota.com",
+                            image_tag("email-logo-dark-scaled.png",
+                            { class: "banner-icon", size: "100x100", alt: "coped@tutanota" } )) %>
                 </div>
             </section>
-            <section class="section">
-                <h2 class="subtitle has-text-centered is-italic">
-                    <%= link_to("Let's build something", "#navbar",
-                        { class: "button is-inverted is-dark is-rounded is-outlined" }) %>
-                </h2>
+            <section class="section has-text-centered">
+                <a id="banner-button" class="button is-inverted is-dark is-rounded is-outlined is-italic">
+                    Let's build something
+                </a>
             </section>
         </div>
     </div>
@@ -163,7 +164,7 @@
         <div class="columns">
             <div class="notification column">
                 <%= link_to(
-                        image_tag("trikeworldltd-scaled.jpg", { alt: "Trike world limited home page" }),
+                        image_tag("trikeworldltd-screenshot-scaled.jpg", { alt: "Trike world limited home page" }),
                     "https://trikeworldlimited.herokuapp.com") %>
             </div>
             <div class="column">
@@ -186,7 +187,7 @@
         <div class="columns">
             <div class="notification column">
                 <%= link_to(
-                    image_tag("coped-dev-scaled.png", { alt: "coped.dev home page" }),
+                    image_tag("coped-screenshot-scaled.png", { alt: "coped.dev home page" }),
                 "https://coped.dev") %>
             </div>
             <div class="column">
