@@ -1,0 +1,61 @@
+<section id="projects" class="section">
+    <div class="container">
+        <h2 class="is-size-2 has-text-weight-light center title">Projects</h2>
+        <div class="columns center">
+            <div class="column">
+                <hr class="hr">
+            </div>
+        </div>
+        <h3 class="subtitle is-size-3 has-text-weight-bold">trikeworldltd.com</h3>
+        <div class="columns">
+            <div class="notification column">
+                <%= link_to(
+                        image_tag("trikeworldltd-screenshot-scaled.jpg", { alt: "Trike world limited home page" }),
+                    "https://trikeworldlimited.herokuapp.com") %>
+            </div>
+            <div class="column">
+                <p class="paragraph">(domain yet to be transferred)</p>
+                <p class="paragraph">
+                    trikeworldltd.com is the website I'm currently building for my dad's V8 trike 
+                    motorcycle business, Trike World Limited. In my opinion, it looks a little cleaner than the 
+                    <%= link_to("website he had before", "http://trikeworldltd.com/") %>.
+                </p>
+                <p class="paragraph">
+                    The website is made with Rails 6, and features an authentication and blogging 
+                    system (currently in development), allowing my dad to sign in and 
+                    create/edit/delete blog posts on the site at his discretion. The Bulma CSS framework is used for styling.
+                </p>
+                <p class="paragraph"><%= link_to("https://trikeworldlimited.herokuapp.com", "https://trikeworldlimited.herokuapp.com") %></p>
+                <p><%= link_to("View project on github", "https://github.com/coped/v8-trikes") %></p>
+            </div>
+        </div>
+        <h3 class="subtitle is-size-3 has-text-weight-bold">coped.dev</h3>
+        <div class="columns">
+            <div class="notification column">
+                <%= link_to(
+                    image_tag("coped-screenshot-scaled.png", { alt: "coped.dev home page" }),
+                "https://coped.dev") %>
+            </div>
+            <div class="column">
+                <p class="paragraph">
+                    The very page you're looking at.
+                </p>
+                <p class="paragraph">
+                    My portfolio page runs on Rails 6, and uses the Bulma CSS framework. 
+                    The contact form sends emails to my address using the Rails <strong>ActionMailer::Base</strong>
+                    class and the Heroku SendGrid add-on.
+                </p>
+                <p class="paragraph">
+                    The contact form also uses Google's reCAPTCHA verification system, because I recieved spam 
+                    messages within the first day of implementing the form.
+                </p>
+                <p class="paragraph">
+                    <%= link_to("https://coped.dev", "https://coped.dev") %>
+                </p>
+                <p class="paragraph">
+                    <%= link_to("View project on github", "https://github.com/coped/my-portfolio") %>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
