@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.6.4'
+ruby '2.6.5'
 
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'rails',                      '~> 6.0.0'
 gem 'pg',                         '~> 1.1', '>= 1.1.4'
 gem 'puma',                       '~> 3.11'
-gem 'sass-rails',                 '~> 5'
+gem 'sass-rails',                 '~> 6.0'
 gem 'webpacker',                  '~> 4.0'
 gem 'turbolinks',                 '~> 5'
 gem 'jbuilder',                   '~> 2.7'
