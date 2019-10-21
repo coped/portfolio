@@ -5,7 +5,6 @@ ruby '2.6.5'
 
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'rails',                      '~> 6.0.0'
-gem 'pg',                         '~> 1.1', '>= 1.1.4'
 gem 'puma',                       '~> 3.11'
 gem 'sass-rails',                 '~> 6.0'
 gem 'webpacker',                  '~> 4.0'
@@ -39,9 +38,14 @@ group :development do
 end
 
 group :test do
-  gem 'capybara', '>= 2.15'
+  gem 'capybara',                 '>= 2.15'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.4'
+end
+
+group :production do
+  gem 'pg',                         '~> 1.1', '>= 1.1.4'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

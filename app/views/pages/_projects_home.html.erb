@@ -11,7 +11,7 @@
             <div class="notification column">
                 <%= link_to(
                         image_tag("trikeworldltd-screenshot-scaled.jpg", { alt: "Trike world limited home page" }),
-                    "https://trikeworldlimited.herokuapp.com") %>
+                    @trike_link) %>
             </div>
             <div class="column">
                 <p class="paragraph">(domain yet to be transferred)</p>
@@ -25,7 +25,7 @@
                     system (currently in development), allowing my dad to sign in and 
                     create/edit/delete blog posts on the site at his discretion. The Bulma CSS framework is used for styling.
                 </p>
-                <p class="paragraph"><%= link_to("https://trikeworldlimited.herokuapp.com", "https://trikeworldlimited.herokuapp.com") %></p>
+                <p class="paragraph"><%= link_to(@trike_link, @trike_link) %></p>
                 <p><%= link_to("View project on github", "https://github.com/coped/v8-trikes") %></p>
             </div>
         </div>
@@ -34,7 +34,7 @@
             <div class="notification column">
                 <%= link_to(
                     image_tag("coped-screenshot-scaled.png", { alt: "coped.dev home page" }),
-                "https://coped.dev") %>
+                @portfolio_link) %>
             </div>
             <div class="column">
                 <p class="paragraph">
@@ -50,7 +50,7 @@
                     messages within the first day of implementing the form.
                 </p>
                 <p class="paragraph">
-                    <%= link_to("https://coped.dev", "https://coped.dev") %>
+                    <%= link_to(@portfolio_link, @portfolio_link) %>
                 </p>
                 <p class="paragraph">
                     <%= link_to("View project on github", "https://github.com/coped/my-portfolio") %>

@@ -13,12 +13,12 @@
             <div class="column is-two-thirds">
                 <p class="paragraph">
                     Questions or concerns? I can be contacted by <%= link_to("GitHub", "https://github.com/coped") %>, 
-                    <%= link_to("LinkedIn", "https://www.linkedin.com/in/dennis-cope-548824164/") %>, or by 
+                    <%= link_to("LinkedIn", "https://www.linkedin.com/in/dennis-cope") %>, or by 
                     <%= mail_to("coped@tutanota.com", "email") %> at <strong>coped@tutanota.com</strong>. You can also use 
                     the form below to email me directly.
                     I'll reply promptly.
                 </p>
-                <%= form_with(scope: :contact, local: true, url: home_path, id: "contact-form" ) do |f| %>
+                <%= form_with(scope: :contact, local: true, url: root_path, id: "contact-form" ) do |f| %>
                     <div class="field">
                         <%= f.label "Name *", { class: "label" } %>
                         <div class="control">

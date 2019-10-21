@@ -2,11 +2,11 @@ require 'test_helper'
 
 class ContactMailerTest < ActionMailer::TestCase
   test "contact" do
-    mail = ContactMailer.contact
-    assert_equal "Contact", mail.subject
-    assert_equal ["to@example.org"], mail.to
-    assert_equal ["from@example.com"], mail.from
-    assert_match "Hi", mail.body.encoded
+    contact_details = { details: { name: "Some Example", email: "some@example.com", message: "Some example." } }
+    mail = ContactMailer.contact(contact_details)
+    assert_equal "Contact message from https://coped.dev", mail.subject
+    assert_equal ["coped@tutanota.com"], mail.to
+    assert_equal ["noreply@coped.dev"], mail.from
   end
 
 end
