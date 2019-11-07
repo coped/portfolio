@@ -1,0 +1,14 @@
+<% provide(:title, blog_title) %>
+<% provide(:page, "blog") %>
+<%= render 'banner' %>
+<section class="section">
+    <div class="container">
+        <h1 class="subtitle">
+            November 2019
+        </h1>
+        <hr>
+    </div>
+    <div class="container">
+        <h2 class="is-size-5"><%= link_to("Test Post", blog_test_path) %></h2>
+    </div>
+</section>

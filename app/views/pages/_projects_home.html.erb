@@ -6,7 +6,7 @@
                 <hr class="hr">
             </div>
         </div>
-        <h3 class="subtitle is-size-3 has-text-weight-bold">trikeworldltd.com</h3>
+        <h3 class="subtitle is-size-3 has-text-weight-bold">Trike World Limited</h3>
         <div class="columns">
             <div class="notification column">
                 <%= link_to(
@@ -14,47 +14,60 @@
                     @trike_link) %>
             </div>
             <div class="column">
-                <p class="paragraph">(domain yet to be transferred)</p>
                 <p class="paragraph">
-                    trikeworldltd.com is the website I'm currently building for my dad's V8 trike 
-                    motorcycle business, Trike World Limited. In my opinion, it looks a little cleaner than the 
-                    <%= link_to("website he had before", "http://trikeworldltd.com/") %>.
+                    trikeworldltd.com (domain yet to transfer) is a fully responsive web 
+                    application built for Trike World Ltd., my father’s V8 trike motorcycle 
+                    business. The primary technologies involved in this project include 
+                    Rails 6, the Bulma CSS framework, and PostgreSQL RDBMS.
                 </p>
                 <p class="paragraph">
-                    The website is made with Rails 6, and features an authentication and blogging 
-                    system (currently in development), allowing my dad to sign in and 
-                    create/edit/delete blog posts on the site at his discretion. The Bulma CSS framework is used for styling.
+                    The website features a custom authentication system and a blogging system, 
+                    allowing my father to sign in and post pictures / updates about his latest 
+                    projects with ease. The source code is also covered with comprehensive unit 
+                    and integration tests, thanks to Minitest.
                 </p>
-                <p class="paragraph"><%= link_to(@trike_link, @trike_link) %></p>
-                <p><%= link_to("View project on github", "https://github.com/coped/v8-trikes") %></p>
+                <p class="paragraph"><%= link_to("Visit website", @trike_link, class: "button is-primary") %></p>
+                <a href="https://github.com/coped/trike-world-limited">
+                    <button class="button">
+                        <span class="icon">
+                            <%= image_tag("icons/github-logo.svg") %>
+                        </span>
+                        <span>View project on GitHub</span>
+                    </button>
+                </a>
             </div>
         </div>
-        <h3 class="subtitle is-size-3 has-text-weight-bold">coped.dev</h3>
+        <h3 class="subtitle is-size-3 has-text-weight-bold">Personal Portfolio</h3>
         <div class="columns">
             <div class="notification column">
                 <%= link_to(
-                    image_tag("coped-screenshot-scaled.png", { alt: "coped.dev home page" }),
-                @portfolio_link) %>
+                        image_tag("coped-screenshot-scaled.png", { alt: "coped.dev home page" }),
+                    @portfolio_link) %>
             </div>
             <div class="column">
                 <p class="paragraph">
-                    The very page you're looking at.
+                    My portfolio page (currently coped.dev) is a website used to showcase my 
+                    developer related projects. It also features a small personal blog. 
+                    The site is fully responsive, built with Rails 6, and uses the Bulma 
+                    CSS framework for layout and styling.
                 </p>
                 <p class="paragraph">
-                    My portfolio page runs on Rails 6, and uses the Bulma CSS framework. 
-                    The contact form sends emails to my address using the Rails <strong>ActionMailer::Base</strong>
-                    class and the Heroku SendGrid add-on.
+                    The contact form featured at the bottom of this page sends emails 
+                    directly to my address using Rails’s 
+                    Action Mailer and Heroku’s SendGrid addon. The form also uses 
+                    Google’s reCAPTCHA verification system to prevent spam messages.
                 </p>
                 <p class="paragraph">
-                    The contact form also uses Google's reCAPTCHA verification system, because I recieved spam 
-                    messages within the first day of implementing the form.
+                    <%= link_to("Visit website", @portfolio_link, class: "button is-primary") %>
                 </p>
-                <p class="paragraph">
-                    <%= link_to(@portfolio_link, @portfolio_link) %>
-                </p>
-                <p class="paragraph">
-                    <%= link_to("View project on github", "https://github.com/coped/my-portfolio") %>
-                </p>
+                <a href="https://github.com/coped/my-portfolio">
+                    <button class="button">
+                        <span class="icon">
+                            <%= image_tag("icons/github-logo.svg") %>
+                        </span>
+                        <span>View project on GitHub</span>
+                    </button>
+                </a>
             </div>
         </div>
     </div>

@@ -36,3 +36,6 @@ yarn-debug.log*
 
 # Ignore env variable config file
 .env
+
+# ignore portfolio-features.todo
+portfolio-features.todo

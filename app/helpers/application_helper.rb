@@ -1,9 +1,5 @@
 module ApplicationHelper
-    def full_title(title)
-        if title.empty?
-            "Dennis Cope"
-        else
-            title
-        end
+    def full_title(title = "Dennis Cope")
+        title == "Dennis Cope" ? title : title + " | Dennis Cope"
     end
 end
