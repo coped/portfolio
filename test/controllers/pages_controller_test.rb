@@ -14,8 +14,8 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   test "should not send message if unverified by reCAPTCHA" do
     Recaptcha.configuration.skip_verify_env.delete("test")
     post root_path, params: { "contact" => { "name" => "Some Thing",
-                                         "email" => "some@thing.com",
-                                         "message" => "Hello." },
+                                             "email" => "some@thing.com",
+                                             "message" => "Hello." },
                               "g-recaptcha-response" => "" }
     assert_redirected_to root_url(anchor: "contact")
     follow_redirect!
@@ -26,8 +26,8 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
 
   test "should send message if verified by reCAPTCHA" do
     post root_path, params: { "contact" => { "name" => "Some Thing",
-                                         "email" => "some@thing.com",
-                                         "message" => "Hello." }}
+                                             "email" => "some@thing.com",
+                                             "message" => "Hello." }}
     assert_redirected_to root_url(anchor: "contact")
     follow_redirect!
     assert_not flash.empty?
