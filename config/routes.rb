@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'pages#home'
 
-  post '/',     to: 'pages#contact_mailer'
+  post '/',     to: 'pages#send_message'
   get  "/blog", to: 'posts#index'
 
   # Posts

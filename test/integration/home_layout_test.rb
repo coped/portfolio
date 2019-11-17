@@ -18,7 +18,7 @@ class HomeLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", "https://www.linkedin.com/in/dennis-cope", count: 2
     assert_select "a[href=?]", "mailto:coped@tutanota.com", count: 2
     assert_select "a", href: /assets\/cope-resume/
-    assert_select "iframe", src: /google.com\/recaptcha/
+    assert_select "div.g-recaptcha"
     assert_select "input", type: "submit"
   end
 end

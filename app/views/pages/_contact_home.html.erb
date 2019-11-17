@@ -39,11 +39,9 @@
                             <%= f.text_area :message, { class: "textarea", rows: "7", placeholder: "Hello!", required: "true" } %>
                         </div>
                     </div>
-
-                    <div class="captcha">
-                        <%= recaptcha_tags %>
-                    </div>
                         
+                    <div class="g-recaptcha captcha" data-sitekey="<%= ENV['RECAPTCHA_SITE_KEY'] %>"></div>
+
                     <div class="field">
                         <div class="control">
                             <%= f.submit :submit, class: "button is-link" %>

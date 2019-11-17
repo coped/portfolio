@@ -5,7 +5,7 @@ class ContactMailer < ApplicationMailer
   #
   #   en.contact_mailer.contact.subject
   #
-  def contact(contact_details)
+  def send_message(contact_details)
     @contact = contact_details
 
     mail to: "coped@tutanota.com", subject: "Contact message from https://coped.dev"
