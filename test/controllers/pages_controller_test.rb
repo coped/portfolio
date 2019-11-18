@@ -2,6 +2,7 @@ require 'test_helper'
 
 class PagesControllerTest < ActionDispatch::IntegrationTest
   def setup
+    ActionMailer::Base.deliveries.clear
     @base_title = "Dennis Cope"
   end
 
@@ -15,22 +16,27 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     post root_path, params: { "contact" => { "name" => "Some Thing",
                                              "email" => "some@thing.com",
                                              "message" => "Hello." },
-                              "g-recaptcha-response" => "" }
+                              "g-recaptcha-response" => "INVALID_RESPONSE" }
     assert_redirected_to root_url(anchor: "contact")
     follow_redirect!
     assert_not flash.empty?
     assert flash[:warning] = "reCAPTCHA verification failed. Please try again."
     assert_select "span#contact-notification", text: flash[:warning]
+    assert_equal 0, ActionMailer::Base.deliveries.size
   end
 
-  # test "should send message if verified by reCAPTCHA" do
-  #   post root_path, params: { "contact" => { "name" => "Some Thing",
-  #                                            "email" => "some@thing.com",
-  #                                            "message" => "Hello." }}
-  #   assert_redirected_to root_url(anchor: "contact")
-  #   follow_redirect!
-  #   assert_not flash.empty?
-  #   assert flash[:success] = "Message sent."
-  #   assert_select "span#contact-notification", text: flash[:success]
-  # end
+  test "should send message if verified by reCAPTCHA" do
+    ENV['RECAPTCHA_SITE_KEY'] = ENV['RECAPTCHA_SITE_TESTING_KEY']
+    ENV['RECAPTCHA_SECRET_KEY'] = ENV['RECAPTCHA_SECRET_TESTING_KEY']
+    post root_path, params: { "contact" => { "name" => "Some Thing",
+                                             "email" => "some@thing.com",
+                                             "message" => "Hello.",
+                              "g-recaptcha-response" => "VALID_RESPONSE" }}
+    assert_redirected_to root_url(anchor: "contact")
+    follow_redirect!
+    assert_not flash.empty?
+    assert flash[:success] = "Message sent."
+    assert_select "span#contact-notification", text: flash[:success]
+    assert_equal 1, ActionMailer::Base.deliveries.size
+  end
 end

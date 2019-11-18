@@ -4,6 +4,9 @@ class HomeLayoutTest < ActionDispatch::IntegrationTest
   def setup
     @trike_link = "https://trikeworldlimited.herokuapp.com"
     @portfolio_link = "https://coped.dev"
+    @github_link = "https://github.com/coped"
+    @linkedin_link = "https://www.linkedin.com/in/dennis-cope"
+    @mailto_link = "mailto:coped@tutanota.com"
   end
 
   test "layout links" do
@@ -14,9 +17,9 @@ class HomeLayoutTest < ActionDispatch::IntegrationTest
     assert_select "a[href=?]", root_path, count: 2
     assert_select "a[href=?]", @trike_link, count: 2
     assert_select "a[href=?]", @portfolio_link, count: 2
-    assert_select "a[href=?]", "https://github.com/coped", count: 2
-    assert_select "a[href=?]", "https://www.linkedin.com/in/dennis-cope", count: 2
-    assert_select "a[href=?]", "mailto:coped@tutanota.com", count: 2
+    assert_select "a[href=?]", @github_link, count: 2
+    assert_select "a[href=?]", @linkedin_link, count: 2
+    assert_select "a[href=?]", @mailto_link, count: 2
     assert_select "a", href: /assets\/cope-resume/
     assert_select "div.g-recaptcha"
     assert_select "input", type: "submit"
