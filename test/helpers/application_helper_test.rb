@@ -6,7 +6,7 @@ class ApplicationHelperTest < ActionView::TestCase
         assert_equal "Dennis Cope", full_title
     end
 
-    test "should return name plus title plus name when given title" do
+    test "should return title plus name when given title" do
         page_title = "Page Title"
         assert_equal "Page Title | Dennis Cope", full_title(page_title)
     end
