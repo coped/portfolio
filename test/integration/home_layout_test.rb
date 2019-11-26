@@ -6,7 +6,7 @@ class HomeLayoutTest < ActionDispatch::IntegrationTest
     @portfolio_link = "https://coped.dev"
     @github_link = "https://github.com/coped"
     @linkedin_link = "https://www.linkedin.com/in/dennis-cope"
-    @mailto_link = "mailto:coped@tutanota.com"
+    @mailto_link = "mailto:dennisaaroncope@gmail.com"
   end
 
   test "layout links" do

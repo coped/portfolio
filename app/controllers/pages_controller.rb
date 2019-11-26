@@ -18,6 +18,7 @@ class PagesController < ApplicationController
     end
 
     private
+    
         def contact_details
             params.require(:contact).permit(:name, :email, :message)
         end
