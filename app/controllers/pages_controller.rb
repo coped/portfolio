@@ -1,4 +1,5 @@
 class PagesController < ApplicationController    
+    include PagesHelper 
     def home
         @trike_link = "https://trikeworldlimited.herokuapp.com"
         @portfolio_link = "https://coped.dev"

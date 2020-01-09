@@ -1,6 +1,9 @@
 <nav id="navbar" class="navbar is-light" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <%= link_to(image_tag("coped-logo.png", class: "logo", alt: "coped.dev logo"), root_path, class: "navbar-item") %>
+    <%= link_to(
+          image_tag("https://coped.s3-us-west-1.amazonaws.com/coped-logo.png",
+          class: "logo", alt: "coped.dev logo"),
+        root_path, class: "navbar-item") %>
 
     <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar-options">
       <span aria-hidden="true"></span>
@@ -16,7 +19,8 @@
     </div>
     <div class="navbar-end">
       <div class="buttons">
-        <%= link_to "Resume", asset_path("Cope-Resume.pdf"), class: "button blue is-info resume navbar-item" %>
+        <%= link_to "Resume", "https://coped.s3-us-west-1.amazonaws.com/Cope-Resume.pdf", 
+            class: "button blue is-info resume navbar-item" %>
       </div>
     </div>
   </div>
