@@ -25,3 +25,16 @@
     </div>
   </div>
 </nav>
+<script>
+  if (document.querySelector(".navbar-burger")) {
+    document.querySelector(".navbar-burger").addEventListener("click", () => {
+      document.querySelector(".navbar-burger").classList.toggle("is-active");
+      document.querySelector(".navbar-menu").classList.toggle("is-active");
+    });
+  }
+  if (document.querySelector("#banner-button")) {
+    document.querySelector("#banner-button").addEventListener("click", () => {
+      document.querySelector("#navbar").scrollIntoView({ behavior: "smooth" });
+    });
+  }
+</script>
