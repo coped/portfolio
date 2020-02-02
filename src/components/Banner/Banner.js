@@ -54,7 +54,7 @@ function Banner() {
                 </div>
             </div>
             <div className="hero-foot center">
-                <a 
+                <button 
                     id="banner-button"
                 >
                     <img
@@ -63,7 +63,7 @@ function Banner() {
                         onClick={() => scrollDown()}
                         alt="scroll button"
                     />
-                </a>
+                </button>
             </div>
         </section>
     )

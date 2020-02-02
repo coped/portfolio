@@ -2,8 +2,17 @@ import React from 'react';
 import './Contact.css'
 
 function Contact() {
-    const submitForm = (e) => {
-    }
+    document.addEventListener('submit', e => {   
+        const form = e.target;
+
+        fetch(form.action, {
+            method: form.method,
+            body: new FormData(form)
+        });
+
+        e.preventDefault();
+      
+      });
     return (
         <section
             id="contact"
@@ -43,7 +52,6 @@ function Contact() {
                                         className="input"
                                         type="text"
                                         placeholder="John Doe"
-                                        required
                                     ></input>
                                 </div>
                             </div>
@@ -57,7 +65,6 @@ function Contact() {
                                         className="input"
                                         type="email"
                                         placeholder="example@email.com"
-                                        required
                                     ></input>
                                 </div>
                             </div>
@@ -71,7 +78,6 @@ function Contact() {
                                         className="textarea"
                                         placeholder="Hello!"
                                         rows="7"
-                                        required
                                     ></textarea>
                                 </div>
                             </div>
@@ -81,7 +87,6 @@ function Contact() {
                                     <button
                                         type="submit"
                                         className="button is-link"
-                                        onClick={(e) => submitForm(e)}
                                     >
                                         Submit
                                     </button>

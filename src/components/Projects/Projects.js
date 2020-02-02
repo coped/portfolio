@@ -50,7 +50,10 @@ function Projects() {
                         <a href="https://github.com/coped/private-events">
                             <button className="button">
                                 <span className="icon">
-                                    <img src="https://coped.s3-us-west-1.amazonaws.com/icons/github-logo.svg" />
+                                    <img 
+                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/github-logo.svg"
+                                        alt="Github logo" 
+                                    />
                                 </span>
                                 <span>View project on GitHub</span>
                             </button>
@@ -90,7 +93,10 @@ function Projects() {
                         <a href="https://github.com/coped/trike-world-limited">
                             <button className="button">
                                 <span className="icon">
-                                    <img src="https://coped.s3-us-west-1.amazonaws.com/icons/github-logo.svg" />
+                                    <img 
+                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/github-logo.svg"
+                                        alt="Github logo"
+                                    />
                                 </span>
                                 <span>View project on GitHub</span>
                             </button>
@@ -115,8 +121,7 @@ function Projects() {
                         </p>
                         <p className="paragraph">
                             The contact form featured at the bottom of this page sends emails 
-                            directly to my address using Rails’s 
-                            Action Mailer and Heroku’s SendGrid addon. The form also uses 
+                            directly to my address using the SendGrid Web API, and uses 
                             Google’s reCAPTCHA v2 API to prevent spam messages.
                         </p>
                         <div>
@@ -129,7 +134,10 @@ function Projects() {
                         <a href="https://github.com/coped/my-portfolio">
                             <button className="button">
                                 <span className="icon">
-                                    <img src="https://coped.s3-us-west-1.amazonaws.com/icons/github-logo.svg" />
+                                    <img 
+                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/github-logo.svg"
+                                        alt="Github logo"
+                                    />
                                 </span>
                                 <span>View project on GitHub</span>
                             </button>

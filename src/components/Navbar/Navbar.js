@@ -24,8 +24,8 @@ function Navbar() {
                     />
                 </a>
 
-                <a 
-                    role="button"
+                <button
+                    id="navbar-button"
                     className="navbar-burger burger"
                     onClick={() => expandMobileMenu()}
                     aria-label="menu" aria-expanded="false"
@@ -34,7 +34,7 @@ function Navbar() {
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
-                </a>
+                </button>
             </div>
 
             <div 

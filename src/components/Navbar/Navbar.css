@@ -5,3 +5,7 @@
 .resume {
   margin-right: 1rem;
 }
+
+#navbar-button {
+  border: none;
+}

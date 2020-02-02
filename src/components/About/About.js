@@ -24,6 +24,7 @@ function About() {
                                     <img
                                         src="https://coped.s3-us-west-1.amazonaws.com/me-256x256.jpg"
                                         className="is-rounded"
+                                        alt="Dennis Cope"
                                     />
                                 </figure>
                             </div>
@@ -45,21 +46,31 @@ function About() {
                                 <p className="paragraph">
                                     Here are some books and courses I'm currently learning from:
                                 </p>
-                                <a href="https://www.theodinproject.com/">
-                                    <p>The Odin Project</p>
-                                </a>
-                                <a href="https://roadtoreact.com/">
-                                    <p>The Road to learn React</p>
-                                </a>
-                                <a href="https://books.google.com/books/about/The_Rails_5_Way.html?id=YGQ-DwAAQBAJ&source=kp_book_description">
-                                    <p>The Rails 5 Way - Obie Fernandez</p>
-                                </a>
-                                <a href="https://github.com/getify/You-Dont-Know-JS">
-                                    <p>You Don't Know JS - Kyle Simpson</p>
-                                </a>
-                                <a href="https://books.google.com/books/about/Programming_in_Haskell.html?id=75C5DAAAQBAJ&source=kp_book_description">
-                                    <p>Programming in Haskell - Graham Hutton</p>
-                                </a>
+                                <p>
+                                    <a href="https://www.theodinproject.com/">
+                                        The Odin Project
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://roadtoreact.com/">
+                                        The Road to learn React
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://books.google.com/books/about/The_Rails_5_Way.html?id=YGQ-DwAAQBAJ&source=kp_book_description">
+                                        The Rails 5 Way - Obie Fernandez
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://github.com/getify/You-Dont-Know-JS">
+                                        You Don't Know JS - Kyle Simpson
+                                    </a>
+                                </p>
+                                <p>
+                                    <a href="https://books.google.com/books/about/Programming_in_Haskell.html?id=75C5DAAAQBAJ&source=kp_book_description">
+                                        Programming in Haskell - Graham Hutton
+                                    </a>
+                                </p>
                             </div>
                         </div>
                     </div>

@@ -7,3 +7,9 @@
 .down-arrow {
     width: 3rem;
 }
+
+#banner-button {
+  border: none;
+  outline: none;
+  background: none;
+}
