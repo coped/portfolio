@@ -3,7 +3,7 @@
 ### About
 This is the application behind my portfolio site, coped.dev.
 
-Powered by Rails 6, styled with the Bulma CSS framework.
+Powered by React and Bulma CSS.
 
-# Author
+# Created by
 Dennis Cope, https://coped.dev

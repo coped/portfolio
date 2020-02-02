@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway:200&display=swap');
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Open Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+.blue {
+  color: #5AF;
+}
+
+.center {
+  display: flex;
+  justify-content: center;  justify-content: center;
+  align-items: center;
+}
+
+.hr {
+  background-color: #ADF;
+}
+
+.paragraph {
+  margin-bottom: 1rem;
+}
+
+.is-vertical-center {
+  display: flex;
+  align-items: center;
+}
