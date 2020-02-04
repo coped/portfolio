@@ -1,18 +1,25 @@
 import React from 'react';
-import './Contact.css'
+import emailjs from 'emailjs-com';
+import './Contact.css';
 
 function Contact() {
-    document.addEventListener('submit', e => {   
-        const form = e.target;
-
-        fetch(form.action, {
-            method: form.method,
-            body: new FormData(form)
-        });
-
+    const templateId = process.env.REACT_APP_TEMPLATE_ID;
+    const userId = process.env.REACT_APP_EMAILJS_USER_ID;
+    const serviceId = process.env.REACT_APP_SERVICE_ID;
+    const sendMessage = e => {
         e.preventDefault();
-      
-      });
+
+        emailjs.sendForm(serviceId, templateId, e.target, userId)
+        .then((result) => {
+            console.log(result.text);
+            document.querySelector('#form-success').hidden = false;
+            document.querySelector('#form-alert').hidden = true;
+        }, (error) => {
+            console.log(error.text);
+            document.querySelector('#form-success').hidden = true;
+            document.querySelector('#form-alert').hidden = false;
+        });
+    }
     return (
         <section
             id="contact"
@@ -24,11 +31,28 @@ function Contact() {
                 </h2>
                 <div className="columns center">
                     <div className="column is-two-thirds">
-                        <hr className="hr"></hr>
+                        <hr className="hr" />
                     </div>
                 </div>
                 <div className="paragraph center">
-                    { /* Render a 'flash' for success and error messages */ }
+                    <p
+                        id="form-alert"
+                        role="alert"
+                        hidden
+                    >
+                        <span className="tag is-warning is-medium">
+                            Something happened. Please try again.
+                        </span>
+                    </p>
+                    <p
+                        id="form-success"
+                        role="alert"
+                        hidden
+                    >
+                        <span className="tag is-success is-medium">
+                            Message sent.
+                        </span>
+                    </p>
                 </div>
                 <div className="columns center">
                     <div className="column is-two-thirds">
@@ -42,16 +66,19 @@ function Contact() {
                         { /* configure form in a later commit */ }
                         <form 
                             id="contact-form"
-                            method="POST">
+                            onSubmit={(e) => sendMessage(e)}
+                        >
                             <div className="field">
                                 <label className="label">
                                     Name *
                                 </label>
                                 <div className="control">
                                     <input
+                                        name="name"
                                         className="input"
                                         type="text"
                                         placeholder="John Doe"
+                                        required
                                     ></input>
                                 </div>
                             </div>
@@ -62,9 +89,11 @@ function Contact() {
                                 </label>
                                 <div className="control">
                                     <input
+                                        name="email"
                                         className="input"
                                         type="email"
                                         placeholder="example@email.com"
+                                        required
                                     ></input>
                                 </div>
                             </div>
@@ -75,9 +104,11 @@ function Contact() {
                                 </label>
                                 <div className="control">
                                     <textarea
+                                        name="message"
                                         className="textarea"
                                         placeholder="Hello!"
                                         rows="7"
+                                        required
                                     ></textarea>
                                 </div>
                             </div>

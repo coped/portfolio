@@ -121,7 +121,7 @@ function Projects() {
                         </p>
                         <p className="paragraph">
                             The contact form featured at the bottom of this page sends emails 
-                            directly to my address using the SendGrid Web API, and uses 
+                            directly to my address using EmailJS, and uses 
                             Google’s reCAPTCHA v2 API to prevent spam messages.
                         </p>
                         <div>
