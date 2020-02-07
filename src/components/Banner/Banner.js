@@ -60,7 +60,7 @@ function Banner() {
                     <img
                         src="https://coped.s3-us-west-1.amazonaws.com/icons/angle-down-solid.svg"
                         className="down-arrow"
-                        onClick={() => scrollDown()}
+                        onClick={scrollDown}
                         alt="scroll button"
                     />
                 </button>
