@@ -94,7 +94,7 @@ class Contact extends Component {
                                 , <a href="https://www.linkedin.com/in/dennis-cope">LinkedIn</a>, 
                                 or by <a href="mailto:dennisaaroncope@gmail.com">email</a> at
                                 <strong> dennisaaroncope@gmail.com</strong>. You can also use the form below to email me 
-                                directly. I'll reply prompty.
+                                directly. I'll reply promptly.
                             </p>
                             <form 
                                 id="contact-form"

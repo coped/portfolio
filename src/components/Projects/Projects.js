@@ -16,6 +16,52 @@ function Projects() {
                         <hr className="hr"></hr>
                     </div>
                 </div>
+
+                <h3 className="subtitle is-size-3 has-text-weight-bold">
+                    Gym Partner
+                </h3>
+                <div className="columns">
+                    <div className="column">
+                        <a href="https://gympartner.app/">
+                            <img
+                                src="https://coped.s3-us-west-1.amazonaws.com/project-screenshots/gym-partner-logo-1000x505.png"
+                                alt="Gym Partner logo"
+                            />
+                        </a>
+                    </div>
+                    <div className="column">
+                        <p className="paragraph">
+                            Gym Partner is a health and fitness app that allows users to plan exercise routines, 
+                            set fitness goals, and track their improvement over time. It involves the use of 
+                            technologies such as Rails 6, React, React Native (soon), PostgreSQL, Heroku, and Netlify.
+                        </p>
+                        <p className="paragraph">
+                            This project is currently composed of two separate applications: a React web-client
+                            and a Rails back-end. The Rails app functions as a JSON API, and its purpose is to recieve
+                            JSON-formatted data from the React client, process it in whatever way it needs, and return JSON data back to 
+                            the React client. This decoupled architecture was used because I plan to integrate a React Native 
+                            mobile app with this project in the future, and this setup serves to make that process a bit easier.
+                        </p>
+                        <div>
+                            <a href="https://gympartner.app/">
+                                <button className="button is-primary paragraph">
+                                    Visit website
+                                </button>
+                            </a>
+                        </div>
+                        <a href="https://github.com/coped/gym-partner-api">
+                            <button className="button">
+                                <span className="icon">
+                                    <img 
+                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/github-logo.svg"
+                                        alt="Github logo" 
+                                    />
+                                </span>
+                                <span>View project on GitHub</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
                 <h3 className="subtitle is-size-3 has-text-weight-bold">
                     Private Events
                 </h3>
@@ -91,47 +137,6 @@ function Projects() {
                             </a>
                         </div>
                         <a href="https://github.com/coped/trike-world-limited">
-                            <button className="button">
-                                <span className="icon">
-                                    <img 
-                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/github-logo.svg"
-                                        alt="Github logo"
-                                    />
-                                </span>
-                                <span>View project on GitHub</span>
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <h3 className="subtitle is-size-3 has-text-weight-bold">Personal Portfolio</h3>
-                <div className="columns">
-                    <div className="column">
-                        <a href="/">
-                            <img
-                                src="https://coped.s3-us-west-1.amazonaws.com/project-screenshots/coped-screenshot-1000x505.jpg"
-                                alt="coped.dev home page"
-                            />
-                        </a>
-                    </div>
-                    <div className="column">
-                        <p className="paragraph">
-                            My portfolio page (currently coped.dev) is a website used to showcase my 
-                            developer related projects. The site is fully responsive, and was created using 
-                            React and Bulma CSS.
-                        </p>
-                        <p className="paragraph">
-                            The contact form featured at the bottom of this page sends emails 
-                            directly to my address using EmailJS, and uses 
-                            Google’s reCAPTCHA v2 API to prevent spam messages.
-                        </p>
-                        <div>
-                            <a href="/">
-                                <button className="button is-primary paragraph">
-                                    Visit website
-                                </button>
-                            </a>
-                        </div>
-                        <a href="https://github.com/coped/my-portfolio">
                             <button className="button">
                                 <span className="icon">
                                     <img 
