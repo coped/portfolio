@@ -3,25 +3,36 @@ import emailjs from 'emailjs-com';
 import './Contact.css';
 
 class Contact extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
-            info: "",
-            infoType: "",
-            showInfo: false,
+            alert: "",
+            alertType: "",
+            showAlert: false,
         }
 
         this.scrollIntoView = this.scrollIntoView.bind(this);
+        this.toggleLoadingAnimation = this.toggleLoadingAnimation.bind(this);
         this.sendMessage = this.sendMessage.bind(this);
     }
 
     scrollIntoView = () => {
         document.querySelector("#contact").scrollIntoView({ behavior: "smooth" });
     }
+
+    toggleLoadingAnimation = () => {
+        const submitButton = document.querySelector("#contact-submit");
+
+        const classes = submitButton.classList;
+
+        ([...classes].includes("is-loading")) ? classes.remove("is-loading") : classes.add("is-loading");
+    }
     
     sendMessage = e => {
         e.preventDefault();
+
+        this.toggleLoadingAnimation();
 
         const templateId = process.env.REACT_APP_TEMPLATE_ID;
         const userId = process.env.REACT_APP_EMAILJS_USER_ID;
@@ -31,18 +42,20 @@ class Contact extends Component {
         .then((result) => {
             console.log(result.text);
             this.setState({
-                info: "Message sent.",
-                infoType: "success",
-                showInfo: true
+                alert: "Message sent.",
+                alertType: "success",
+                showAlert: true
             });
-            this.scrollIntoView();
         }, (error) => {
             console.log(error.text);
             this.setState({
-                info: "Something happened. Please try again.",
-                infoType: "warning",
-                showInfo: true
+                alert: "Something happened. Please try again.",
+                alertType: "warning",
+                showAlert: true
             });
+        })
+        .then(() => {
+            this.toggleLoadingAnimation();
             this.scrollIntoView();
         });
     }
@@ -62,14 +75,14 @@ class Contact extends Component {
                             <hr className="hr" />
                         </div>
                     </div>
-                    { this.state.showInfo &&
+                    { this.state.showAlert &&
                         <div className="paragraph center">
                             <p
                                 id="form-alert"
                                 role="alert"
                             >
-                                <span className={`tag is-${this.state.infoType} is-medium`}>
-                                    {this.state.info}
+                                <span className={`tag is-${this.state.alertType} is-medium`}>
+                                    {this.state.alert}
                                 </span>
                             </p>
                         </div>
@@ -80,7 +93,7 @@ class Contact extends Component {
                                 Questions or concerns? I can be contacted by <a href="https://github.com/coped">Github</a>
                                 , <a href="https://www.linkedin.com/in/dennis-cope">LinkedIn</a>, 
                                 or by <a href="mailto:dennisaaroncope@gmail.com">email</a> at
-                                <strong> dennisaaroncope@gmail.com</strong>. You can also user the form below to email me 
+                                <strong> dennisaaroncope@gmail.com</strong>. You can also use the form below to email me 
                                 directly. I'll reply prompty.
                             </p>
                             <form 
@@ -135,6 +148,7 @@ class Contact extends Component {
                                 <div className="field">
                                     <div className="control">
                                         <button
+                                            id="contact-submit"
                                             type="submit"
                                             className="button is-link"
                                         >

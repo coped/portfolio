@@ -5,6 +5,7 @@ function Banner() {
     const scrollDown = () => {
         document.querySelector("#navbar").scrollIntoView({ behavior: "smooth" });
     }
+    
     return (
         <section 
             id="banner"
@@ -18,7 +19,7 @@ function Banner() {
                             Dennis <span className="blue">Cope</span>
                         </h1>
                         <h2 className="subtitle is-size-4 has-text-centered">
-                            Jr. Fullstack <span className="blue">Developer</span>
+                            Fullstack <span className="blue">Developer</span>
                         </h2>
                     </section>
                     <section className="section">
