@@ -30,7 +30,9 @@ function About() {
                             </div>
                             <div className="column is-7">
                                 <p className="paragraph">
-                                    I'm a self-taught developer, and I like making web applications with Rails and React.
+                                    I'm a self-taught developer, and I like making applications of different varieties.
+                                    I like to use Rails and React when it comes to building web apps, and I've recently 
+                                    started to tinker with Android development using Kotlin.
                                 </p>
                                 <p className="paragraph">
                                     There's seldom a feeling like learning something new, and using that knowledge 

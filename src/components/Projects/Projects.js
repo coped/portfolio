@@ -38,9 +38,10 @@ function Projects() {
                         <p className="paragraph">
                             This project is currently composed of two separate applications: a React web-client
                             and a Rails back-end. The Rails app functions as a JSON API, and its purpose is to recieve
-                            JSON-formatted data from the React client, process it in whatever way it needs, and return JSON data back to 
-                            the React client. This decoupled architecture was used because I plan to integrate a React Native 
-                            mobile app with this project in the future, and this setup serves to make that process a bit easier.
+                            HTTP requests and JSON data from the React client, process it in whatever way it needs, and 
+                            return necessary JSON data back to the React client. This decoupled architecture was used because I 
+                            plan to integrate a native mobile application with this project in the future, and 
+                            this setup serves to make that process a bit easier.
                         </p>
                         <div>
                             <a href="https://gympartner.app/">
