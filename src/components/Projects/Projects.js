@@ -31,17 +31,15 @@ function Projects() {
                     </div>
                     <div className="column">
                         <p className="paragraph">
-                            Gym Partner is a health and fitness app that allows users to plan exercise routines, 
-                            set fitness goals, and track their improvement over time. It involves the use of 
-                            technologies such as Rails 6, React, React Native (soon), PostgreSQL, Heroku, and Netlify.
+                            Gym Partner is a cross-platform health and fitness application that allows users to plan exercise routines, 
+                            set fitness goals, and track improvement over time. It involves the use of 
+                            tech such as Rails 6, React, and Android with Kotlin. It's currently hosted on Heroku and Netlify.
                         </p>
                         <p className="paragraph">
-                            This project is currently composed of two separate applications: a React web-client
-                            and a Rails back-end. The Rails app functions as a JSON API, and its purpose is to recieve
-                            HTTP requests and JSON data from the React client, process it in whatever way it needs, and 
-                            return necessary JSON data back to the React client. This decoupled architecture was used because I 
-                            plan to integrate a native mobile application with this project in the future, and 
-                            this setup serves to make that process a bit easier.
+                            This project is composed of three separate applications: A React web client, a native Android client, and a 
+                            Rails REST API. The API functions as a back-end for the overall Gym Partner project, and its purpose 
+                            is to provide an interface for the React and Android applications to communicate with, and provide access to
+                            the resources of the REST API (user data, exercise data, etc.).
                         </p>
                         <div>
                             <a href="https://gympartner.app/">
@@ -128,7 +126,7 @@ function Projects() {
                             The website features a custom authentication system and a blogging system, 
                             allowing my father to sign in and post pictures / updates about his latest 
                             projects with ease. The source code is also covered with comprehensive unit 
-                            and integration tests, thanks to Minitest.
+                            and integration tests using the Minitest framework.
                         </p>
                         <div>
                             <a href="https://trikeworldlimited.herokuapp.com/">

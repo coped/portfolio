@@ -42,7 +42,7 @@ function About() {
                                 <p className="paragraph">
                                     If I've got free time to spare, I'll probably be weight lifting, 
                                     slammin' keys on my piano,
-                                    playing Super Smash Bros, or taking my Hayabusa 
+                                    playing Kerbal Space Program, or taking my Hayabusa 
                                     up into the mountains for a joyride.
                                 </p>
                                 <p className="paragraph">
