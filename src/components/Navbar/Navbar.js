@@ -1,5 +1,6 @@
 import React from 'react';
 import './Navbar.css';
+import copedLogo from 'assets/images/coped-logo.png'
 
 function Navbar() {
     const expandMobileMenu = () => {
@@ -7,37 +8,37 @@ function Navbar() {
         document.querySelector(".navbar-menu").classList.toggle("is-active");
     }
     return (
-        <nav 
+        <nav
             id="navbar"
             className="navbar is-light"
             role="navigation"
             aria-label="main navigation">
             <div className="navbar-brand">
-                <a 
+                <a
                     href="/"
                     className="navbar-item"
                 >
                     <img
-                        src="https://coped.s3-us-west-1.amazonaws.com/coped-logo.png"
+                        src={copedLogo}
                         className="logo"
                         alt="coped.dev logo"
                     />
                 </a>
 
-                <button
+                <a
                     id="navbar-button"
                     className="navbar-burger burger"
-                    onClick={() => expandMobileMenu()}
+                    onClick={expandMobileMenu}
                     aria-label="menu" aria-expanded="false"
                     data-target="navbar-options"
                 >
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
-                </button>
+                </a>
             </div>
 
-            <div 
+            <div
                 id="navbar-options"
                 className="navbar-menu is-size-5"
             >
@@ -59,7 +60,7 @@ function Navbar() {
                 </div>
                 <div className="navbar-end">
                     <div className="buttons">
-                        <a 
+                        <a
                             href="https://coped.s3-us-west-1.amazonaws.com/Cope-Resume.pdf"
                             className="button resume is-info navbar-item"
                         >

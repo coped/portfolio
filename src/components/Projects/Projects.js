@@ -1,5 +1,9 @@
 import React from 'react';
-import './Projects.css'
+import './Projects.css';
+import githubLogo from 'assets/images/icons/github-logo.svg';
+import gymPartner from 'assets/images/project-screenshots/gym-partner-logo-1000x505.png';
+import privateEvents from 'assets/images/project-screenshots/private-events-home-1000x503px.jpg'
+import trikeWorldLimited from 'assets/images/project-screenshots/trikeworldltd-screenshot-1000x505.jpg'
 
 function Projects() {
     return (
@@ -24,7 +28,7 @@ function Projects() {
                     <div className="column">
                         <a href="https://gympartner.app/">
                             <img
-                                src="https://coped.s3-us-west-1.amazonaws.com/project-screenshots/gym-partner-logo-1000x505.png"
+                                src={gymPartner}
                                 alt="Gym Partner logo"
                             />
                         </a>
@@ -52,7 +56,7 @@ function Projects() {
                             <button className="button">
                                 <span className="icon">
                                     <img 
-                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/github-logo.svg"
+                                        src={githubLogo}
                                         alt="Github logo" 
                                     />
                                 </span>
@@ -68,7 +72,7 @@ function Projects() {
                     <div className="column">
                         <a href="https://private-events-top-coped.herokuapp.com/">
                             <img
-                                src="https://coped.s3-us-west-1.amazonaws.com/project-screenshots/private-events-home-1000x503px.jpg"
+                                src={privateEvents}
                                 alt="Private Events home page"
                             />
                         </a>
@@ -96,7 +100,7 @@ function Projects() {
                             <button className="button">
                                 <span className="icon">
                                     <img 
-                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/github-logo.svg"
+                                        src={githubLogo}
                                         alt="Github logo" 
                                     />
                                 </span>
@@ -110,7 +114,7 @@ function Projects() {
                     <div className="column">
                         <a href="https://trikeworldlimited.herokuapp.com/">
                             <img
-                                src="https://coped.s3-us-west-1.amazonaws.com/project-screenshots/trikeworldltd-screenshot-1000x505.jpg"
+                                src={trikeWorldLimited}
                                 alt="Trike world limited home page"
                             />
                         </a>
@@ -139,7 +143,7 @@ function Projects() {
                             <button className="button">
                                 <span className="icon">
                                     <img 
-                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/github-logo.svg"
+                                        src={githubLogo}
                                         alt="Github logo"
                                     />
                                 </span>

@@ -1,5 +1,6 @@
 import React from 'react';
 import './About.css';
+import portraitOfMe from 'assets/images/me-256x256.jpg'
 
 function About() {
     return (
@@ -22,7 +23,7 @@ function About() {
                             <div className="column center is-5">
                                 <figure className="image is-256x256">
                                     <img
-                                        src="https://coped.s3-us-west-1.amazonaws.com/me-256x256.jpg"
+                                        src={portraitOfMe}
                                         className="is-rounded"
                                         alt="Dennis Cope"
                                     />

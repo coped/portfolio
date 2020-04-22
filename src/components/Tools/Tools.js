@@ -1,5 +1,21 @@
 import React from 'react';
 import './Tools.css';
+import rubyLogo from 'assets/images/icons/ruby-logo.svg';
+import railsLogo from 'assets/images/icons/rails-logo.svg';
+import rspecLogo from 'assets/images/icons/rspec-logo.svg';
+import pgLogo from 'assets/images/icons/pg-logo.svg';
+import jsLogo from 'assets/images/icons/javascript-logo.svg';
+import reactLogo from 'assets/images/icons/react-logo.svg';
+import htmlLogo from 'assets/images/icons/html-logo.svg';
+import cssLogo from 'assets/images/icons/css-logo.svg';
+import bulmaLogo from 'assets/images/icons/bulma-logo.svg';
+import linuxLogo from 'assets/images/icons/tux-logo.png';
+import gitLogo from 'assets/images/icons/git-logo.svg';
+import githubLogo from 'assets/images/icons/github-logo.svg';
+import herokuLogo from 'assets/images/icons/heroku-logo.svg';
+import awsLogo from 'assets/images/icons/aws-logo.svg';
+
+
 
 function Tools() {
     return (
@@ -25,7 +41,7 @@ function Tools() {
                             <div className="has-text-left">
                                 <div className="columns is-vertical-center">
                                     <img
-                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/ruby-logo.svg"
+                                        src={rubyLogo}
                                         className="column tool-icon"
                                         alt="Ruby logo"
                                     />
@@ -35,7 +51,7 @@ function Tools() {
                                 </div>
                                 <div className="columns is-vertical-center">
                                     <img
-                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/rails-logo.svg"
+                                        src={railsLogo}
                                         className="column tool-icon"
                                         alt="Rails logo"
                                     />
@@ -45,7 +61,7 @@ function Tools() {
                                 </div>
                                 <div className="columns is-vertical-center">
                                     <img
-                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/rspec-logo.svg"
+                                        src={rspecLogo}
                                         className="column tool-icon"
                                         alt="RSpec logo"
                                     />
@@ -55,7 +71,7 @@ function Tools() {
                                 </div>
                                 <div className="columns is-vertical-center">
                                     <img
-                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/pg-logo.svg"
+                                        src={pgLogo}
                                         className="column tool-icon"
                                         alt="PostgreSQL logo"
                                     />
@@ -74,7 +90,7 @@ function Tools() {
                             <div className="has-text-left">
                                 <div className="columns is-vertical-center">
                                     <img
-                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/javascript-logo.svg"
+                                        src={jsLogo}
                                         className="column tool-icon"
                                         alt="Javascript logo"
                                     />
@@ -84,7 +100,7 @@ function Tools() {
                                 </div>
                                 <div className="columns is-vertical-center">
                                     <img
-                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/react-logo.svg"
+                                        src={reactLogo}
                                         className="column tool-icon"
                                         alt="React logo"
                                     />
@@ -94,7 +110,7 @@ function Tools() {
                                 </div>
                                 <div className="columns is-vertical-center">
                                     <img
-                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/html-logo.svg"
+                                        src={htmlLogo}
                                         className="column tool-icon"
                                         alt="HTML logo"
                                     />
@@ -104,7 +120,7 @@ function Tools() {
                                 </div>
                                 <div className="columns is-vertical-center">
                                     <img
-                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/css-logo.svg"
+                                        src={cssLogo}
                                         className="column tool-icon"
                                         alt="CSS logo"
                                     />
@@ -114,7 +130,7 @@ function Tools() {
                                 </div>
                                 <div className="columns is-vertical-center">
                                     <img
-                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/bulma-logo.svg"
+                                        src={bulmaLogo}
                                         className="column tool-icon"
                                         alt="Bulma logo"
                                     />
@@ -133,7 +149,7 @@ function Tools() {
                             <div className="has-text-left">
                                 <div className="columns is-vertical-center">
                                     <img
-                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/tux-logo.png"
+                                        src={linuxLogo}
                                         className="column tool-icon"
                                         alt="Linux logo"
                                     />
@@ -143,7 +159,7 @@ function Tools() {
                                 </div>
                                 <div className="columns is-vertical-center">
                                     <img
-                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/git-logo.svg"
+                                        src={gitLogo}
                                         className="column tool-icon"
                                         alt="Git logo"
                                     />
@@ -153,7 +169,7 @@ function Tools() {
                                 </div>
                                 <div className="columns is-vertical-center">
                                     <img
-                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/github-logo.svg"
+                                        src={githubLogo}
                                         className="column tool-icon"
                                         alt="GitHub logo"
                                     />
@@ -163,7 +179,7 @@ function Tools() {
                                 </div>
                                 <div className="columns is-vertical-center">
                                     <img
-                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/heroku-logo.svg"
+                                        src={herokuLogo}
                                         className="column tool-icon"
                                         alt="Heroku logo"
                                     />
@@ -173,7 +189,7 @@ function Tools() {
                                 </div>
                                 <div className="columns is-vertical-center">
                                     <img
-                                        src="https://coped.s3-us-west-1.amazonaws.com/icons/aws-logo.svg"
+                                        src={awsLogo}
                                         className="column tool-icon"
                                         alt="Amazon web services logo"
                                     />

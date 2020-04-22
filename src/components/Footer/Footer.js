@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import copedLogo from 'assets/images/coped-logo.png'
 
 function Footer() {
     return (
@@ -7,7 +8,7 @@ function Footer() {
             <div className="content has-text-centered">
                 <img
                     id="footer-image"
-                    src="https://coped.s3-us-west-1.amazonaws.com/coped-logo.png"
+                    src={copedLogo}
                     alt="coped.dev logo"
                 />
             </div>

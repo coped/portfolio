@@ -1,9 +1,13 @@
 import React from 'react';
 import './Banner.css';
+import githubIcon from 'assets/images/banner-icons/GitHub-Mark-Light-120px-plus-scaled.png'
+import linkedinIcon from 'assets/images/banner-icons/linkedin-dark-scaled.png'
+import emailIcon from 'assets/images/banner-icons/email-logo-dark-scaled.png'
+import arrow from 'assets/images/banner-icons/angle-down-solid.svg'
 
 function Banner() {
     const scrollDown = () => {
-        document.querySelector("#navbar").scrollIntoView({ behavior: "smooth" });
+        document.getElementById('navbar').scrollIntoView({ behavior: "smooth" });
     }
     
     return (
@@ -26,21 +30,21 @@ function Banner() {
                         <div className="center">
                             <a href="https://github.com/coped">
                                 <img
-                                    src="https://coped.s3-us-west-1.amazonaws.com/GitHub-Mark-Light-120px-plus-scaled.png"
+                                    src={githubIcon}
                                     className="banner-icon"
                                     alt="Link to github"
                                 />
                             </a>
                             <a href="https://www.linkedin.com/in/dennis-cope">
                                 <img
-                                    src="https://coped.s3-us-west-1.amazonaws.com/linkedin-dark-scaled.png"
+                                    src={linkedinIcon}
                                     className="banner-icon"
                                     alt="Link to linkedin"
                                 />
                             </a>
                             <a href="mailto:dennisaaroncope@gmail.com">
                                 <img
-                                    src="https://coped.s3-us-west-1.amazonaws.com/email-logo-dark-scaled.png"
+                                    src={emailIcon}
                                     className="banner-icon"
                                     alt="Mail to dennisaaroncope@gmail.com"
                                 />
@@ -59,7 +63,7 @@ function Banner() {
                     id="banner-button"
                 >
                     <img
-                        src="https://coped.s3-us-west-1.amazonaws.com/icons/angle-down-solid.svg"
+                        src={arrow}
                         className="down-arrow"
                         onClick={scrollDown}
                         alt="scroll button"
