@@ -62,105 +62,92 @@ class Contact extends Component {
 
     render() {
         return (
-            <section
-                id="contact"
-                className="section"
-            >
-                <div className="container">
-                    <h2 className="is-size-2 has-text-weight-light center title">
-                        Contact
-                    </h2>
-                    <div className="columns center">
-                        <div className="column is-two-thirds">
-                            <hr className="hr" />
-                        </div>
+            <div className="container">
+                { this.state.showAlert &&
+                    <div className="paragraph center">
+                        <p
+                            id="form-alert"
+                            role="alert"
+                        >
+                            <span className={`tag is-${this.state.alertType} is-medium`}>
+                                {this.state.alert}
+                            </span>
+                        </p>
                     </div>
-                    { this.state.showAlert &&
-                        <div className="paragraph center">
-                            <p
-                                id="form-alert"
-                                role="alert"
-                            >
-                                <span className={`tag is-${this.state.alertType} is-medium`}>
-                                    {this.state.alert}
-                                </span>
-                            </p>
-                        </div>
-                    }
-                    <div className="columns center">
-                        <div className="column is-two-thirds">
-                            <p className="paragraph">
-                                Questions or concerns? I can be contacted by <a href="https://github.com/coped">Github</a>
-                                , <a href="https://www.linkedin.com/in/dennis-cope">LinkedIn</a>, 
-                                or by <a href="mailto:dennisaaroncope@gmail.com">email</a> at
-                                <strong> dennisaaroncope@gmail.com</strong>. You can also use the form below to email me 
-                                directly. I'll reply promptly.
-                            </p>
-                            <form 
-                                id="contact-form"
-                                onSubmit={this.sendMessage}
-                            >
-                                <div className="field">
-                                    <label className="label">
-                                        Name *
-                                    </label>
-                                    <div className="control">
-                                        <input
-                                            name="name"
-                                            className="input"
-                                            type="text"
-                                            placeholder="John Doe"
-                                            required
-                                        ></input>
-                                    </div>
+                }
+                <div className="columns center">
+                    <div className="column is-two-thirds">
+                        <p className="paragraph">
+                            Questions or concerns? I can be contacted by <a href="https://github.com/coped">Github</a>
+                            , <a href="https://www.linkedin.com/in/dennis-cope">LinkedIn</a>, 
+                            or by <a href="mailto:dennisaaroncope@gmail.com">email</a> at
+                            <strong> dennisaaroncope@gmail.com</strong>. You can also use the form below to email me 
+                            directly. I'll reply promptly.
+                        </p>
+                        <form 
+                            id="contact-form"
+                            onSubmit={this.sendMessage}
+                        >
+                            <div className="field">
+                                <label className="label">
+                                    Name *
+                                </label>
+                                <div className="control">
+                                    <input
+                                        name="name"
+                                        className="input"
+                                        type="text"
+                                        placeholder="John Doe"
+                                        required
+                                    ></input>
                                 </div>
+                            </div>
 
-                                <div className="field">
-                                    <label className="label">
-                                        Email *
-                                    </label>
-                                    <div className="control">
-                                        <input
-                                            name="email"
-                                            className="input"
-                                            type="email"
-                                            placeholder="example@email.com"
-                                            required
-                                        ></input>
-                                    </div>
+                            <div className="field">
+                                <label className="label">
+                                    Email *
+                                </label>
+                                <div className="control">
+                                    <input
+                                        name="email"
+                                        className="input"
+                                        type="email"
+                                        placeholder="example@email.com"
+                                        required
+                                    ></input>
                                 </div>
+                            </div>
 
-                                <div className="field">
-                                    <label className="label">
-                                        Message *
-                                    </label>
-                                    <div className="control">
-                                        <textarea
-                                            name="message"
-                                            className="textarea"
-                                            placeholder="Hello!"
-                                            rows="7"
-                                            required
-                                        ></textarea>
-                                    </div>
+                            <div className="field">
+                                <label className="label">
+                                    Message *
+                                </label>
+                                <div className="control">
+                                    <textarea
+                                        name="message"
+                                        className="textarea"
+                                        placeholder="Hello!"
+                                        rows="7"
+                                        required
+                                    ></textarea>
                                 </div>
+                            </div>
 
-                                <div className="field">
-                                    <div className="control">
-                                        <button
-                                            id="contact-submit"
-                                            type="submit"
-                                            className="button is-link"
-                                        >
-                                            Submit
-                                        </button>
-                                    </div>
+                            <div className="field">
+                                <div className="control">
+                                    <button
+                                        id="contact-submit"
+                                        type="submit"
+                                        className="button is-link"
+                                    >
+                                        Submit
+                                    </button>
                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
-            </section>
+            </div>
         )
     }
 }
