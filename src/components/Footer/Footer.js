@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import copedLogo from 'assets/images/coped-logo.png'
+import copedLogo from 'assets/images/coped-logo.png';
 
 function Footer() {
     return (

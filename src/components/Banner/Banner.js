@@ -1,9 +1,7 @@
 import React from 'react';
 import './Banner.css';
-import githubIcon from 'assets/images/banner-icons/GitHub-Mark-Light-120px-plus-scaled.png'
-import linkedinIcon from 'assets/images/banner-icons/linkedin-dark-scaled.png'
-import emailIcon from 'assets/images/banner-icons/email-logo-dark-scaled.png'
-import arrow from 'assets/images/banner-icons/angle-down-solid.svg'
+import arrow from 'assets/images/banner-icons/angle-down-solid.svg';
+import { socialLinks } from 'lib/content';
 
 function Banner() {
     const scrollDown = () => {
@@ -28,27 +26,17 @@ function Banner() {
                     </section>
                     <section className="section">
                         <div className="center">
-                            <a href="https://github.com/coped">
-                                <img
-                                    src={githubIcon}
-                                    className="banner-icon"
-                                    alt="Link to github"
-                                />
-                            </a>
-                            <a href="https://www.linkedin.com/in/dennis-cope">
-                                <img
-                                    src={linkedinIcon}
-                                    className="banner-icon"
-                                    alt="Link to linkedin"
-                                />
-                            </a>
-                            <a href="mailto:dennisaaroncope@gmail.com">
-                                <img
-                                    src={emailIcon}
-                                    className="banner-icon"
-                                    alt="Mail to dennisaaroncope@gmail.com"
-                                />
-                            </a>
+                            {socialLinks.map((social) => 
+                                <a 
+                                    key={social.id}
+                                    href={social.link}>
+                                    <img
+                                        src={social.image}
+                                        className="banner-icon"
+                                        alt={social.alt}
+                                    />
+                                </a>
+                            )}
                         </div>
                     </section>
                     <section className="section has-text-centered">
@@ -74,4 +62,4 @@ function Banner() {
     )
 }
 
-export default Banner
+export default Banner;

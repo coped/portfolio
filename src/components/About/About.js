@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
-import portraitOfMe from 'assets/images/me-256x256.jpg'
-import Content from 'lib/content'
+import portraitOfMe from 'assets/images/me-256x256.jpg';
+import { aboutMe, booksAndCourses } from 'lib/content';
 
 function About() {
     return (
@@ -18,7 +18,7 @@ function About() {
                         </figure>
                     </div>
                     <div className="column is-7">
-                        {Content.aboutMe.map((paragraph, index) =>
+                        {aboutMe.map((paragraph, index) =>
                             <p
                                 key={index}
                                 className="paragraph">
@@ -28,8 +28,8 @@ function About() {
                         <p className="paragraph">
                             Here are some books and courses I'm currently learning from:
                         </p>
-                        {Content.booksCourses.map((item, index) =>
-                            <p key={index} >
+                        {booksAndCourses.map((item) =>
+                            <p key={item.id} >
                                 <a href={item.link}>
                                     {item.name}
                                 </a>

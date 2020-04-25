@@ -8,7 +8,7 @@ function Section(props) {
             className="section"
         >
             <div className="container">
-                <h2 className="is-size-2 has-text-weight-light center title">
+                <h2 className="is-size-2 has-text-weight-light has-text-centered title">
                     {props.name}
                 </h2>
                 <div className="columns center">
