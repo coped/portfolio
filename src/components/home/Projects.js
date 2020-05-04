@@ -1,23 +1,21 @@
 import React from "react";
 import "./Projects.css";
 import { projectInfo } from "lib/content";
-import Project from "components/Project/Project";
+import { Project } from "components/home";
 
-function Projects() {
+export default function Projects() {
   return (
     <div className="container">
       {projectInfo.map((project) => (
         <Project
           key={project.id}
           name={project.name}
-            image={project.image}
-            paragraphs={project.paragraphs}
-            websiteLink={project.websiteLink}
-            githubLink={project.githubLink}
-          />
+          image={project.image}
+          paragraphs={project.paragraphs}
+          websiteLink={project.websiteLink}
+          githubLink={project.githubLink}
+        />
       ))}
     </div>
   );
 }
-
-export default Projects;
