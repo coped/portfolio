@@ -1,0 +1,940 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App has a valid snapshot 1`] = `
+Array [
+  <section
+    className="hero is-dark is-bold is-fullheight"
+    id="banner"
+  >
+    <div
+      className="hero-head"
+    />
+    <div
+      className="hero-body"
+    >
+      <div
+        className="container"
+      >
+        <section
+          className="section"
+        >
+          <h1
+            className="title has-text-centered has-text-weight-light is-size-1"
+          >
+            Dennis 
+            <span
+              className="blue"
+            >
+              Cope
+            </span>
+          </h1>
+          <h2
+            className="subtitle is-size-4 has-text-centered"
+          >
+            Fullstack 
+            <span
+              className="blue"
+            >
+              Developer
+            </span>
+          </h2>
+        </section>
+        <section
+          className="section"
+        >
+          <div
+            className="center"
+          >
+            <a
+              href="https://github.com/coped"
+            >
+              <img
+                alt="Link to github"
+                className="banner-icon"
+                src="GitHub-Mark-Light-120px-plus-scaled.png"
+              />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/dennis-cope"
+            >
+              <img
+                alt="Link to linkedin"
+                className="banner-icon"
+                src="linkedin-dark-scaled.png"
+              />
+            </a>
+            <a
+              href="mailto:dennisaaroncope@gmail.com"
+            >
+              <img
+                alt="Mail to dennisaaroncope@gmail.coim"
+                className="banner-icon"
+                src="email-logo-dark-scaled.png"
+              />
+            </a>
+          </div>
+        </section>
+        <section
+          className="section has-text-centered"
+        >
+          <h2
+            className="subtitle is-size-4"
+          >
+            Let's build something.
+          </h2>
+        </section>
+      </div>
+    </div>
+    <div
+      className="hero-foot center"
+    >
+      <button
+        id="banner-button"
+      >
+        <img
+          alt="scroll button"
+          className="down-arrow"
+          onClick={[Function]}
+          src="angle-down-solid.svg"
+        />
+      </button>
+    </div>
+  </section>,
+  <nav
+    aria-label="main navigation"
+    className="navbar is-light"
+    id="navbar"
+    role="navigation"
+  >
+    <div
+      className="navbar-brand"
+    >
+      <a
+        className="navbar-item"
+        href="/"
+      >
+        <img
+          alt="coped.dev logo"
+          className="logo"
+          src="coped-logo.png"
+        />
+      </a>
+      <a
+        aria-expanded="false"
+        aria-label="menu"
+        className="navbar-burger burger"
+        data-target="navbar-options"
+        id="navbar-button"
+        onClick={[Function]}
+      >
+        <span
+          aria-hidden="true"
+        />
+        <span
+          aria-hidden="true"
+        />
+        <span
+          aria-hidden="true"
+        />
+      </a>
+    </div>
+    <div
+      className="navbar-menu is-size-5"
+      id="navbar-options"
+    >
+      <div
+        className="navbar-start"
+      >
+        <a
+          className="navbar-item is-tab"
+          href="/"
+        >
+          Home
+        </a>
+      </div>
+      <div
+        className="navbar-end"
+      >
+        <div
+          className="buttons"
+        >
+          <a
+            className="button resume is-info navbar-item"
+            href="https://coped.s3-us-west-1.amazonaws.com/Cope-Resume.pdf"
+          >
+            Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>,
+  <section
+    className="section"
+    id="about"
+  >
+    <div
+      className="container"
+    >
+      <h2
+        className="is-size-2 has-text-weight-light has-text-centered title"
+      >
+        About Me
+      </h2>
+      <div
+        className="columns center"
+      >
+        <div
+          className="column is-two-thirds"
+        >
+          <hr
+            className="hr"
+          />
+        </div>
+      </div>
+      <div
+        className="columns center"
+      >
+        <div
+          className="column is-8"
+        >
+          <div
+            className="columns"
+          >
+            <div
+              className="column center is-5"
+            >
+              <figure
+                className="image is-256x256"
+              >
+                <img
+                  alt="Dennis Cope"
+                  className="is-rounded"
+                  src="me-256x256.jpg"
+                />
+              </figure>
+            </div>
+            <div
+              className="column is-7"
+            >
+              <p
+                className="paragraph"
+              >
+                I'm a self-taught developer, and I like making applications of different varieties. I like to use Rails and React when it comes to building web apps, and I've recently started to tinker with Android development using Kotlin.
+              </p>
+              <p
+                className="paragraph"
+              >
+                There's seldom a feeling like learning something new, and using that knowledge to make something work. I enjoy what I do because I get that feeling almost every day, in one way or another.
+              </p>
+              <p
+                className="paragraph"
+              >
+                If I've got free time to spare, I'll probably be weight lifting, slammin' keys on my piano, playing Kerbal Space Program, or taking my Hayabusa up into the mountains for a joyride.
+              </p>
+              <p
+                className="paragraph"
+              >
+                Here are some books and courses I'm currently learning from:
+              </p>
+              <p>
+                <a
+                  href="https://www.theodinproject.com/"
+                >
+                  The Odin Project
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://github.com/getify/You-Dont-Know-JS"
+                >
+                  You Don't Know JS - Kyle Simpson
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://roadtoreact.com/"
+                >
+                  The Road to Learn React - Robin Wieruch
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://books.google.com/books/about/Programming_in_Haskell.html?id=75C5DAAAQBAJ&source=kp_book_description"
+                >
+                  Programming in Haskell - Graham Hutton
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://www.poodr.com/"
+                >
+                  Practical Object-Oriented Design in Ruby - Sandi Metz
+                </a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>,
+  <section
+    className="section"
+    id="tools"
+  >
+    <div
+      className="container"
+    >
+      <h2
+        className="is-size-2 has-text-weight-light has-text-centered title"
+      >
+        My Favorite Tools
+      </h2>
+      <div
+        className="columns center"
+      >
+        <div
+          className="column"
+        >
+          <hr
+            className="hr"
+          />
+        </div>
+      </div>
+      <div
+        className="columns"
+      >
+        <div
+          className="column"
+        >
+          <div
+            className="notification"
+          >
+            <h3
+              className="subtitle has-text-centered has-text-weight-bold"
+            >
+              Back end
+            </h3>
+            <div
+              className="columns is-vertical-center"
+            >
+              <img
+                alt="Ruby logo"
+                className="column tool-icon"
+                src="ruby-logo.svg"
+              />
+              <p
+                className="column is-7"
+              >
+                Ruby
+              </p>
+            </div>
+            <div
+              className="columns is-vertical-center"
+            >
+              <img
+                alt="Ruby on Rails logo"
+                className="column tool-icon"
+                src="rails-logo.svg"
+              />
+              <p
+                className="column is-7"
+              >
+                Ruby on Rails
+              </p>
+            </div>
+            <div
+              className="columns is-vertical-center"
+            >
+              <img
+                alt="RSpec + Minitest logo"
+                className="column tool-icon"
+                src="rspec-logo.svg"
+              />
+              <p
+                className="column is-7"
+              >
+                RSpec + Minitest
+              </p>
+            </div>
+            <div
+              className="columns is-vertical-center"
+            >
+              <img
+                alt="PostgreSQL logo"
+                className="column tool-icon"
+                src="pg-logo.svg"
+              />
+              <p
+                className="column is-7"
+              >
+                PostgreSQL
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          className="column"
+        >
+          <div
+            className="notification"
+          >
+            <h3
+              className="subtitle has-text-centered has-text-weight-bold"
+            >
+              Front end
+            </h3>
+            <div
+              className="columns is-vertical-center"
+            >
+              <img
+                alt="JavaScript logo"
+                className="column tool-icon"
+                src="javascript-logo.svg"
+              />
+              <p
+                className="column is-7"
+              >
+                JavaScript
+              </p>
+            </div>
+            <div
+              className="columns is-vertical-center"
+            >
+              <img
+                alt="React logo"
+                className="column tool-icon"
+                src="react-logo.svg"
+              />
+              <p
+                className="column is-7"
+              >
+                React
+              </p>
+            </div>
+            <div
+              className="columns is-vertical-center"
+            >
+              <img
+                alt="HTML5 logo"
+                className="column tool-icon"
+                src="html-logo.svg"
+              />
+              <p
+                className="column is-7"
+              >
+                HTML5
+              </p>
+            </div>
+            <div
+              className="columns is-vertical-center"
+            >
+              <img
+                alt="CSS logo"
+                className="column tool-icon"
+                src="css-logo.svg"
+              />
+              <p
+                className="column is-7"
+              >
+                CSS
+              </p>
+            </div>
+            <div
+              className="columns is-vertical-center"
+            >
+              <img
+                alt="Bulma logo"
+                className="column tool-icon"
+                src="bulma-logo.svg"
+              />
+              <p
+                className="column is-7"
+              >
+                Bulma
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          className="column"
+        >
+          <div
+            className="notification"
+          >
+            <h3
+              className="subtitle has-text-centered has-text-weight-bold"
+            >
+              Miscellaneous
+            </h3>
+            <div
+              className="columns is-vertical-center"
+            >
+              <img
+                alt="Linux logo"
+                className="column tool-icon"
+                src="tux-logo.png"
+              />
+              <p
+                className="column is-7"
+              >
+                Linux
+              </p>
+            </div>
+            <div
+              className="columns is-vertical-center"
+            >
+              <img
+                alt="Git logo"
+                className="column tool-icon"
+                src="git-logo.svg"
+              />
+              <p
+                className="column is-7"
+              >
+                Git
+              </p>
+            </div>
+            <div
+              className="columns is-vertical-center"
+            >
+              <img
+                alt="Github logo"
+                className="column tool-icon"
+                src="github-logo.svg"
+              />
+              <p
+                className="column is-7"
+              >
+                Github
+              </p>
+            </div>
+            <div
+              className="columns is-vertical-center"
+            >
+              <img
+                alt="Heroku logo"
+                className="column tool-icon"
+                src="heroku-logo.svg"
+              />
+              <p
+                className="column is-7"
+              >
+                Heroku
+              </p>
+            </div>
+            <div
+              className="columns is-vertical-center"
+            >
+              <img
+                alt="Amazon Web Services logo"
+                className="column tool-icon"
+                src="aws-logo.svg"
+              />
+              <p
+                className="column is-7"
+              >
+                Amazon Web Services
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>,
+  <section
+    className="section"
+    id="projects"
+  >
+    <div
+      className="container"
+    >
+      <h2
+        className="is-size-2 has-text-weight-light has-text-centered title"
+      >
+        Projects
+      </h2>
+      <div
+        className="columns center"
+      >
+        <div
+          className="column"
+        >
+          <hr
+            className="hr"
+          />
+        </div>
+      </div>
+      <div
+        className="container"
+      >
+        <div
+          className="container paragraph"
+        >
+          <h3
+            className="subtitle is-size-3 has-text-weight-bold"
+          >
+            Gym Partner
+          </h3>
+          <div
+            className="columns"
+          >
+            <div
+              className="column"
+            >
+              <a
+                href="https://gympartner.app/"
+              >
+                <img
+                  alt="Gym Partner logo"
+                  src="gym-partner-logo-1000x505.png"
+                />
+              </a>
+            </div>
+            <div
+              className="column"
+            >
+              <p
+                className="paragraph"
+              >
+                Gym Partner is a cross-platform health and fitness application that allows users to plan exercise routines, set fitness goals, and track improvement over time. It involves the use of tech such as Rails 6, React, and Android with Kotlin. It's currently hosted using Amazon Web Services.
+              </p>
+              <p
+                className="paragraph"
+              >
+                This project is composed of three separate applications: A React web client, a native Android client, and a Rails REST API. The API functions as a back-end for the overall Gym Partner project, and its purpose is to provide an interface for the React and Android applications to communicate with, and provide access to the resources of the REST API (user data, exercise data, etc.).
+              </p>
+              <div>
+                <a
+                  href="https://gympartner.app/"
+                >
+                  <button
+                    className="button is-primary paragraph"
+                  >
+                    Visit website
+                  </button>
+                </a>
+              </div>
+              <a
+                href="https://github.com/coped/gym-partner-api"
+              >
+                <button
+                  className="button"
+                >
+                  <span
+                    className="icon"
+                  >
+                    <img
+                      alt="Github logo"
+                      src="github-logo.svg"
+                    />
+                  </span>
+                  <span>
+                    View project on GitHub
+                  </span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          className="container paragraph"
+        >
+          <h3
+            className="subtitle is-size-3 has-text-weight-bold"
+          >
+            Private Events
+          </h3>
+          <div
+            className="columns"
+          >
+            <div
+              className="column"
+            >
+              <a
+                href="https://private-events-top-coped.herokuapp.com/"
+              >
+                <img
+                  alt="Private Events logo"
+                  src="private-events-home-1000x503px.jpg"
+                />
+              </a>
+            </div>
+            <div
+              className="column"
+            >
+              <p
+                className="paragraph"
+              >
+                Private Events is a web application similar to Eventbrite. Users can create, attend, and send invitations for events. The app was created using Rails 6, Bulma CSS, and PostgreSQL.
+              </p>
+              <p
+                className="paragraph"
+              >
+                This application's database schema requires tables with many-to-many relationships, and uses has-many-through associations between Active Record models to represent these relationships. This project was a fun exploration of Rails's Active Record ORM framework, and provided a deeper look at the power and programming convenience Active Record can give back-end developers over bare-metal SQL.
+              </p>
+              <div>
+                <a
+                  href="https://private-events-top-coped.herokuapp.com/"
+                >
+                  <button
+                    className="button is-primary paragraph"
+                  >
+                    Visit website
+                  </button>
+                </a>
+              </div>
+              <a
+                href="https://github.com/coped/private-events"
+              >
+                <button
+                  className="button"
+                >
+                  <span
+                    className="icon"
+                  >
+                    <img
+                      alt="Github logo"
+                      src="github-logo.svg"
+                    />
+                  </span>
+                  <span>
+                    View project on GitHub
+                  </span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          className="container paragraph"
+        >
+          <h3
+            className="subtitle is-size-3 has-text-weight-bold"
+          >
+            Trike World Limited
+          </h3>
+          <div
+            className="columns"
+          >
+            <div
+              className="column"
+            >
+              <a
+                href="https://trikeworldlimited.herokuapp.com/"
+              >
+                <img
+                  alt="Trike World Limited logo"
+                  src="trikeworldltd-screenshot-1000x505.jpg"
+                />
+              </a>
+            </div>
+            <div
+              className="column"
+            >
+              <p
+                className="paragraph"
+              >
+                trikeworldltd.com (domain yet to transfer) is a fully responsive web application built for Trike World Ltd., my father’s V8 trike motorcycle business. The primary technologies involved in this project include Rails 6, the Bulma CSS framework, and PostgreSQL.
+              </p>
+              <p
+                className="paragraph"
+              >
+                The website features a custom authentication system and a blogging system, allowing my father to sign in and post pictures / updates about his latest projects with ease. The source code is also covered with comprehensive unit and integration tests using the Minitest framework.
+              </p>
+              <div>
+                <a
+                  href="https://trikeworldlimited.herokuapp.com/"
+                >
+                  <button
+                    className="button is-primary paragraph"
+                  >
+                    Visit website
+                  </button>
+                </a>
+              </div>
+              <a
+                href="https://github.com/coped/trike-world-limited"
+              >
+                <button
+                  className="button"
+                >
+                  <span
+                    className="icon"
+                  >
+                    <img
+                      alt="Github logo"
+                      src="github-logo.svg"
+                    />
+                  </span>
+                  <span>
+                    View project on GitHub
+                  </span>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>,
+  <section
+    className="section"
+    id="contact"
+  >
+    <div
+      className="container"
+    >
+      <h2
+        className="is-size-2 has-text-weight-light has-text-centered title"
+      >
+        Contact
+      </h2>
+      <div
+        className="columns center"
+      >
+        <div
+          className="column is-two-thirds"
+        >
+          <hr
+            className="hr"
+          />
+        </div>
+      </div>
+      <div
+        className="container"
+      >
+        <div
+          className="columns center"
+        >
+          <div
+            className="column is-two-thirds"
+          >
+            <p
+              className="paragraph"
+            >
+              Questions or concerns? I can be contacted by
+               
+              <a
+                href="https://github.com/coped"
+              >
+                Github
+              </a>
+              ,
+               
+              <a
+                href="https://www.linkedin.com/in/dennis-cope"
+              >
+                LinkedIn
+              </a>
+              , or by 
+              <a
+                href="mailto:dennisaaroncope@gmail.com"
+              >
+                email
+              </a>
+               at
+              <strong>
+                 dennisaaroncope@gmail.com
+              </strong>
+              . You can also use the form below to email me directly. I'll reply promptly.
+            </p>
+            <form
+              id="contact-form"
+              onSubmit={[Function]}
+            >
+              <div
+                className="field"
+              >
+                <label
+                  className="label"
+                >
+                  Name *
+                </label>
+                <div
+                  className="control"
+                >
+                  <input
+                    className="input"
+                    name="name"
+                    placeholder="John Doe"
+                    required={true}
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                className="field"
+              >
+                <label
+                  className="label"
+                >
+                  Email *
+                </label>
+                <div
+                  className="control"
+                >
+                  <input
+                    className="input"
+                    name="email"
+                    placeholder="example@email.com"
+                    required={true}
+                    type="email"
+                  />
+                </div>
+              </div>
+              <div
+                className="field"
+              >
+                <label
+                  className="label"
+                >
+                  Message *
+                </label>
+                <div
+                  className="control"
+                >
+                  <textarea
+                    className="textarea"
+                    name="message"
+                    placeholder="Hello!"
+                    required={true}
+                    rows="7"
+                  />
+                </div>
+              </div>
+              <div
+                className="field"
+              >
+                <div
+                  className="control"
+                >
+                  <button
+                    className="button is-link"
+                    id="contact-submit"
+                    type="submit"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>,
+  <footer
+    className="footer"
+  >
+    <div
+      className="content has-text-centered"
+    >
+      <img
+        alt="coped.dev logo"
+        id="footer-image"
+        src="coped-logo.png"
+      />
+    </div>
+  </footer>,
+]
+`;
