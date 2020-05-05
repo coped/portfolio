@@ -7,34 +7,32 @@ export default class Contact extends Component {
     super(props);
 
     this.state = {
-      alert: "",
-      alertType: "",
-      showAlert: false,
+      notification: "",
+      isLoading: false,
+      name: "",
+      email: "",
+      message: "",
     };
 
     this.scrollIntoView = this.scrollIntoView.bind(this);
-    this.toggleLoadingAnimation = this.toggleLoadingAnimation.bind(this);
     this.sendMessage = this.sendMessage.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    const target = e.target;
+    this.setState({
+      [target.name]: target.value,
+    });
   }
 
   scrollIntoView = () => {
     document.querySelector("#contact").scrollIntoView({ behavior: "smooth" });
   };
 
-  toggleLoadingAnimation = () => {
-    const submitButton = document.querySelector("#contact-submit");
-
-    const classes = submitButton.classList;
-
-    [...classes].includes("is-loading")
-      ? classes.remove("is-loading")
-      : classes.add("is-loading");
-  };
-
   sendMessage = (e) => {
     e.preventDefault();
-
-    this.toggleLoadingAnimation();
+    this.setState({ isLoading: true });
 
     const templateId = process.env.REACT_APP_TEMPLATE_ID;
     const userId = process.env.REACT_APP_EMAILJS_USER_ID;
@@ -42,44 +40,57 @@ export default class Contact extends Component {
 
     emailjs
       .sendForm(serviceId, templateId, e.target, userId)
-      .then(
-        (result) => {
-          console.log(result.text);
-          this.setState({
-            alert: "Message sent.",
-            alertType: "success",
-            showAlert: true,
-          });
-        },
-        (error) => {
-          console.log(error.text);
-          this.setState({
-            alert: "Something happened. Please try again.",
-            alertType: "warning",
-            showAlert: true,
-          });
-        }
-      )
-      .then(() => {
-        this.toggleLoadingAnimation();
+      .then((result) => {
+        console.log(result.text);
+        this.setState({
+          notification: {
+            type: "success",
+            message: "Message sent.",
+          },
+          name: "",
+          email: "",
+          message: "",
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        this.setState({
+          notification: {
+            type: "warning",
+            message: "Something went wrong. Please try again.",
+          },
+        });
+      })
+      .finally(() => {
         this.scrollIntoView();
+        this.setState({ isLoading: false });
       });
   };
 
   render() {
+    const {
+      isLoading,
+      notification,
+      name,
+      email,
+      message,
+    } = this.state;
+    const loadingClass = isLoading ? "is-loading" : "";
     return (
       <div className="container">
-        {this.state.showAlert && (
-          <div className="paragraph center">
-            <p id="form-alert" role="alert">
-              <span className={`tag is-${this.state.alertType} is-medium`}>
-                {this.state.alert}
-              </span>
-            </p>
-          </div>
-        )}
         <div className="columns center">
           <div className="column is-two-thirds">
+            {this.state.notification && (
+              <div className="paragraph has-text-centered">
+                <p id="form-alert" role="alert">
+                  <div
+                    className={`notification is-${notification.type} is-medium`}
+                  >
+                    {notification.message}
+                  </div>
+                </p>
+              </div>
+            )}
             <p className="paragraph">
               Questions or concerns? I can be contacted by{" "}
               <a href="https://github.com/coped">Github</a>,{" "}
@@ -97,6 +108,8 @@ export default class Contact extends Component {
                     className="input"
                     type="text"
                     placeholder="John Doe"
+                    value={name}
+                    onChange={this.handleChange}
                     required
                   ></input>
                 </div>
@@ -110,6 +123,8 @@ export default class Contact extends Component {
                     className="input"
                     type="email"
                     placeholder="example@email.com"
+                    value={email}
+                    onChange={this.handleChange}
                     required
                   ></input>
                 </div>
@@ -123,6 +138,8 @@ export default class Contact extends Component {
                     className="textarea"
                     placeholder="Hello!"
                     rows="7"
+                    value={message}
+                    onChange={this.handleChange}
                     required
                   ></textarea>
                 </div>
@@ -133,7 +150,7 @@ export default class Contact extends Component {
                   <button
                     id="contact-submit"
                     type="submit"
-                    className="button is-link"
+                    className={"button is-link " + loadingClass}
                   >
                     Submit
                   </button>

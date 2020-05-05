@@ -140,7 +140,7 @@ const projectInfo = [
     image: gymPartnerImage,
     paragraphs: [
       "Gym Partner is a cross-platform health and fitness application that allows users to plan exercise routines, set fitness goals, and track improvement over time. It involves the use of tech such as Rails 6, React, and Android with Kotlin. It's currently hosted using Amazon Web Services.",
-      "This project is composed of three separate applications: A React web client, a native Android client, and a Rails REST API. The API functions as a back-end for the overall Gym Partner project, and its purpose is to provide an interface for the React and Android applications to communicate with, and provide access to the resources of the REST API (user data, exercise data, etc.).",
+      "This project is composed of three separate applications: A React single-page application, a native Android application, and a Rails REST API. The React and Android applications function as user interfaces for Gym Partner, and the Rails API functions as a back-end for both of these interfaces. The Rails app is designed to receive HTTP requests and data from both clients and respond with appropriately handled JSON data, and the communication between these applications creates a cohesive user experience.",
     ],
     websiteLink: "https://gympartner.app/",
     githubLink: "https://github.com/coped/gym-partner-api",

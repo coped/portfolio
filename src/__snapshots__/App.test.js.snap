@@ -601,7 +601,7 @@ Array [
               <p
                 className="paragraph"
               >
-                This project is composed of three separate applications: A React web client, a native Android client, and a Rails REST API. The API functions as a back-end for the overall Gym Partner project, and its purpose is to provide an interface for the React and Android applications to communicate with, and provide access to the resources of the REST API (user data, exercise data, etc.).
+                This project is composed of three separate applications: A React single-page application, a native Android application, and a Rails REST API. The React and Android applications function as user interfaces for Gym Partner, and the Rails API functions as a back-end for both of these interfaces. The Rails app is designed to receive HTTP requests and data from both clients and respond with appropriately handled JSON data, and the communication between these applications creates a cohesive user experience.
               </p>
               <div>
                 <a
@@ -809,6 +809,7 @@ Array [
           <div
             className="column is-two-thirds"
           >
+            
             <p
               className="paragraph"
             >
@@ -856,9 +857,11 @@ Array [
                   <input
                     className="input"
                     name="name"
+                    onChange={[Function]}
                     placeholder="John Doe"
                     required={true}
                     type="text"
+                    value=""
                   />
                 </div>
               </div>
@@ -876,9 +879,11 @@ Array [
                   <input
                     className="input"
                     name="email"
+                    onChange={[Function]}
                     placeholder="example@email.com"
                     required={true}
                     type="email"
+                    value=""
                   />
                 </div>
               </div>
@@ -896,9 +901,11 @@ Array [
                   <textarea
                     className="textarea"
                     name="message"
+                    onChange={[Function]}
                     placeholder="Hello!"
                     required={true}
                     rows="7"
+                    value=""
                   />
                 </div>
               </div>
@@ -909,7 +916,7 @@ Array [
                   className="control"
                 >
                   <button
-                    className="button is-link"
+                    className="button is-link "
                     id="contact-submit"
                     type="submit"
                   >
