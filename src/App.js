@@ -1,41 +1,16 @@
 import React from "react";
 import "./App.css";
-import {
-  Banner,
-  Navbar,
-  About,
-  Tools,
-  Projects,
-  Contact,
-  Footer,
-  Section,
-} from "components/home";
+import { Home } from "components/home";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export default function App() {
   return (
-    <React.Fragment>
-      <Banner />
-      <Navbar />
-      <Section id="about" name="About Me" wide={false} component={<About />} />
-      <Section
-        id="tools"
-        name="My Favorite Tools"
-        wide={true}
-        component={<Tools />}
-      />
-      <Section
-        id="projects"
-        name="Projects"
-        wide={true}
-        component={<Projects />}
-      />
-      <Section
-        id="contact"
-        name="Contact"
-        wide={false}
-        component={<Contact />}
-      />
-      <Footer />
-    </React.Fragment>
+    <Router>
+      <Switch>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
