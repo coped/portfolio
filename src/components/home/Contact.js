@@ -17,6 +17,7 @@ export default class Contact extends Component {
     this.scrollIntoView = this.scrollIntoView.bind(this);
     this.sendMessage = this.sendMessage.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   handleChange(e) {
@@ -24,6 +25,10 @@ export default class Contact extends Component {
     this.setState({
       [target.name]: target.value,
     });
+  }
+
+  onSubmit(token) {
+    document.getElementById("demo-form").submit();
   }
 
   scrollIntoView = () => {
@@ -68,13 +73,7 @@ export default class Contact extends Component {
   };
 
   render() {
-    const {
-      isLoading,
-      notification,
-      name,
-      email,
-      message,
-    } = this.state;
+    const { isLoading, notification, name, email, message } = this.state;
     const loadingClass = isLoading ? "is-loading" : "";
     return (
       <div className="container">
@@ -143,6 +142,13 @@ export default class Contact extends Component {
                     required
                   ></textarea>
                 </div>
+              </div>
+
+              <div className="field">
+                <div
+                  class="g-recaptcha"
+                  data-sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
+                ></div>
               </div>
 
               <div className="field">
