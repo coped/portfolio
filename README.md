@@ -1,9 +1,15 @@
 # My Portfolio
 
 ### About
-This is the application behind my portfolio site, coped.dev.
+This is the source code for my web portfolio. 
 
-Powered by React and Bulma CSS.
+Visit it at: https://coped.dev
 
-# Created by
+### Built with
+- React - https://reactjs.org/
+- TypeScript - https://www.typescriptlang.org/
+- EmailJS - https://www.emailjs.com/
+- BulmaCSS - https://bulma.io/
+
+### Created by
 Dennis Cope, https://coped.dev
