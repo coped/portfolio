@@ -18,14 +18,21 @@ import twlImage from "assets/images/project-screenshots/trikeworldltd-screenshot
 import githubBannerIcon from "assets/images/banner-icons/GitHub-Mark-Light-120px-plus-scaled.png";
 import linkedinBannerIcon from "assets/images/banner-icons/linkedin-dark-scaled.png";
 import emailBannerIcon from "assets/images/banner-icons/email-logo-dark-scaled.png";
+import {
+  AboutMe,
+  BooksAndCourses,
+  Tools,
+  ProjectInfo,
+  SocialLinks,
+} from "types/lib/content";
 
-const aboutMe = [
+const aboutMe: AboutMe = [
   "I'm a self-taught developer, and I like making applications of different varieties. I like to use Rails and React when it comes to building web apps, and I've recently started to tinker with Android development using Kotlin.",
   "There's seldom a feeling like learning something new, and using that knowledge to make something work. I enjoy what I do because I get that feeling almost every day, in one way or another.",
   "If I've got free time to spare, I'll probably be weight lifting, slammin' keys on my piano, playing Kerbal Space Program, or taking my Hayabusa up into the mountains for a joyride.",
 ];
 
-const booksAndCourses = [
+const booksAndCourses: BooksAndCourses = [
   {
     id: 0,
     name: "The Odin Project",
@@ -54,7 +61,7 @@ const booksAndCourses = [
   },
 ];
 
-const tools = {
+const tools: Tools = {
   backend: [
     {
       id: 0,
@@ -133,7 +140,7 @@ const tools = {
   ],
 };
 
-const projectInfo = [
+const projectInfo: ProjectInfo = [
   {
     id: 0,
     name: "Gym Partner",
@@ -169,7 +176,7 @@ const projectInfo = [
   },
 ];
 
-const socialLinks = [
+const socialLinks: SocialLinks = [
   {
     id: 0,
     image: githubBannerIcon,

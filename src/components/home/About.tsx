@@ -1,8 +1,8 @@
-import React from "react";
+import { ReactElement } from "react";
 import portraitOfMe from "assets/images/me-256x256.jpg";
 import { aboutMe, booksAndCourses } from "lib/content";
 
-export default function About() {
+export default function About(): ReactElement {
   return (
     <div className="columns center">
       <div className="column is-8">

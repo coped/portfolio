@@ -1,6 +1,13 @@
-import React from "react";
+import { ReactElement } from "react";
 
-export default function Section(props) {
+interface SectionProps {
+  id: string;
+  name: string;
+  wide: boolean;
+  children: ReactElement;
+}
+
+export default function Section(props: SectionProps): ReactElement {
   return (
     <section id={props.id} className="section">
       <div className="container">
@@ -12,7 +19,7 @@ export default function Section(props) {
             <hr className="hr"></hr>
           </div>
         </div>
-        {props.component}
+        {props.children}
       </div>
     </section>
   );

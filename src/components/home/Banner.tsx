@@ -1,12 +1,13 @@
-import React from "react";
-import "./Banner.css";
+import { ReactElement } from "react";
+import styles from "./Banner.module.css";
 import arrow from "assets/images/banner-icons/angle-down-solid.svg";
 import { socialLinks } from "lib/content";
 
-export default function Banner() {
-  const scrollDown = () => {
-    document.getElementById("navbar").scrollIntoView({ behavior: "smooth" });
-  };
+export default function Banner(): ReactElement {
+  function scrollDown(): void {
+    const element = document.getElementById("navbar");
+    element && element.scrollIntoView({ behavior: "smooth" });
+  }
 
   return (
     <section id="banner" className="hero is-dark is-bold is-fullheight">
@@ -18,7 +19,7 @@ export default function Banner() {
               Dennis <span className="blue">Cope</span>
             </h1>
             <h2 className="subtitle is-size-4 has-text-centered">
-              Fullstack <span className="blue">Developer</span>
+              JavaScript <span className="blue">Developer</span>
             </h2>
           </section>
           <section className="section">
@@ -27,7 +28,7 @@ export default function Banner() {
                 <a key={social.id} href={social.link}>
                   <img
                     src={social.image}
-                    className="banner-icon"
+                    className={styles.bannerIcon}
                     alt={social.alt}
                   />
                 </a>
@@ -40,10 +41,10 @@ export default function Banner() {
         </div>
       </div>
       <div className="hero-foot center">
-        <button id="banner-button">
+        <button className={styles.bannerButton}>
           <img
             src={arrow}
-            className="down-arrow"
+            className={styles.downArrow}
             onClick={scrollDown}
             alt="scroll button"
           />
