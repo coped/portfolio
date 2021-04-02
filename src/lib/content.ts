@@ -20,19 +20,19 @@ import linkedinBannerIcon from "assets/images/banner-icons/linkedin-dark-scaled.
 import emailBannerIcon from "assets/images/banner-icons/email-logo-dark-scaled.png";
 import {
   AboutMe,
-  BooksAndCourses,
-  Tools,
+  BookAndCourse,
+  Tool,
   ProjectInfo,
-  SocialLinks,
+  SocialLink,
 } from "types/lib/content";
 
-const aboutMe: AboutMe = [
+const aboutMe: AboutMe[] = [
   "I'm a self-taught developer, and I like making applications of different varieties. I like to use Rails and React when it comes to building web apps, and I've recently started to tinker with Android development using Kotlin.",
   "There's seldom a feeling like learning something new, and using that knowledge to make something work. I enjoy what I do because I get that feeling almost every day, in one way or another.",
   "If I've got free time to spare, I'll probably be weight lifting, slammin' keys on my piano, playing Kerbal Space Program, or taking my Hayabusa up into the mountains for a joyride.",
 ];
 
-const booksAndCourses: BooksAndCourses = [
+const booksAndCourses: BookAndCourse[] = [
   {
     id: 0,
     name: "The Odin Project",
@@ -61,7 +61,7 @@ const booksAndCourses: BooksAndCourses = [
   },
 ];
 
-const tools: Tools = {
+const tools: { [id: string]: Tool[] } = {
   backend: [
     {
       id: 0,
@@ -140,7 +140,7 @@ const tools: Tools = {
   ],
 };
 
-const projectInfo: ProjectInfo = [
+const projectInfo: ProjectInfo[] = [
   {
     id: 0,
     name: "Gym Partner",
@@ -176,7 +176,7 @@ const projectInfo: ProjectInfo = [
   },
 ];
 
-const socialLinks: SocialLinks = [
+const socialLinks: SocialLink[] = [
   {
     id: 0,
     image: githubBannerIcon,

@@ -23,7 +23,7 @@ export default function About(): ReactElement {
               </p>
             ))}
             <p className="paragraph">
-              Here are some books and courses I'm currently learning from:
+              Here are some books and courses I&apos;m currently learning from:
             </p>
             {booksAndCourses.map((item) => (
               <p key={item.id}>

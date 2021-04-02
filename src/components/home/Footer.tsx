@@ -1,8 +1,8 @@
-import React from "react";
+import { ReactElement } from "react";
 import "./Footer.css";
 import copedLogo from "assets/images/coped-logo.png";
 
-export default function Footer() {
+export default function Footer(): ReactElement {
   return (
     <footer className="footer">
       <div className="content has-text-centered">

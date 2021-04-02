@@ -1,50 +1,62 @@
-import React, { Component } from "react";
+import { ChangeEvent, Component, FormEvent, ReactElement } from "react";
 import emailjs from "emailjs-com";
-import "./Contact.css";
 
-export default class Contact extends Component {
-  constructor(props) {
-    super(props);
+type HandleChange = (
+  e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+) => void;
 
-    this.state = {
-      notification: "",
-      isLoading: false,
-      name: "",
-      email: "",
+type ContactProps = Record<string, never>;
+
+interface ContactState {
+  notification: { type: string; message: string };
+  isLoading: boolean;
+  name: string;
+  email: string;
+  message: string;
+}
+
+export default class Contact extends Component<ContactProps, ContactState> {
+  state: ContactState = {
+    notification: {
+      type: "",
       message: "",
-    };
-
-    this.scrollIntoView = this.scrollIntoView.bind(this);
-    this.sendMessage = this.sendMessage.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-  }
-
-  handleChange(e) {
-    const target = e.target;
-    this.setState({
-      [target.name]: target.value,
-    });
-  }
-
-  onSubmit(token) {
-    document.getElementById("demo-form").submit();
-  }
-
-  scrollIntoView = () => {
-    document.querySelector("#contact").scrollIntoView({ behavior: "smooth" });
+    },
+    isLoading: false,
+    name: "",
+    email: "",
+    message: "",
   };
 
-  sendMessage = (e) => {
+  constructor(props: ContactProps) {
+    super(props);
+  }
+
+  handleChange: () => string = () => {
+    return "placeholder";
+  };
+
+  // handleChange: HandleChange = (e) => {
+  //   const target = e.target;
+  //   this.setState({
+  //     [target.name]: target.value,
+  //   });
+  // };
+
+  scrollIntoView = (): void => {
+    const element = document.querySelector("#contact");
+    element && element.scrollIntoView({ behavior: "smooth" });
+  };
+
+  sendMessage = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     this.setState({ isLoading: true });
 
-    const templateId = process.env.REACT_APP_TEMPLATE_ID;
+    const serviceId = process.env.REACT_APP_SERVICE_ID as string;
+    const templateId = process.env.REACT_APP_TEMPLATE_ID as string;
     const userId = process.env.REACT_APP_EMAILJS_USER_ID;
-    const serviceId = process.env.REACT_APP_SERVICE_ID;
 
     emailjs
-      .sendForm(serviceId, templateId, e.target, userId)
+      .sendForm(serviceId, templateId, e.currentTarget, userId)
       .then((result) => {
         console.log(result.text);
         this.setState({
@@ -72,7 +84,7 @@ export default class Contact extends Component {
       });
   };
 
-  render() {
+  render(): ReactElement {
     const { isLoading, notification, name, email, message } = this.state;
     const loadingClass = isLoading ? "is-loading" : "";
     return (
@@ -96,7 +108,7 @@ export default class Contact extends Component {
               <a href="https://www.linkedin.com/in/dennis-cope">LinkedIn</a>, or
               by <a href="mailto:dennisaaroncope@gmail.com">email</a> at
               <strong> dennisaaroncope@gmail.com</strong>. You can also use the
-              form below to email me directly. I'll reply promptly.
+              form below to email me directly. I&apos;ll reply promptly.
             </p>
             <form id="contact-form" onSubmit={this.sendMessage}>
               <div className="field">
@@ -136,7 +148,7 @@ export default class Contact extends Component {
                     name="message"
                     className="textarea"
                     placeholder="Hello!"
-                    rows="7"
+                    rows={7}
                     value={message}
                     onChange={this.handleChange}
                     required
@@ -146,7 +158,7 @@ export default class Contact extends Component {
 
               <div className="field">
                 <div
-                  class="g-recaptcha"
+                  className="g-recaptcha"
                   data-sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
                 ></div>
               </div>

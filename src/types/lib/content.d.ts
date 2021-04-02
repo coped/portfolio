@@ -1,17 +1,15 @@
-export type AboutMe = string[];
+export type AboutMe = string;
 
-export type BooksAndCourses = {
+export type BookAndCourse = {
   id: number;
   name: string;
   link: string;
-}[];
+};
 
-export type Tools = {
-  [id: string]: {
-    id: number;
-    name: string;
-    logo: string;
-  }[];
+export type Tool = {
+  id: number;
+  name: string;
+  logo: string;
 };
 
 export type ProjectInfo = {
@@ -21,11 +19,11 @@ export type ProjectInfo = {
   paragraphs: string[];
   websiteLink: string;
   githubLink: string;
-}[];
+};
 
-export type SocialLinks = {
+export type SocialLink = {
   id: number;
   image: string;
   link: string;
   alt: string;
-}[];
+};

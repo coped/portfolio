@@ -1,6 +1,12 @@
-import React from "react";
+import { ReactElement } from "react";
+import { Tool } from "types/lib/content";
 
-export default function Toolbox(props) {
+interface ToolboxProps {
+  name: string;
+  tools: Tool[];
+}
+
+export default function Toolbox(props: ToolboxProps): ReactElement {
   return (
     <div className="notification">
       <h3 className="subtitle has-text-centered has-text-weight-bold">

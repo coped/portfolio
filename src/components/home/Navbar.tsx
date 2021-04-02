@@ -1,12 +1,16 @@
-import React from "react";
+import { ReactElement } from "react";
 import "./Navbar.css";
 import copedLogo from "assets/images/coped-logo.png";
 
-export default function Navbar() {
-  const expandMobileMenu = () => {
-    document.querySelector(".navbar-burger").classList.toggle("is-active");
-    document.querySelector(".navbar-menu").classList.toggle("is-active");
+export default function Navbar(): ReactElement {
+  const expandMobileMenu = (): void => {
+    const burg = document.querySelector(".navbar-burger");
+    const menu = document.querySelector(".navbar-menu");
+
+    burg && burg.classList.toggle("is-active");
+    menu && menu.classList.toggle("is-active");
   };
+  
   return (
     <nav
       id="navbar"
@@ -18,7 +22,6 @@ export default function Navbar() {
         <a href="/" className="navbar-item">
           <img src={copedLogo} className="logo" alt="coped.dev logo" />
         </a>
-
         <a
           id="navbar-button"
           className="navbar-burger burger"
@@ -32,20 +35,11 @@ export default function Navbar() {
           <span aria-hidden="true"></span>
         </a>
       </div>
-
       <div id="navbar-options" className="navbar-menu is-size-5">
         <div className="navbar-start">
           <a href="/" className="navbar-item is-tab">
             Home
           </a>
-          {/* No blog yet. I'll figure it out later
-                    <a
-                        href="/blog"
-                        className="navbar-item is-tab"
-                    >
-                        Blog
-                    </a>
-                    */}
         </div>
         <div className="navbar-end">
           <div className="buttons">

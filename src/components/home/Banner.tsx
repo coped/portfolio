@@ -36,7 +36,7 @@ export default function Banner(): ReactElement {
             </div>
           </section>
           <section className="section has-text-centered">
-            <h2 className="subtitle is-size-4">Let's build something.</h2>
+            <h2 className="subtitle is-size-4">Let&apos;s build something.</h2>
           </section>
         </div>
       </div>

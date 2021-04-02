@@ -1,8 +1,8 @@
-import React from "react";
+import { ReactElement } from "react";
 import { Toolbox } from "components/home";
 import { tools } from "lib/content";
 
-export default function Tools() {
+export default function Tools(): ReactElement {
   return (
     <div className="columns">
       <div className="column">
