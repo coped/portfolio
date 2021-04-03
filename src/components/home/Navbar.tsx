@@ -2,7 +2,7 @@ import { ReactElement } from "react";
 import "./Navbar.css";
 import copedLogo from "assets/images/coped-logo.png";
 
-export default function Navbar(): ReactElement {
+export function Navbar(): ReactElement {
   const expandMobileMenu = (): void => {
     const burg = document.querySelector(".navbar-burger");
     const menu = document.querySelector(".navbar-menu");

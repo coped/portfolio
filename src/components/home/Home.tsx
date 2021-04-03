@@ -1,16 +1,14 @@
 import { ReactElement } from "react";
-import {
-  Banner,
-  Navbar,
-  About,
-  Tools,
-  Projects,
-  Contact,
-  Footer,
-  Section,
-} from "components/home";
+import { Banner } from "components/home/Banner";
+import { Navbar } from "components/home/Navbar";
+import { About } from "components/home/About";
+import { Tools } from "components/home/Tools";
+import { Projects } from "components/home/Projects";
+import { Contact } from "components/home/Contact";
+import { Footer } from "components/home/Footer";
+import { Section } from "components/home/Section";
 
-export default function Home(): ReactElement {
+export function Home(): ReactElement {
   return (
     <div>
       <Banner />

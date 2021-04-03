@@ -1,9 +1,9 @@
 import { ReactElement } from "react";
 import "./Projects.css";
 import { projectInfo } from "lib/content";
-import { Project } from "components/home";
+import { Project } from "components/home/Project";
 
-export default function Projects(): ReactElement {
+export function Projects(): ReactElement {
   return (
     <div className="container">
       {projectInfo.map((project) => (

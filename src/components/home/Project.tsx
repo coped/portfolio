@@ -7,7 +7,7 @@ interface ProjectProps {
   project: ProjectInfo;
 }
 
-export default function Project({ project }: ProjectProps): ReactElement {
+export function Project({ project }: ProjectProps): ReactElement {
   return (
     <div className="container paragraph">
       <h3 className="subtitle is-size-3 has-text-weight-bold">

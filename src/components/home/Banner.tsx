@@ -3,7 +3,7 @@ import styles from "./Banner.module.css";
 import arrow from "assets/images/banner-icons/angle-down-solid.svg";
 import { socialLinks } from "lib/content";
 
-export default function Banner(): ReactElement {
+export function Banner(): ReactElement {
   function scrollDown(): void {
     const element = document.getElementById("navbar");
     element && element.scrollIntoView({ behavior: "smooth" });

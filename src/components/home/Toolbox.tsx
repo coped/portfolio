@@ -6,7 +6,7 @@ interface ToolboxProps {
   tools: Tool[];
 }
 
-export default function Toolbox(props: ToolboxProps): ReactElement {
+export function Toolbox(props: ToolboxProps): ReactElement {
   return (
     <div className="notification">
       <h3 className="subtitle has-text-centered has-text-weight-bold">

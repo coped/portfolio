@@ -7,7 +7,7 @@ interface SectionProps {
   children: ReactElement;
 }
 
-export default function Section(props: SectionProps): ReactElement {
+export function Section(props: SectionProps): ReactElement {
   return (
     <section id={props.id} className="section">
       <div className="container">
