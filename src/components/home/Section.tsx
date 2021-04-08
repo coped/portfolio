@@ -15,7 +15,10 @@ export function Section(props: SectionProps): ReactElement {
           {props.name}
         </h2>
         <div className="columns center">
-          <div className={"column" + (props.wide ? "" : " is-two-thirds")}>
+          <div
+            className={"column" + (props.wide ? "" : " is-two-thirds")}
+            data-testid="wide"
+          >
             <hr className="hr"></hr>
           </div>
         </div>
