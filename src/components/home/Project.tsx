@@ -3,7 +3,7 @@ import githubLogo from "assets/images/icons/github-logo.svg";
 import { ProjectInfo } from "types/lib/content";
 
 interface ProjectProps {
-  key: number;
+  key: string;
   project: ProjectInfo;
 }
 
@@ -19,7 +19,6 @@ export function Project({ project }: ProjectProps): ReactElement {
             <img src={project.image} alt={project.name + " logo"} />
           </a>
         </div>
-        props
         <div className="column">
           {project.paragraphs.map((paragraph, index) => (
             <p key={index} className="paragraph">

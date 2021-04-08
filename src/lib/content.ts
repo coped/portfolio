@@ -34,28 +34,28 @@ const aboutMe: AboutMe[] = [
 
 const booksAndCourses: BookAndCourse[] = [
   {
-    id: 0,
+    id: "0",
     name: "The Odin Project",
     link: "https://www.theodinproject.com/",
   },
   {
-    id: 1,
+    id: "1",
     name: "You Don't Know JS - Kyle Simpson",
     link: "https://github.com/getify/You-Dont-Know-JS",
   },
   {
-    id: 2,
+    id: "2",
     name: "The Road to Learn React - Robin Wieruch",
     link: "https://roadtoreact.com/",
   },
   {
-    id: 3,
+    id: "3",
     name: "Programming in Haskell - Graham Hutton",
     link:
       "https://books.google.com/books/about/Programming_in_Haskell.html?id=75C5DAAAQBAJ&source=kp_book_description",
   },
   {
-    id: 4,
+    id: "4",
     name: "Practical Object-Oriented Design in Ruby - Sandi Metz",
     link: "https://www.poodr.com/",
   },
@@ -64,76 +64,76 @@ const booksAndCourses: BookAndCourse[] = [
 const tools: { [id: string]: Tool[] } = {
   backend: [
     {
-      id: 0,
+      id: "0",
       name: "Ruby",
       logo: rubyLogo,
     },
     {
-      id: 1,
+      id: "1",
       name: "Ruby on Rails",
       logo: railsLogo,
     },
     {
-      id: 2,
+      id: "2",
       name: "RSpec + Minitest",
       logo: rspecLogo,
     },
     {
-      id: 3,
+      id: "3",
       name: "PostgreSQL",
       logo: pgLogo,
     },
   ],
   frontend: [
     {
-      id: 4,
+      id: "4",
       name: "JavaScript",
       logo: jsLogo,
     },
     {
-      id: 5,
+      id: "5",
       name: "React",
       logo: reactLogo,
     },
     {
-      id: 6,
+      id: "6",
       name: "HTML5",
       logo: htmlLogo,
     },
     {
-      id: 7,
+      id: "7",
       name: "CSS",
       logo: cssLogo,
     },
     {
-      id: 8,
+      id: "8",
       name: "Bulma",
       logo: bulmaLogo,
     },
   ],
   miscellaneous: [
     {
-      id: 9,
+      id: "9",
       name: "Linux",
       logo: linuxLogo,
     },
     {
-      id: 10,
+      id: "10",
       name: "Git",
       logo: gitLogo,
     },
     {
-      id: 11,
+      id: "11",
       name: "Github",
       logo: githubLogo,
     },
     {
-      id: 12,
+      id: "12",
       name: "Heroku",
       logo: herokuLogo,
     },
     {
-      id: 13,
+      id: "13",
       name: "Amazon Web Services",
       logo: awsLogo,
     },
@@ -142,7 +142,7 @@ const tools: { [id: string]: Tool[] } = {
 
 const projectInfo: ProjectInfo[] = [
   {
-    id: 0,
+    id: "0",
     name: "Gym Partner",
     image: gymPartnerImage,
     paragraphs: [
@@ -153,7 +153,7 @@ const projectInfo: ProjectInfo[] = [
     githubLink: "https://github.com/coped/gym-partner-api",
   },
   {
-    id: 1,
+    id: "1",
     name: "Private Events",
     image: privateEventsImage,
     paragraphs: [
@@ -164,7 +164,7 @@ const projectInfo: ProjectInfo[] = [
     githubLink: "https://github.com/coped/private-events",
   },
   {
-    id: 2,
+    id: "2",
     name: "Trike World Limited",
     image: twlImage,
     paragraphs: [
@@ -178,19 +178,19 @@ const projectInfo: ProjectInfo[] = [
 
 const socialLinks: SocialLink[] = [
   {
-    id: 0,
+    id: "0",
     image: githubBannerIcon,
     link: "https://github.com/coped",
     alt: "Link to github",
   },
   {
-    id: 1,
+    id: "1",
     image: linkedinBannerIcon,
     link: "https://www.linkedin.com/in/dennis-cope",
     alt: "Link to linkedin",
   },
   {
-    id: 2,
+    id: "2",
     image: emailBannerIcon,
     link: "mailto:dennisaaroncope@gmail.com",
     alt: "Mail to dennisaaroncope@gmail.coim",

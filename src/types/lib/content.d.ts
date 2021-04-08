@@ -1,19 +1,19 @@
 export type AboutMe = string;
 
 export type BookAndCourse = {
-  id: number;
+  id: string;
   name: string;
   link: string;
 };
 
 export type Tool = {
-  id: number;
+  id: string;
   name: string;
   logo: string;
 };
 
 export type ProjectInfo = {
-  id: number;
+  id: string;
   name: string;
   image: string;
   paragraphs: string[];
@@ -22,7 +22,7 @@ export type ProjectInfo = {
 };
 
 export type SocialLink = {
-  id: number;
+  id: string;
   image: string;
   link: string;
   alt: string;
