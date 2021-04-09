@@ -1,7 +1,6 @@
-import type { ProjectInfo } from "types/lib/content";
 import { make, uuid } from "utils/utils";
 import faker from "faker";
-import type { Tool } from "types/lib/content";
+import type { Tool, ProjectInfo } from "types/lib/content";
 
 export const mockProject = ({
   id = uuid(),

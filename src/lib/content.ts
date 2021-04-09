@@ -18,7 +18,7 @@ import twlImage from "assets/images/project-screenshots/trikeworldltd-screenshot
 import githubBannerIcon from "assets/images/banner-icons/GitHub-Mark-Light-120px-plus-scaled.png";
 import linkedinBannerIcon from "assets/images/banner-icons/linkedin-dark-scaled.png";
 import emailBannerIcon from "assets/images/banner-icons/email-logo-dark-scaled.png";
-import {
+import type {
   AboutMe,
   BookAndCourse,
   Tool,

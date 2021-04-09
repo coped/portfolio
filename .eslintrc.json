@@ -13,6 +13,7 @@
   "root": true,
   "rules": {
     "jsx-ally/anchor-is-valid": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/no-inferrable-types": [2, { "ignoreParameters": true }]
   }
 }

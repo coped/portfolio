@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { Tool } from "types/lib/content";
+import type { Tool } from "types/lib/content";
 
 interface ToolboxProps {
   name: string;

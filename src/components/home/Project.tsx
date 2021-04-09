@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import githubLogo from "assets/images/icons/github-logo.svg";
-import { ProjectInfo } from "types/lib/content";
+import type { ProjectInfo } from "types/lib/content";
 
 interface ProjectProps {
   key: string;

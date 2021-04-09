@@ -10,7 +10,7 @@ export function randomNumber(min: number = 0, max: number = 100): number {
 }
 
 /**
- * make(3).fromCallback(randomNumber; // -> [42, 9, 83];
+ * make(3).fromCallback(randomNumber); // -> [42, 9, 83];
  */
 export const make: Make = (amount = 1) => ({
   of: (item) => {
