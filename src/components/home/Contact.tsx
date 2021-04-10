@@ -1,6 +1,7 @@
 import { FormEvent, ReactElement } from "react";
 import styles from "./Contact.module.css";
 import emailjs from "emailjs-com";
+import { scrollIntoView } from "utils/utils";
 import {
   useContactReducer,
   notificationSuccess,
@@ -14,11 +15,7 @@ import {
 
 export function Contact(): ReactElement {
   const [state, dispatch] = useContactReducer();
-
-  function scrollIntoView(): void {
-    const element = document.querySelector("#contact");
-    element && element.scrollIntoView({ behavior: "smooth" });
-  }
+  const loadingClass = state.form.isLoading ? "is-loading" : "";
 
   function sendMessage(e: FormEvent<HTMLFormElement>): void {
     e.preventDefault();
@@ -34,11 +31,9 @@ export function Contact(): ReactElement {
         dispatch(notificationSuccess());
         dispatch(formReset());
       })
-      .catch(() => {
-        dispatch(notificationError());
-      })
+      .catch(() => dispatch(notificationError()))
       .finally(() => {
-        scrollIntoView();
+        scrollIntoView("#contact");
         dispatch(formSetLoading(false));
       });
   }
@@ -50,8 +45,6 @@ export function Contact(): ReactElement {
       return <span className={styles.asterisk}>*</span>;
     }
   }
-
-  const loadingClass = state.form.isLoading ? "is-loading" : "";
 
   return (
     <div className="container">

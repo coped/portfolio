@@ -28,3 +28,8 @@ export const make: Make = (amount = 1) => ({
     return items;
   },
 });
+
+export function scrollIntoView(querySelector: string): void {
+  const element = document.querySelector(querySelector);
+  element && element.scrollIntoView({ behavior: "smooth" });
+}

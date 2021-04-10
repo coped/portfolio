@@ -2,13 +2,9 @@ import { ReactElement } from "react";
 import styles from "./Banner.module.css";
 import arrow from "assets/images/banner-icons/angle-down-solid.svg";
 import { socialLinks } from "lib/content";
+import { scrollIntoView } from "utils/utils";
 
 export function Banner(): ReactElement {
-  function scrollDown(): void {
-    const element = document.getElementById("navbar");
-    element && element.scrollIntoView({ behavior: "smooth" });
-  }
-
   return (
     <section id="banner" className="hero is-dark is-bold is-fullheight">
       <div className="hero-head"></div>
@@ -45,7 +41,7 @@ export function Banner(): ReactElement {
           <img
             src={arrow}
             className={styles.downArrow}
-            onClick={scrollDown}
+            onClick={() => scrollIntoView("#navbar")}
             alt="scroll button"
           />
         </button>
