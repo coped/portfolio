@@ -9,6 +9,7 @@ import {
   formSetName,
   formSetEmail,
   formSetMessage,
+  formReset,
 } from "modules/home/Contact";
 
 export function Contact(): ReactElement {
@@ -29,12 +30,25 @@ export function Contact(): ReactElement {
 
     emailjs
       .sendForm(serviceId, templateId, e.currentTarget, userId)
-      .then(() => dispatch(notificationSuccess()))
-      .catch(() => dispatch(notificationError()))
+      .then(() => {
+        dispatch(notificationSuccess());
+        dispatch(formReset());
+      })
+      .catch(() => {
+        dispatch(notificationError());
+      })
       .finally(() => {
         scrollIntoView();
         dispatch(formSetLoading(false));
       });
+  }
+
+  function showRequired(value: string): ReactElement {
+    if (value.length > 0) {
+      return <></>;
+    } else {
+      return <span className={styles.asterisk}>*</span>;
+    }
   }
 
   const loadingClass = state.form.isLoading ? "is-loading" : "";
@@ -65,7 +79,7 @@ export function Contact(): ReactElement {
           <form id="contact-form" onSubmit={sendMessage}>
             <div className="field">
               <label className="label" htmlFor="contact-form-name">
-                Name <span className={styles.asterisk}>*</span>
+                Name {showRequired(state.form.name)}
               </label>
               <div className="control">
                 <input
@@ -81,7 +95,7 @@ export function Contact(): ReactElement {
             </div>
             <div className="field">
               <label className="label" htmlFor="contact-form-email">
-                Email <span className={styles.asterisk}>*</span>
+                Email {showRequired(state.form.email)}
               </label>
               <div className="control">
                 <input
@@ -97,7 +111,7 @@ export function Contact(): ReactElement {
             </div>
             <div className="field">
               <label className="label" htmlFor="contact-form-message">
-                Message <span className={styles.asterisk}>*</span>
+                Message {showRequired(state.form.message)}
               </label>
               <div className="control">
                 <textarea

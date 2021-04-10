@@ -23,7 +23,8 @@ export type Action =
   | FormSetLoading
   | FormSetName
   | FormSetEmail
-  | FormSetMessage;
+  | FormSetMessage
+  | FormReset;
 
 export type NotificationSuccess = { type: CONTACT.NOTIFICATION_SUCCESS };
 
@@ -44,3 +45,5 @@ export type FormSetMessage = {
   type: CONTACT.FORM_SET_MESSAGE;
   payload: string;
 };
+
+export type FormReset = { type: CONTACT.FORM_RESET };

@@ -37,6 +37,15 @@ describe("Contact", () => {
     expect(input).toHaveValue(value);
   });
 
+  it("should show asterisk only on empty field", () => {
+    render();
+    expect(screen.getByText(/name/i).textContent).toContain("*");
+
+    userEvent.type(screen.getByRole("textbox", { name: /name/i }), "Something");
+
+    expect(screen.getByText(/name/i).textContent).not.toContain("*");
+  });
+
   it("should show loading spinner on form submission", () => {
     render();
     const button = screen.getByRole("button");

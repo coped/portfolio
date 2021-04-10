@@ -8,6 +8,7 @@ import type {
   FormSetName,
   FormSetEmail,
   FormSetMessage,
+  FormReset,
 } from "types/modules/Contact";
 import { useReducer, ReducerState, Dispatch, ReducerAction } from "react";
 
@@ -22,6 +23,7 @@ export enum CONTACT {
   FORM_SET_NAME = "contact/form/SET_NAME",
   FORM_SET_EMAIL = "contact/form/SET_EMAIL",
   FORM_SET_MESSAGE = "contact/form/SET_MESSAGE",
+  FORM_RESET = "contact/form/RESET",
 }
 
 /**
@@ -58,6 +60,8 @@ export const formSetMessage = (payload: string): FormSetMessage => ({
   type: CONTACT.FORM_SET_MESSAGE,
   payload,
 });
+
+export const formReset = (): FormReset => ({ type: CONTACT.FORM_RESET });
 
 /**
  * Reducers
@@ -121,6 +125,9 @@ function formReducer(
     }
     case CONTACT.FORM_SET_MESSAGE: {
       return { ...state, message: action.payload };
+    }
+    case CONTACT.FORM_RESET: {
+      return { ...state, name: "", email: "", message: "" };
     }
     default: {
       return state;
