@@ -77,6 +77,7 @@ export function Contact(): ReactElement {
               <div className="control">
                 <input
                   id="contact-form-name"
+                  name="name"
                   className="input"
                   type="text"
                   placeholder="John Doe"
@@ -93,6 +94,7 @@ export function Contact(): ReactElement {
               <div className="control">
                 <input
                   id="contact-form-email"
+                  name="email"
                   className="input"
                   type="email"
                   placeholder="example@email.com"
@@ -109,6 +111,7 @@ export function Contact(): ReactElement {
               <div className="control">
                 <textarea
                   id="contact-form-message"
+                  name="message"
                   className="textarea"
                   placeholder="Hello!"
                   rows={7}

@@ -54,6 +54,19 @@ describe("Contact", () => {
 
     expect(button).toHaveClass("is-loading");
   });
+
+  it("should have attributes necessary to use emailjs library", () => {
+    render();
+
+    const name = screen.getByRole("textbox", { name: /name/i });
+    expect(name).toHaveProperty("name", "name");
+
+    const email = screen.getByRole("textbox", { name: /email/i });
+    expect(email).toHaveProperty("name", "email");
+
+    const message = screen.getByRole("textbox", { name: /message/i });
+    expect(message).toHaveProperty("name", "message");
+  });
 });
 
 const render = () => rtlRender(<Contact />);
