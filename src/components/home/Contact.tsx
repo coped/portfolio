@@ -124,12 +124,6 @@ export function Contact(): ReactElement {
               </div>
             </div>
             <div className="field">
-              <div
-                className="g-recaptcha"
-                data-sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
-              ></div>
-            </div>
-            <div className="field">
               <div className="control">
                 <button
                   id="contact-submit"
