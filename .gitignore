@@ -27,3 +27,6 @@ yarn-error.log*
 
 # todo list
 things.todo
+
+# Don't serve this file in production
+public/mockServiceWorker.js
