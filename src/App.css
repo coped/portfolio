@@ -21,27 +21,3 @@ h5,
 h6 {
   font-family: "Raleway", sans-serif;
 }
-
-.blue {
-  color: #5af;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  justify-content: center;
-  align-items: center;
-}
-
-.hr {
-  background-color: #adf;
-}
-
-.paragraph {
-  margin-bottom: 1rem;
-}
-
-.is-vertical-center {
-  display: flex;
-  align-items: center;
-}

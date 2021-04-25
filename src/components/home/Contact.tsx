@@ -1,5 +1,6 @@
 import { FormEvent, ReactElement } from "react";
-import styles from "./Contact.module.css";
+import contactStyles from "./Contact.module.css";
+import commonStyles from "common.module.css";
 import emailjs from "emailjs-com";
 import { scrollIntoView } from "utils/utils";
 import {
@@ -42,16 +43,16 @@ export function Contact(): ReactElement {
     if (value.length > 0) {
       return <></>;
     } else {
-      return <span className={styles.asterisk}>*</span>;
+      return <span className={contactStyles.asterisk}>*</span>;
     }
   }
 
   return (
     <div className="container">
-      <div className="columns center">
+      <div className={`columns ${commonStyles.center}`}>
         <div className="column is-two-thirds">
           {state.notification.message && (
-            <div className="paragraph has-text-centered">
+            <div className={`${commonStyles.paragraph} has-text-centered`}>
               <div
                 className={`notification is-${state.notification.type} is-medium`}
               >
@@ -61,7 +62,7 @@ export function Contact(): ReactElement {
               </div>
             </div>
           )}
-          <p className="paragraph">
+          <p className={commonStyles.paragraph}>
             Questions or concerns? I can be contacted by{" "}
             <a href="https://github.com/coped">Github</a>,{" "}
             <a href="https://www.linkedin.com/in/dennis-cope">LinkedIn</a>, or

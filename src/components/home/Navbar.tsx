@@ -1,7 +1,6 @@
 import { ReactElement } from "react";
-import "./Navbar.css";
+import styles from "./Navbar.module.css";
 import copedLogo from "assets/images/coped-logo.png";
-
 export function Navbar(): ReactElement {
   const expandMobileMenu = (): void => {
     const burg = document.querySelector(".navbar-burger");
@@ -10,7 +9,7 @@ export function Navbar(): ReactElement {
     burg && burg.classList.toggle("is-active");
     menu && menu.classList.toggle("is-active");
   };
-  
+
   return (
     <nav
       id="navbar"
@@ -23,7 +22,7 @@ export function Navbar(): ReactElement {
           <img src={copedLogo} className="logo" alt="coped.dev logo" />
         </a>
         <a
-          id="navbar-button"
+          id={styles.navbarButton}
           className="navbar-burger burger"
           onClick={expandMobileMenu}
           aria-label="menu"
@@ -43,11 +42,10 @@ export function Navbar(): ReactElement {
         </div>
         <div className="navbar-end">
           <div className="buttons">
-            <a
-              href="https://coped.s3-us-west-1.amazonaws.com/Cope-Resume.pdf"
-              className="button resume is-info navbar-item"
-            >
-              Resume
+            <a href="https://coped.s3-us-west-1.amazonaws.com/Cope-Resume.pdf">
+              <button className={`button ${styles.resume} is-info navbar-item`}>
+                Resume
+              </button>
             </a>
           </div>
         </div>

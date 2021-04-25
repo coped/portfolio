@@ -1,0 +1,23 @@
+.blue {
+  color: #5af;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.paragraph {
+  margin-bottom: 1rem;
+}
+
+.logo {
+  min-height: 2rem;
+}
+
+.isVerticalCenter {
+  display: flex;
+  align-items: center;
+}

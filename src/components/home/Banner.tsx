@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
-import styles from "./Banner.module.css";
+import bannerStyles from "./Banner.module.css";
+import commonStyles from "common.module.css";
 import arrow from "assets/images/banner-icons/angle-down-solid.svg";
 import { socialLinks } from "lib/content";
 import { scrollIntoView } from "utils/utils";
@@ -12,19 +13,19 @@ export function Banner(): ReactElement {
         <div className="container">
           <section className="section">
             <h1 className="title has-text-centered has-text-weight-light is-size-1">
-              Dennis <span className="blue">Cope</span>
+              Dennis <span className={commonStyles.blue}>Cope</span>
             </h1>
             <h2 className="subtitle is-size-4 has-text-centered">
-              JavaScript <span className="blue">Developer</span>
+              JavaScript <span className={commonStyles.blue}>Developer</span>
             </h2>
           </section>
           <section className="section">
-            <div className="center">
+            <div className={commonStyles.center}>
               {socialLinks.map((social) => (
                 <a key={social.id} href={social.link}>
                   <img
                     src={social.image}
-                    className={styles.bannerIcon}
+                    className={bannerStyles.bannerIcon}
                     alt={social.alt}
                   />
                 </a>
@@ -36,11 +37,11 @@ export function Banner(): ReactElement {
           </section>
         </div>
       </div>
-      <div className="hero-foot center">
-        <button className={styles.bannerButton}>
+      <div className={`hero-foot ${commonStyles.center}`}>
+        <button className={bannerStyles.bannerButton}>
           <img
             src={arrow}
-            className={styles.downArrow}
+            className={bannerStyles.downArrow}
             onClick={() => scrollIntoView("#navbar")}
             alt="scroll button"
           />
