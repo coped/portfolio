@@ -1,4 +1,6 @@
 import { ReactElement } from "react";
+import sectionStyles from "./Section.module.css";
+import commonStyles from "common.module.css";
 
 interface SectionProps {
   id: string;
@@ -14,12 +16,12 @@ export function Section(props: SectionProps): ReactElement {
         <h2 className="is-size-2 has-text-weight-light has-text-centered title">
           {props.name}
         </h2>
-        <div className="columns center">
+        <div className={`columns ${commonStyles.center}`}>
           <div
             className={"column" + (props.wide ? "" : " is-two-thirds")}
             data-testid="wide"
           >
-            <hr className="hr"></hr>
+            <hr className={sectionStyles.hr}></hr>
           </div>
         </div>
         {props.children}

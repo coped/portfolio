@@ -1,5 +1,4 @@
 import { ReactElement } from "react";
-import "./Projects.css";
 import { projectInfo } from "lib/content";
 import { Project } from "components/home/Project";
 

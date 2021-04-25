@@ -6,7 +6,7 @@ import { Tools } from "components/home/Tools";
 import { Projects } from "components/home/Projects";
 import { Contact } from "components/home/Contact";
 import { Footer } from "components/home/Footer";
-import { Section } from "components/home/Section";
+import { Section } from "components/ui/Section";
 
 export function Home(): ReactElement {
   return (

@@ -1,5 +1,7 @@
 import { ReactElement } from "react";
 import githubLogo from "assets/images/icons/github-logo.svg";
+import commonStyles from "common.module.css";
+import { IconButton } from "components/ui/IconButton";
 import type { ProjectInfo } from "types/lib/content";
 
 interface ProjectProps {
@@ -9,7 +11,7 @@ interface ProjectProps {
 
 export function Project({ project }: ProjectProps): ReactElement {
   return (
-    <div className="container paragraph">
+    <div className={`container ${commonStyles.paragraph}`}>
       <h3 className="subtitle is-size-3 has-text-weight-bold">
         {project.name}
       </h3>
@@ -21,25 +23,24 @@ export function Project({ project }: ProjectProps): ReactElement {
         </div>
         <div className="column">
           {project.paragraphs.map((paragraph, index) => (
-            <p key={index} className="paragraph">
+            <p key={index} className={commonStyles.paragraph}>
               {paragraph}
             </p>
           ))}
           <div>
             <a href={project.websiteLink}>
-              <button className="button is-primary paragraph">
+              <button className={`button is-primary ${commonStyles.paragraph}`}>
                 Visit website
               </button>
             </a>
           </div>
-          <a href={project.githubLink}>
-            <button className="button">
-              <span className="icon">
-                <img src={githubLogo} alt="Github logo" />
-              </span>
-              <span>View project on GitHub</span>
-            </button>
-          </a>
+          <IconButton
+            link={project.githubLink}
+            icon={githubLogo}
+            alt="Github logo"
+          >
+            View project on GitHub
+          </IconButton>
         </div>
       </div>
     </div>
