@@ -39,6 +39,8 @@ export function Contact(): ReactElement {
       });
   }
 
+  // Test comment
+
   function showRequired(value: string): ReactElement {
     if (value.length > 0) {
       return <></>;
