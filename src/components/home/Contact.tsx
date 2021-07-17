@@ -13,10 +13,11 @@ import {
   formSetMessage,
   formReset,
 } from "modules/home/Contact";
+import { EMAIL_REGEX } from "utils/constants";
 
 export function Contact(): ReactElement {
-  const [state, dispatch] = useContactReducer();
-  const loadingClass = state.form.isLoading ? "is-loading" : "";
+  const [form, dispatch] = useContactReducer();
+  const loadingClass = form.isLoading ? "is-loading" : "";
 
   function sendMessage(e: FormEvent<HTMLFormElement>): void {
     e.preventDefault();
@@ -39,13 +40,21 @@ export function Contact(): ReactElement {
       });
   }
 
-  // Test comment
-
-  function showRequired(value: string): ReactElement {
-    if (value.length > 0) {
+  function showRequired(condition: boolean): ReactElement {
+    if (condition) {
       return <></>;
     } else {
       return <span className={contactStyles.asterisk}>*</span>;
+    }
+  }
+  
+  function isValidEmail(email: string): boolean {
+    const match = email.match(EMAIL_REGEX);
+    console.log(match);
+    if (match) {
+      return match.length > 0;
+    } else {
+      return false;
     }
   }
 
@@ -53,13 +62,13 @@ export function Contact(): ReactElement {
     <div className="container">
       <div className={`columns ${commonStyles.center}`}>
         <div className="column is-two-thirds">
-          {state.notification.message && (
+          {form.notification.message && (
             <div className={`${commonStyles.paragraph} has-text-centered`}>
               <div
-                className={`notification is-${state.notification.type} is-medium`}
+                className={`notification is-${form.notification.type} is-medium`}
               >
                 <p id="form-alert" role="alert">
-                  {state.notification.message}
+                  {form.notification.message}
                 </p>
               </div>
             </div>
@@ -75,7 +84,7 @@ export function Contact(): ReactElement {
           <form id="contact-form" onSubmit={sendMessage}>
             <div className="field">
               <label className="label" htmlFor="contact-form-name">
-                Name {showRequired(state.form.name)}
+                Name {showRequired(form.form.name.length > 0)}
               </label>
               <div className="control">
                 <input
@@ -84,7 +93,7 @@ export function Contact(): ReactElement {
                   className="input"
                   type="text"
                   placeholder="John Doe"
-                  value={state.form.name}
+                  value={form.form.name}
                   onChange={(e): void => dispatch(formSetName(e.target.value))}
                   required
                 ></input>
@@ -92,7 +101,7 @@ export function Contact(): ReactElement {
             </div>
             <div className="field">
               <label className="label" htmlFor="contact-form-email">
-                Email {showRequired(state.form.email)}
+                Email {showRequired(isValidEmail(form.form.email))}
               </label>
               <div className="control">
                 <input
@@ -101,7 +110,7 @@ export function Contact(): ReactElement {
                   className="input"
                   type="email"
                   placeholder="example@email.com"
-                  value={state.form.email}
+                  value={form.form.email}
                   onChange={(e): void => dispatch(formSetEmail(e.target.value))}
                   required
                 ></input>
@@ -109,7 +118,7 @@ export function Contact(): ReactElement {
             </div>
             <div className="field">
               <label className="label" htmlFor="contact-form-message">
-                Message {showRequired(state.form.message)}
+                Message {showRequired(form.form.message.length > 0)}
               </label>
               <div className="control">
                 <textarea
@@ -118,7 +127,7 @@ export function Contact(): ReactElement {
                   className="textarea"
                   placeholder="Hello!"
                   rows={7}
-                  value={state.form.message}
+                  value={form.form.message}
                   onChange={(e): void =>
                     dispatch(formSetMessage(e.target.value))
                   }
