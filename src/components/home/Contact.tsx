@@ -2,8 +2,8 @@ import { FormEvent, ReactElement, useState, useRef, ChangeEvent } from "react";
 import contactStyles from "./Contact.module.css";
 import commonStyles from "common.module.css";
 import emailjs from "emailjs-com";
-import { scrollIntoView, joinClasses } from "utils/utils";
-import { EMAIL_REGEX } from "utils/constants";
+import { scrollIntoView, joinClasses, seconds } from "utils/utils";
+import { EMAIL_REGEX, ENVIRONMENTS } from "utils/constants";
 
 enum NotificationTypes {
   success = "success",
@@ -81,6 +81,10 @@ export function Contact(): ReactElement {
     if (name) name.value = "";
     if (email) email.value = "";
     if (message) message.value = "";
+
+    setNameValid(false);
+    setEmailValid(false);
+    setMessageValid(false);
   }
 
   function sendMessage(e: FormEvent<HTMLFormElement>): void {
@@ -91,25 +95,43 @@ export function Contact(): ReactElement {
     const templateId = process.env.REACT_APP_TEMPLATE_ID as string;
     const userId = process.env.REACT_APP_EMAILJS_USER_ID;
 
-    emailjs
-      .sendForm(serviceId, templateId, e.currentTarget, userId)
-      .then(() => {
-        setFormNotification({
-          message: "Message sent.",
-          type: NotificationTypes.success,
-        });
-        resetForm();
-      })
-      .catch(() =>
-        setFormNotification({
-          message: "Something went wrong. Please try again.",
-          type: NotificationTypes.warning,
+    if (process.env.NODE_ENV === ENVIRONMENTS.PRODUCTION) {
+      emailjs
+        .sendForm(serviceId, templateId, e.currentTarget, userId)
+        .then(() => {
+          notifySuccess();
+          resetForm();
         })
-      )
-      .finally(() => {
-        scrollIntoView("#contact");
-        setFormLoading(false);
-      });
+        .catch(() =>
+          setFormNotification({
+            message: "Something went wrong. Please try again.",
+            type: NotificationTypes.warning,
+          })
+        )
+        .finally(() => {
+          scrollIntoView("#contact");
+          setFormLoading(false);
+        });
+    } else {
+      new Promise((resolve) => {
+        setTimeout(resolve, seconds(1));
+      })
+        .then(() => {
+          notifySuccess();
+          resetForm();
+        })
+        .finally(() => {
+          scrollIntoView("#contact");
+          setFormLoading(false);
+        });
+    }
+  }
+
+  function notifySuccess(): void {
+    setFormNotification({
+      message: "Message sent.",
+      type: NotificationTypes.success,
+    });
   }
 
   function showAsteriskIf(invalid: boolean): ReactElement {

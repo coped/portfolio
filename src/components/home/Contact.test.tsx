@@ -1,8 +1,4 @@
-import {
-  render as rtlRender,
-  screen,
-  waitFor,
-} from "@testing-library/react";
+import { render as rtlRender, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Contact } from "./Contact";
 
@@ -81,6 +77,8 @@ describe("Contact", () => {
 
     await waitFor(() => expect(nameField()).toHaveValue(""));
   });
+
+  it.skip("should show asterisks on fields after form is cleared", () => {});
 });
 
 const render = () => rtlRender(<Contact />);
