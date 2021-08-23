@@ -1,5 +1,6 @@
 import { v4 } from "uuid";
 import type { Make } from "types/utils/utils";
+import { RefObject } from "react";
 
 export const uuid = (): string => v4();
 
@@ -29,7 +30,23 @@ export const make: Make = (amount = 1) => ({
   },
 });
 
-export function scrollIntoView(querySelector: string): void {
-  const element = document.querySelector(querySelector);
-  element && element.scrollIntoView({ behavior: "smooth" });
+export function scrollIntoView(
+  identifier: string | RefObject<HTMLElement>
+): void {
+  let element;
+  if (typeof identifier === "string") {
+    element = document.querySelector(identifier);
+  } else {
+    element = identifier.current;
+  }
+
+  if (element) {
+    element.scrollIntoView({ behavior: "smooth" });
+  } else {
+    throw new Error("Element was not found.");
+  }
+}
+
+export function joinClasses(...args: string[]): string {
+  return args.join(" ");
 }

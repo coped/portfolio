@@ -2,13 +2,14 @@ import { ReactElement } from "react";
 import portraitOfMe from "assets/images/me-256x256.jpg";
 import commonStyles from "common.module.css";
 import { aboutMe, booksAndCourses } from "lib/content";
+import { joinClasses } from "utils/utils";
 
 export function About(): ReactElement {
   return (
-    <div className={`columns ${commonStyles.center}`}>
+    <div className={joinClasses("columns", commonStyles.center)}>
       <div className="column is-8">
         <div className="columns">
-          <div className={`column ${commonStyles.center} is-5`}>
+          <div className={joinClasses("column", commonStyles.center, "is-5")}>
             <figure className="image is-256x256">
               <img
                 src={portraitOfMe}

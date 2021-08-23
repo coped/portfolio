@@ -30,3 +30,6 @@ things.todo
 
 # Don't serve this file in production
 public/mockServiceWorker.js
+
+# Ignore .vscode settings
+.vscode

@@ -1,27 +1,91 @@
-import { FormEvent, ReactElement } from "react";
+import { FormEvent, ReactElement, useState, useRef, ChangeEvent } from "react";
 import contactStyles from "./Contact.module.css";
 import commonStyles from "common.module.css";
 import emailjs from "emailjs-com";
-import { scrollIntoView } from "utils/utils";
-import {
-  useContactReducer,
-  notificationSuccess,
-  notificationError,
-  formSetLoading,
-  formSetName,
-  formSetEmail,
-  formSetMessage,
-  formReset,
-} from "modules/home/Contact";
+import { scrollIntoView, joinClasses } from "utils/utils";
 import { EMAIL_REGEX } from "utils/constants";
 
+enum NotificationTypes {
+  success = "success",
+  warning = "warning",
+  error = "error",
+  none = "",
+}
+type Notification = { message: string; type: NotificationTypes };
+
 export function Contact(): ReactElement {
-  const [form, dispatch] = useContactReducer();
-  const loadingClass = form.isLoading ? "is-loading" : "";
+  /**
+   * State
+   */
+  const [formLoading, setFormLoading] = useState<boolean>(false);
+  const [formNotification, setFormNotification] = useState<Notification>({
+    message: "",
+    type: NotificationTypes.none,
+  });
+  const [nameValid, setNameValid] = useState<boolean>(false);
+  const [emailValid, setEmailValid] = useState<boolean>(false);
+  const [messageValid, setMessageValid] = useState<boolean>(false);
+
+  /**
+   * Refs
+   */
+  const nameInput = useRef<HTMLInputElement>(null);
+  const emailInput = useRef<HTMLInputElement>(null);
+  const messageInput = useRef<HTMLTextAreaElement>(null);
+
+  /**
+   * Helpers
+   */
+  function checkValid(
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ): void {
+    const name = nameInput.current;
+    const email = emailInput.current;
+    const message = messageInput.current;
+
+    if (!name || !email || !message) throw new Error("Contact element missing");
+
+    switch (e.target) {
+      case name: {
+        name.value.length > 0 ? setNameValid(true) : setNameValid(false);
+        return;
+      }
+      case email: {
+        const match = email.value.match(EMAIL_REGEX);
+        if (match) {
+          match.length > 0 ? setEmailValid(true) : setEmailValid(false);
+        } else {
+          setEmailValid(false);
+        }
+        return;
+      }
+      case message: {
+        message.value.length > 0
+          ? setMessageValid(true)
+          : setMessageValid(false);
+        return;
+      }
+      default: {
+        throw new Error("Event target doesn't match contact element");
+      }
+    }
+  }
+
+  const loadingClass = formLoading ? "is-loading" : "";
+
+  function resetForm(): void {
+    const name = nameInput.current;
+    const email = emailInput.current;
+    const message = messageInput.current;
+
+    if (name) name.value = "";
+    if (email) email.value = "";
+    if (message) message.value = "";
+  }
 
   function sendMessage(e: FormEvent<HTMLFormElement>): void {
     e.preventDefault();
-    dispatch(formSetLoading(true));
+    setFormLoading(true);
 
     const serviceId = process.env.REACT_APP_SERVICE_ID as string;
     const templateId = process.env.REACT_APP_TEMPLATE_ID as string;
@@ -30,45 +94,55 @@ export function Contact(): ReactElement {
     emailjs
       .sendForm(serviceId, templateId, e.currentTarget, userId)
       .then(() => {
-        dispatch(notificationSuccess());
-        dispatch(formReset());
+        setFormNotification({
+          message: "Message sent.",
+          type: NotificationTypes.success,
+        });
+        resetForm();
       })
-      .catch(() => dispatch(notificationError()))
+      .catch(() =>
+        setFormNotification({
+          message: "Something went wrong. Please try again.",
+          type: NotificationTypes.warning,
+        })
+      )
       .finally(() => {
         scrollIntoView("#contact");
-        dispatch(formSetLoading(false));
+        setFormLoading(false);
       });
   }
 
-  function showRequired(condition: boolean): ReactElement {
-    if (condition) {
-      return <></>;
-    } else {
+  function showAsteriskIf(invalid: boolean): ReactElement {
+    if (invalid) {
       return <span className={contactStyles.asterisk}>*</span>;
-    }
-  }
-  
-  function isValidEmail(email: string): boolean {
-    const match = email.match(EMAIL_REGEX);
-    console.log(match);
-    if (match) {
-      return match.length > 0;
     } else {
-      return false;
+      return <></>;
     }
   }
 
+  /**
+   * UI
+   */
   return (
     <div className="container">
-      <div className={`columns ${commonStyles.center}`}>
+      <div className={joinClasses("columns", commonStyles.center)}>
         <div className="column is-two-thirds">
-          {form.notification.message && (
-            <div className={`${commonStyles.paragraph} has-text-centered`}>
+          {formNotification.message && (
+            <div
+              className={joinClasses(
+                commonStyles.paragraph,
+                "has-text-centered"
+              )}
+            >
               <div
-                className={`notification is-${form.notification.type} is-medium`}
+                className={joinClasses(
+                  "notification",
+                  `is-${formNotification.type}`,
+                  "is-medium"
+                )}
               >
                 <p id="form-alert" role="alert">
-                  {form.notification.message}
+                  {formNotification.message}
                 </p>
               </div>
             </div>
@@ -84,63 +158,61 @@ export function Contact(): ReactElement {
           <form id="contact-form" onSubmit={sendMessage}>
             <div className="field">
               <label className="label" htmlFor="contact-form-name">
-                Name {showRequired(form.form.name.length > 0)}
+                Name {showAsteriskIf(!nameValid)}
               </label>
               <div className="control">
                 <input
                   id="contact-form-name"
                   name="name"
+                  ref={nameInput}
                   className="input"
                   type="text"
                   placeholder="John Doe"
-                  value={form.form.name}
-                  onChange={(e): void => dispatch(formSetName(e.target.value))}
+                  onChange={checkValid}
                   required
-                ></input>
+                />
               </div>
             </div>
             <div className="field">
               <label className="label" htmlFor="contact-form-email">
-                Email {showRequired(isValidEmail(form.form.email))}
+                Email {showAsteriskIf(!emailValid)}
               </label>
               <div className="control">
                 <input
                   id="contact-form-email"
                   name="email"
+                  ref={emailInput}
                   className="input"
                   type="email"
                   placeholder="example@email.com"
-                  value={form.form.email}
-                  onChange={(e): void => dispatch(formSetEmail(e.target.value))}
+                  onChange={checkValid}
                   required
-                ></input>
+                />
               </div>
             </div>
             <div className="field">
               <label className="label" htmlFor="contact-form-message">
-                Message {showRequired(form.form.message.length > 0)}
+                Message {showAsteriskIf(!messageValid)}
               </label>
               <div className="control">
                 <textarea
                   id="contact-form-message"
                   name="message"
+                  ref={messageInput}
                   className="textarea"
                   placeholder="Hello!"
                   rows={7}
-                  value={form.form.message}
-                  onChange={(e): void =>
-                    dispatch(formSetMessage(e.target.value))
-                  }
+                  onChange={checkValid}
                   required
-                ></textarea>
+                />
               </div>
             </div>
             <div className="field">
               <div className="control">
                 <button
-                  id="contact-submit"
                   type="submit"
-                  className={"button is-link " + loadingClass}
+                  className={joinClasses("button", "is-link", loadingClass)}
+                  disabled={!nameValid || !emailValid || !messageValid}
                 >
                   Submit
                 </button>

@@ -2,6 +2,7 @@ import { ReactElement } from "react";
 import githubLogo from "assets/images/icons/github-logo.svg";
 import commonStyles from "common.module.css";
 import { IconButton } from "components/ui/IconButton";
+import { joinClasses } from "utils/utils";
 import type { ProjectInfo } from "types/lib/content";
 
 interface ProjectProps {
@@ -11,7 +12,7 @@ interface ProjectProps {
 
 export function Project({ project }: ProjectProps): ReactElement {
   return (
-    <div className={`container ${commonStyles.paragraph}`}>
+    <div className={joinClasses("container", commonStyles.paragraph)}>
       <h3 className="subtitle is-size-3 has-text-weight-bold">
         {project.name}
       </h3>
@@ -29,7 +30,13 @@ export function Project({ project }: ProjectProps): ReactElement {
           ))}
           <div>
             <a href={project.websiteLink}>
-              <button className={`button is-primary ${commonStyles.paragraph}`}>
+              <button
+                className={joinClasses(
+                  "button",
+                  "is-primary",
+                  commonStyles.paragraph
+                )}
+              >
                 Visit website
               </button>
             </a>
