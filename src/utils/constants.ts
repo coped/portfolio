@@ -5,3 +5,8 @@ export enum ENVIRONMENTS {
   DEVELOPMENT = "development",
   PRODUCTION = "production",
 }
+export const BASE_API_URL = "http://localhost:8000";
+
+export const URLS = {
+  SEND_FORM: BASE_API_URL + "/send-form",
+};

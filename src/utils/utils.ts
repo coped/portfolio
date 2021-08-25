@@ -62,3 +62,11 @@ export function minutes(n: number): number {
 export function hours(n: number): number {
   return minutes(n * 60);
 }
+
+export function titleize(s: string): string {
+  const words = s.split(" ");
+  const titleized = words.map((word) => {
+    return word[0].toUpperCase() + word.slice(1);
+  });
+  return titleized.join("");
+}
