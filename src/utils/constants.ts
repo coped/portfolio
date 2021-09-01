@@ -6,7 +6,10 @@ export enum ENV {
   PRODUCTION = "production",
 }
 
-export const BASE_API_URL: URL = new URL("http://localhost:8000");
+export const BASE_API_URL: URL = new URL(
+  process.env.API_URL || "http://localhost:8000"
+);
+
 export const BASE_FRONTEND_URL: URL = new URL(
   process.env.NODE_ENV === ENV.PRODUCTION
     ? "https://coped.dev"
