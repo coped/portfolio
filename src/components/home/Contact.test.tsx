@@ -59,14 +59,6 @@ describe("Contact", () => {
     await waitFor(() => expect(submitButton()).not.toHaveClass("is-loading"));
   });
 
-  it("should have attributes necessary to use emailjs library", () => {
-    render();
-
-    expect(nameField()).toHaveProperty("name", "name");
-    expect(emailField()).toHaveProperty("name", "email");
-    expect(messageField()).toHaveProperty("name", "message");
-  });
-
   it.skip("should clear form on successful submission", async () => {
     render();
 

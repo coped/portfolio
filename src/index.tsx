@@ -1,9 +1,9 @@
 import ReactDOM from "react-dom";
 import App from "./App";
-import { ENVIRONMENTS } from "utils/constants";
+import { ENV } from "utils/constants";
 
 // Use MSW responses in development
-if (process.env.NODE_ENV === ENVIRONMENTS.DEVELOPMENT) {
+if (process.env.NODE_ENV === ENV.DEVELOPMENT) {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const { worker } = require("./mocks/browser");
   worker.start();

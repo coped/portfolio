@@ -1,13 +1,9 @@
-import {
-  FormEvent,
-  ReactElement,
-  useState,
-} from "react";
+import { FormEvent, ReactElement, useState } from "react";
 import contactStyles from "./Contact.module.css";
 import commonStyles from "common.module.css";
-import emailjs, { init } from "emailjs-com";
-import { scrollIntoView, joinClasses, seconds } from "utils/utils";
-import { EMAIL_REGEX, URLS } from "utils/constants";
+import { scrollIntoView, joinClasses } from "utils/utils";
+import { EMAIL_REGEX } from "utils/constants";
+import { contact } from "utils/api";
 
 enum NotificationTypes {
   success = "success",
@@ -40,69 +36,34 @@ export function Contact(): ReactElement {
     setMessageValue("");
   }
 
-  function sendMessage(e: FormEvent<HTMLFormElement>): void {
+  async function sendMessage(e: FormEvent<HTMLFormElement>): Promise<void> {
     e.preventDefault();
     setFormLoading(true);
 
-    new Promise((resolve) => {
-      setTimeout(resolve, seconds(1));
-    })
-      .then(() => {
-        setFormNotification({
-          message: "Message sent.",
-          type: NotificationTypes.success,
-        });
-        resetForm();
-      })
-      .catch(() => {
-        setFormNotification({
-          message: "Something went wrong. Please try again.",
-          type: NotificationTypes.warning,
-        });
-      })
-      .finally(() => {
-        scrollIntoView("#contact");
-        setFormLoading(false);
-      });
+    const res = await contact(nameValue, emailValue, messageValue);
+    if (res.ok) {
+      notifySuccess();
+      resetForm();
+    } else {
+      notifyError();
+    }
+
+    scrollIntoView("#contact");
+    setFormLoading(false);
   }
 
-  function _sendMessage(e: FormEvent<HTMLFormElement>): void {
-    e.preventDefault();
-    setFormLoading(true);
-
-    const serviceId = process.env.REACT_APP_SERVICE_ID as string;
-    const templateId = process.env.REACT_APP_TEMPLATE_ID as string;
-    const userId = process.env.REACT_APP_EMAILJS_USER_ID;
-
-    const body = { a: "a" };
-
-    const promise = fetch(URLS.SEND_FORM, {
-      method: "POST",
-      body: JSON.stringify(body),
-      mode: "cors",
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-      },
+  function notifyError(): void {
+    setFormNotification({
+      message: "Something went wrong. Please try again.",
+      type: NotificationTypes.warning,
     });
+  }
 
-    promise
-      .then(() => {
-        setFormNotification({
-          message: "Message sent.",
-          type: NotificationTypes.success,
-        });
-        resetForm();
-      })
-      .catch(() => {
-        setFormNotification({
-          message: "Something went wrong. Please try again.",
-          type: NotificationTypes.warning,
-        });
-      })
-      .finally(() => {
-        scrollIntoView("#contact");
-        setFormLoading(false);
-      });
+  function notifySuccess(): void {
+    setFormNotification({
+      message: "Message sent.",
+      type: NotificationTypes.success,
+    });
   }
 
   function showAsteriskIf(invalid: boolean): ReactElement {
@@ -165,9 +126,7 @@ export function Contact(): ReactElement {
             Questions or concerns? I can be contacted by{" "}
             <a href="https://github.com/coped">Github</a>,{" "}
             <a href="https://www.linkedin.com/in/dennis-cope">LinkedIn</a>, or
-            by <a href="mailto:dennisaaroncope@gmail.com">email</a> at
-            <strong> dennisaaroncope@gmail.com</strong>. You can also use the
-            form below to email me directly. I&apos;ll reply promptly.
+            by email using the form below.
           </p>
           <form id="contact-form" onSubmit={sendMessage}>
             <div className="field">
@@ -177,7 +136,6 @@ export function Contact(): ReactElement {
               <div className="control">
                 <input
                   id="contact-form-name"
-                  name="name"
                   value={nameValue}
                   className="input"
                   type="text"
@@ -194,7 +152,6 @@ export function Contact(): ReactElement {
               <div className="control">
                 <input
                   id="contact-form-email"
-                  name="email"
                   value={emailValue}
                   className="input"
                   type="email"
@@ -228,7 +185,7 @@ export function Contact(): ReactElement {
                     "is-link",
                     formLoading ? "is-loading" : ""
                   )}
-                  disabled={!formSubmittable}
+                  disabled={!formSubmittable()}
                 >
                   Submit
                 </button>
