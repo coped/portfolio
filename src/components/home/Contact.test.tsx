@@ -7,6 +7,11 @@ describe("Contact", () => {
   const emailField = () => screen.getByRole("textbox", { name: /email/i });
   const messageField = () => screen.getByRole("textbox", { name: /message/i });
   const submitButton = () => screen.getByRole("button", { name: /submit/i });
+  const fillForm = () => {
+    userEvent.type(nameField(), "Name");
+    userEvent.type(emailField(), "foo@email.com");
+    userEvent.type(messageField(), "foo");
+  };
 
   it("should render without crashing", () => {
     render();
@@ -41,34 +46,56 @@ describe("Contact", () => {
 
   it("should show asterisk only on empty field", () => {
     render();
+
     expect(screen.getByText(/name/i).textContent).toContain("*");
+  });
+
+  it("should not show asterisk on populated field", () => {
+    render();
 
     userEvent.type(nameField(), "Something");
 
     expect(screen.getByText(/name/i).textContent).not.toContain("*");
   });
 
-  it.skip("should show loading spinner on form submission", async () => {
+  it("should have disabled submit button when fields are empty", () => {
     render();
 
+    expect(submitButton()).toBeDisabled();
+  });
+
+  it("should not have disabled submit button when fields are populated", () => {
+    render();
+
+    fillForm();
+
+    expect(submitButton()).toBeEnabled();
+  });
+
+  it("should show loading spinner on form submission", async () => {
+    render();
+
+    fillForm();
     userEvent.click(submitButton());
 
     expect(submitButton()).toHaveClass("is-loading");
-    await waitFor(() => expect(submitButton()).not.toHaveClass("is-loading"));
-  });
 
-  it.skip("should clear form on successful submission", async () => {
+    await waitFor(() => {
+      expect(submitButton()).not.toHaveClass("is-loading");
+    });
+  });
+  
+  it("should clear form on successful submission", async () => {
     render();
 
-    userEvent.type(nameField(), "foobar");
-    userEvent.type(emailField(), "foo@bar.com");
-    userEvent.type(messageField(), "message");
+    fillForm();
     userEvent.click(submitButton());
 
     await waitFor(() => expect(nameField()).toHaveValue(""));
+    await waitFor(() =>
+      expect(screen.getByText(/name/i).textContent).toContain("*")
+    );
   });
-
-  it.skip("should show asterisks on fields after form is cleared", () => {});
 });
 
 const render = () => rtlRender(<Contact />);

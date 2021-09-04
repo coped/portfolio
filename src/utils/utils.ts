@@ -1,6 +1,7 @@
 import { v4 } from "uuid";
 import type { Make } from "types/utils/utils";
 import { RefObject } from "react";
+import { ENV } from "utils/constants";
 
 export const uuid = (): string => v4();
 
@@ -42,8 +43,6 @@ export function scrollIntoView(
 
   if (element) {
     element.scrollIntoView({ behavior: "smooth" });
-  } else {
-    throw new Error("Element was not found.");
   }
 }
 
@@ -71,9 +70,6 @@ export function titleize(s: string): string {
   return titleized.join("");
 }
 
-export function hasOwnProperty(
-  obj: unknown,
-  prop: string
-): boolean {
+export function hasOwnProperty(obj: unknown, prop: string): boolean {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
