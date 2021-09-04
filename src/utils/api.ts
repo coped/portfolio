@@ -1,4 +1,4 @@
-import { URLS } from "./constants";
+import { API_URLS } from "./constants";
 
 type ErrorResponse = { ok: false };
 type RequestResult = Promise<Response | ErrorResponse>;
@@ -9,7 +9,7 @@ export const contact = (
   message: string
 ): RequestResult => {
   const request = () =>
-    fetch(URLS.CONTACT.toString(), {
+    fetch(API_URLS.CONTACT.toString(), {
       method: "POST",
       body: JSON.stringify({
         name: name,
@@ -26,7 +26,7 @@ export const contact = (
 
 export const index = (): RequestResult => {
   const request = () =>
-    fetch(URLS.INDEX.toString(), {
+    fetch(API_URLS.INDEX.toString(), {
       method: "GET",
     });
 

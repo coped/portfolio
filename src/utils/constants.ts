@@ -6,22 +6,14 @@ export enum ENV {
   PRODUCTION = "production",
 }
 
-export const BASE_API_URL: URL = new URL(
-  process.env.REACT_APP_API_URL || "http://localhost:8000"
-);
+const API_DOMAIN = "https://api.coped.dev";
 
-export const BASE_FRONTEND_URL: URL = new URL(
-  process.env.NODE_ENV === ENV.PRODUCTION
-    ? "https://coped.dev"
-    : "http://localhost:3000"
-);
-
-export const PATHS: Record<string, string> = {
+const API_PATHS: Record<string, string> = {
   CONTACT: "contact",
   INDEX: "",
 };
 
-// Same thing as PATHS, but values are URL objects
-export const URLS: Record<string, URL> = Object.fromEntries(
-  Object.entries(PATHS).map(([k, v]) => [k, new URL(BASE_API_URL + v)])
+// Same thing as API_PATHS, but values are URL objects
+export const API_URLS: Record<string, URL> = Object.fromEntries(
+  Object.entries(API_PATHS).map(([k, v]) => [k, new URL(API_DOMAIN + v)])
 );
