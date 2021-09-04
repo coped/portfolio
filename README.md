@@ -8,7 +8,6 @@ Visit it at: https://coped.dev
 ### Built with
 - React - https://reactjs.org/
 - TypeScript - https://www.typescriptlang.org/
-- EmailJS - https://www.emailjs.com/
 - BulmaCSS - https://bulma.io/
 
 ### Created by

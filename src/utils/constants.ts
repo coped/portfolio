@@ -8,12 +8,7 @@ export enum ENV {
 
 const API_DOMAIN = "https://api.coped.dev";
 
-const API_PATHS: Record<string, string> = {
-  CONTACT: "contact",
-  INDEX: "",
+export const API_URLS = {
+  CONTACT: new URL(API_DOMAIN + "contact"),
+  INDEX: new URL(API_DOMAIN),
 };
-
-// Same thing as API_PATHS, but values are URL objects
-export const API_URLS: Record<string, URL> = Object.fromEntries(
-  Object.entries(API_PATHS).map(([k, v]) => [k, new URL(API_DOMAIN + v)])
-);

@@ -2,8 +2,6 @@ import { render as rtlRender, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { Contact } from "./Contact";
 
-jest.mock("emailjs-com");
-
 describe("Contact", () => {
   const nameField = () => screen.getByRole("textbox", { name: /name/i });
   const emailField = () => screen.getByRole("textbox", { name: /email/i });

@@ -1,10 +1,29 @@
 import { rest } from "msw";
+import { API_URLS } from "utils/constants";
+import { seconds } from "utils/utils";
+import { hasOwnProperty } from "utils/utils";
+
+const mockDelay = seconds(0.5);
 
 export const handlers = [
-  rest.post(
-    "https://api.emailjs.com/api/v1.0/email/send-form",
-    (req, res, ctx) => {
-      return res(ctx.status(200), ctx.delay(500), ctx.json("OK"));
+  rest.get(API_URLS.INDEX.toString(), (req, res, ctx) => {
+    return res(ctx.status(200), ctx.delay(mockDelay));
+  }),
+  rest.post(API_URLS.CONTACT.toString(), (req, res, ctx) => {
+    if (!req.body) throw new Error("Request body missing, but is required");
+
+    const fields = ["name", "email", "message"];
+    let hasFields = false;
+
+    // Make sure req.body has required fields
+    if (fields.every((field) => hasOwnProperty(req.body, field))) {
+      hasFields = true;
     }
-  ),
+
+    if (hasFields) {
+      return res(ctx.status(200), ctx.delay(mockDelay));
+    } else {
+      return res(ctx.status(400), ctx.delay(mockDelay));
+    }
+  }),
 ];

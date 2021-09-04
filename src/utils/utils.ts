@@ -70,3 +70,10 @@ export function titleize(s: string): string {
   });
   return titleized.join("");
 }
+
+export function hasOwnProperty(
+  obj: unknown,
+  prop: string
+): boolean {
+  return Object.prototype.hasOwnProperty.call(obj, prop);
+}

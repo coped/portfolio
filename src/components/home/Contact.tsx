@@ -3,7 +3,7 @@ import contactStyles from "./Contact.module.css";
 import commonStyles from "common.module.css";
 import { scrollIntoView, joinClasses } from "utils/utils";
 import { EMAIL_REGEX } from "utils/constants";
-import { contact } from "utils/api";
+import { contact, index } from "utils/api";
 
 enum NotificationTypes {
   success = "success",
@@ -23,9 +23,9 @@ export function Contact(): ReactElement {
     type: NotificationTypes.none,
   });
 
-  const [nameValue, setNameValue] = useState<string>("");
-  const [emailValue, setEmailValue] = useState<string>("");
-  const [messageValue, setMessageValue] = useState<string>("");
+  const [nameValue, setNameValue] = useState<string>("a");
+  const [emailValue, setEmailValue] = useState<string>("a@a.co");
+  const [messageValue, setMessageValue] = useState<string>("a");
 
   /**
    * Helpers
