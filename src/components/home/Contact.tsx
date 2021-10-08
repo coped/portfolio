@@ -30,7 +30,7 @@ export function Contact(): ReactElement {
   /**
    * Helpers
    */
-  function resetForm(): void {
+  function clearForm(): void {
     setNameValue("");
     setEmailValue("");
     setMessageValue("");
@@ -40,34 +40,59 @@ export function Contact(): ReactElement {
     e.preventDefault();
     setFormLoading(true);
 
-    const res = await contact(nameValue, emailValue, messageValue);
-    if (res.ok) {
-      notifySuccess();
-      resetForm();
-    } else {
+    const siteKey = process.env.REACT_APP_RECAPTCHA_SITE_KEY;
+    if (!siteKey) {
       notifyError();
+      return;
     }
 
-    scrollIntoView("#contact");
-    setFormLoading(false);
+    try {
+      grecaptcha.ready(() => {
+        grecaptcha
+          .execute(siteKey, {
+            action: "submit",
+          })
+          .then((responseToken: string) => {
+            contact({
+              name: nameValue,
+              email: emailValue,
+              message: messageValue,
+              token: responseToken,
+            }).then((res) => {
+              if (res.ok) {
+                notifySuccess();
+              } else {
+                notifyError();
+              }
+            });
+          });
+      });
+    } catch (e: unknown) {
+      notifyError();
+    }
   }
 
-  function notifyError(): void {
+  function notifyError(message?: string): void {
     setFormNotification({
-      message: "Something went wrong. Please try again.",
+      message: message ?? "Something went wrong. Please try again.",
       type: NotificationTypes.warning,
     });
+    setFormLoading(false);
+    scrollIntoView("#contact");
   }
 
-  function notifySuccess(): void {
+  function notifySuccess(message?: string): void {
     setFormNotification({
-      message: "Message sent.",
+      message: message ?? "Message sent.",
       type: NotificationTypes.success,
     });
+    setFormLoading(false);
+    scrollIntoView("#contact");
+    clearForm();
   }
 
-  function showAsteriskIf(invalid: boolean): ReactElement {
-    if (invalid) {
+  function showAsteriskIf(condition: boolean): ReactElement {
+    if (condition) {
       return <span className={contactStyles.asterisk}>*</span>;
     } else {
       return <></>;

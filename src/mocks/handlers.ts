@@ -10,9 +10,9 @@ export const handlers = [
     return res(ctx.status(200), ctx.delay(mockDelay));
   }),
   rest.post(API_URLS.CONTACT.toString(), (req, res, ctx) => {
-    if (!req.body) throw new Error("Request body missing, but is required");
+    if (!req.body) throw new Error("Required request body is missing");
 
-    const fields = ["name", "email", "message"];
+    const fields = ["name", "email", "message", "token"];
     let hasFields = false;
 
     // Make sure req.body has required fields

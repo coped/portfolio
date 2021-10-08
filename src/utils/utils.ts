@@ -1,7 +1,6 @@
 import { v4 } from "uuid";
 import type { Make } from "types/utils/utils";
 import { RefObject } from "react";
-import { ENV } from "utils/constants";
 
 export const uuid = (): string => v4();
 
@@ -41,9 +40,7 @@ export function scrollIntoView(
     element = identifier.current;
   }
 
-  if (element) {
-    element.scrollIntoView({ behavior: "smooth" });
-  }
+  if (element) element.scrollIntoView({ behavior: "smooth" });
 }
 
 export function joinClasses(...args: string[]): string {

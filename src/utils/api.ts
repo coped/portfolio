@@ -1,21 +1,16 @@
 import { API_URLS } from "./constants";
 
-type ErrorResponse = { ok: false };
-type RequestResult = Promise<Response | ErrorResponse>;
-
-export const contact = (
-  name: string,
-  email: string,
-  message: string
-): RequestResult => {
+interface RequestBody {
+  name: string;
+  email: string;
+  message: string;
+  token: string;
+}
+export const contact = (requestBody: RequestBody): Promise<Response> => {
   const request = () =>
     fetch(API_URLS.CONTACT.toString(), {
       method: "POST",
-      body: JSON.stringify({
-        name: name,
-        email: email,
-        message: message,
-      }),
+      body: JSON.stringify(requestBody),
       headers: {
         "Content-Type": "application/json",
       },
@@ -24,23 +19,19 @@ export const contact = (
   return handleRequest(request);
 };
 
-export const index = (): RequestResult => {
-  const request = () =>
-    fetch(API_URLS.INDEX.toString(), {
-      method: "GET",
-    });
+export const index = (): Promise<Response> => {
+  const request = () => fetch(API_URLS.INDEX.toString());
 
   return handleRequest(request);
 };
 
-const handleRequest = async (
-  f: () => Promise<Response>
-): Promise<Response | ErrorResponse> => {
+/**
+ * General request handler
+ */
+const handleRequest = async (f: () => Promise<Response>): Promise<Response> => {
   try {
     return await f();
-  } catch (e) {
-    return await new Promise((res) => {
-      res({ ok: false });
-    });
+  } catch (e: unknown) {
+    return Response.error();
   }
 };

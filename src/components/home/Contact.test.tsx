@@ -7,11 +7,33 @@ describe("Contact", () => {
   const emailField = () => screen.getByRole("textbox", { name: /email/i });
   const messageField = () => screen.getByRole("textbox", { name: /message/i });
   const submitButton = () => screen.getByRole("button", { name: /submit/i });
+
   const fillForm = () => {
     userEvent.type(nameField(), "Name");
     userEvent.type(emailField(), "foo@email.com");
     userEvent.type(messageField(), "foo");
   };
+
+  beforeEach(() => {
+    window.grecaptcha = {
+      ready: (fn) => fn(),
+      execute: jest.fn(() => Promise.resolve("foo")),
+      render: jest.fn(),
+      reset: jest.fn(),
+      getResponse: jest.fn(),
+      enterprise: {
+        render: jest.fn(),
+        ready: jest.fn(),
+        reset: jest.fn(),
+        execute: jest.fn(),
+        getResponse: jest.fn(),
+      },
+    };
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
 
   it("should render without crashing", () => {
     render();
@@ -78,13 +100,10 @@ describe("Contact", () => {
     fillForm();
     userEvent.click(submitButton());
 
-    expect(submitButton()).toHaveClass("is-loading");
-
-    await waitFor(() => {
-      expect(submitButton()).not.toHaveClass("is-loading");
-    });
+    await waitFor(() => expect(submitButton()).toHaveClass("is-loading"));
+    await waitFor(() => expect(submitButton()).not.toHaveClass("is-loading"));
   });
-  
+
   it("should clear form on successful submission", async () => {
     render();
 

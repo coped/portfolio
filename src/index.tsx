@@ -3,7 +3,7 @@ import App from "./App";
 import { ENV } from "utils/constants";
 
 // Use MSW responses in development
-if (process.env.NODE_ENV === ENV.DEVELOPMENT) {
+if (process.env.NODE_ENV !== ENV.PRODUCTION) {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const { worker } = require("./mocks/browser");
   worker.start();

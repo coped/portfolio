@@ -6,9 +6,20 @@ export enum ENV {
   PRODUCTION = "production",
 }
 
-const API_DOMAIN = "https://api.coped.dev";
+export const API_DOMAIN = "https://api.coped.dev";
+export const DEV_API_DOMAIN = "http://localhost:8000";
 
-export const API_URLS = {
-  CONTACT: new URL(API_DOMAIN + "contact"),
-  INDEX: new URL(API_DOMAIN),
+const API_PATHS = {
+  CONTACT: "contact/",
+  INDEX: "",
 };
+
+export const API_URLS = mapPathToUrl(DEV_API_DOMAIN);
+
+export const DEV_API_URLS = mapPathToUrl(DEV_API_DOMAIN);
+
+function mapPathToUrl(domain: string): Record<string, URL> {
+  return Object.fromEntries(
+    Object.entries(API_PATHS).map(([k, v]) => [k, new URL(v, domain)])
+  );
+}
