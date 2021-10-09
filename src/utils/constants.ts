@@ -6,7 +6,8 @@ export enum ENV {
   PRODUCTION = "production",
 }
 
-export const API_DOMAIN = "http://portfolioapi-env.eba-mvhwdbuw.us-west-2.elasticbeanstalk.com/";
+export const API_DOMAIN =
+  "http://portfolioapi-env.eba-mvhwdbuw.us-west-2.elasticbeanstalk.com/";
 export const DEV_API_DOMAIN = "http://localhost:8000";
 
 const API_PATHS = {
@@ -14,7 +15,7 @@ const API_PATHS = {
   INDEX: "",
 };
 
-export const API_URLS = mapPathToUrl(DEV_API_DOMAIN);
+export const API_URLS = mapPathToUrl(API_DOMAIN);
 
 export const DEV_API_URLS = mapPathToUrl(DEV_API_DOMAIN);
 
