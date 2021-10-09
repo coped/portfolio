@@ -6,7 +6,7 @@ export enum ENV {
   PRODUCTION = "production",
 }
 
-export const API_DOMAIN = "https://api.coped.dev";
+export const API_DOMAIN = "http://portfolioapi-env.eba-mvhwdbuw.us-west-2.elasticbeanstalk.com/";
 export const DEV_API_DOMAIN = "http://localhost:8000";
 
 const API_PATHS = {
