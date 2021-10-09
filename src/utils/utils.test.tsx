@@ -22,24 +22,24 @@ describe("utils", () => {
 
   describe("make", () => {
     it("should make correct number of items", () => {
-      const fiveItems = make<string>(5).of(() => "foo");
+      const fiveItems = make(5).of<string>(() => "foo");
       expect(fiveItems.length).toEqual(5);
 
-      const tenItems = make<number>(10).of(jest.fn(() => 0));
+      const tenItems = make(10).of<number>(jest.fn(() => 0));
       expect(tenItems.length).toEqual(10);
     });
 
     it("should invoke callback", () => {
       const spy = jest.fn(() => "foo");
-      const threeItems = make<string>(3).of(spy);
+      const threeItems = make(3).of<string>(spy);
 
       expect(spy).toHaveBeenCalledTimes(3);
       expect(threeItems.every((item) => item === "foo")).toEqual(true);
     });
 
     it("should work with nonsense values", () => {
-      expect(make<string>(0).of(() => "foo").length).toEqual(0);
-      expect(make<string>(-1).of(() => "foo").length).toEqual(0);
+      expect(make(0).of<string>(() => "foo").length).toEqual(0);
+      expect(make(-1).of<string>(() => "foo").length).toEqual(0);
     });
   });
 });

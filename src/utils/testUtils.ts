@@ -6,7 +6,7 @@ export const mockProject = ({
   id = uuid(),
   name = faker.name.findName(),
   image = faker.image.imageUrl(),
-  paragraphs = make<string>(3).of(faker.lorem.sentence),
+  paragraphs = make(3).of<string>(faker.lorem.sentence),
   websiteLink = faker.internet.url(),
   githubLink = faker.internet.url(),
 }: Partial<ProjectInfo> = {}): ProjectInfo => ({
