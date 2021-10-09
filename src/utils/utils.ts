@@ -11,17 +11,10 @@ export function randomNumber(min: number = 0, max: number = 100): number {
 }
 
 /**
- * make(3).fromCallback(randomNumber); // -> [42, 9, 83];
+ * make(3).of(() => randomNumber()); // -> [42, 9, 83];
  */
 export const make: Make = (amount = 1) => ({
-  of: (item) => {
-    const items = [];
-    for (let i = 0; i < amount; i++) {
-      items.push(item);
-    }
-    return items;
-  },
-  fromCallback: (cb) => {
+  of: (cb) => {
     const items = [];
     for (let i = 0; i < amount; i++) {
       items.push(cb());

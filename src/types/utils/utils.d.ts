@@ -1,6 +1,5 @@
 export interface Make {
   <Type>(amount: number): {
-    of(item: Type): Type[];
-    fromCallback(cb: () => Type): Type[];
+    of(cb: () => Type): Type[];
   };
 }

@@ -26,13 +26,13 @@ import type {
   SocialLink,
 } from "types/lib/content";
 
-const aboutMe: AboutMe[] = [
+export const aboutMe: AboutMe[] = [
   "I'm a self-taught developer, and I like making applications of different varieties. I like to use Rails and React when it comes to building web apps, and I've recently started to tinker with Android development using Kotlin.",
   "There's seldom a feeling like learning something new, and using that knowledge to make something work. I enjoy what I do because I get that feeling almost every day, in one way or another.",
   "If I've got free time to spare, I'll probably be weight lifting, slammin' keys on my piano, playing Kerbal Space Program, or taking my Hayabusa up into the mountains for a joyride.",
 ];
 
-const booksAndCourses: BookAndCourse[] = [
+export const booksAndCourses: BookAndCourse[] = [
   {
     id: "0",
     name: "The Odin Project",
@@ -51,8 +51,7 @@ const booksAndCourses: BookAndCourse[] = [
   {
     id: "3",
     name: "Programming in Haskell - Graham Hutton",
-    link:
-      "https://books.google.com/books/about/Programming_in_Haskell.html?id=75C5DAAAQBAJ&source=kp_book_description",
+    link: "https://books.google.com/books/about/Programming_in_Haskell.html?id=75C5DAAAQBAJ&source=kp_book_description",
   },
   {
     id: "4",
@@ -61,7 +60,7 @@ const booksAndCourses: BookAndCourse[] = [
   },
 ];
 
-const tools: { [id: string]: Tool[] } = {
+export const tools: { [key: string]: Tool[] } = {
   backend: [
     {
       id: "0",
@@ -140,7 +139,7 @@ const tools: { [id: string]: Tool[] } = {
   ],
 };
 
-const projectInfo: ProjectInfo[] = [
+export const projectInfo: ProjectInfo[] = [
   {
     id: "0",
     name: "Gym Partner",
@@ -176,7 +175,7 @@ const projectInfo: ProjectInfo[] = [
   },
 ];
 
-const socialLinks: SocialLink[] = [
+export const socialLinks: SocialLink[] = [
   {
     id: "0",
     image: githubBannerIcon,
@@ -196,5 +195,3 @@ const socialLinks: SocialLink[] = [
     alt: "Mail to dennisaaroncope@gmail.coim",
   },
 ];
-
-export { aboutMe, booksAndCourses, tools, projectInfo, socialLinks };
