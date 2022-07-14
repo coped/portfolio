@@ -60,13 +60,7 @@ export const booksAndCourses: BookAndCourse[] = [
   },
 ];
 
-type toolTypes = "languages" | "frameworks" | "tools";
-type Foo = {
-  languages: string;
-  frameworks: string;
-  tools: string;
-};
-export const tools: { [Foo]: Tool[] } = {
+export const tools: { [key: string]: Tool[] } = {
   languages: [
     {
       id: "0",
