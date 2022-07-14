@@ -25,9 +25,6 @@ yarn-error.log*
 # environment variables
 .env
 
-# todo list
-things.todo
-
 # Don't serve this file in production
 public/mockServiceWorker.js
 

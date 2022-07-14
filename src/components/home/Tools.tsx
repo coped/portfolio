@@ -3,7 +3,7 @@ import { Box } from "components/ui/Box";
 import { tools } from "lib/content";
 import commonStyles from "common.module.css";
 import type { Tool } from "types/lib/content";
-import toolStyles from "./Tools.module.css";
+import toolStyles from "./Tools.module.scss";
 import { joinClasses } from "utils/utils";
 
 export function Tools(): ReactElement {

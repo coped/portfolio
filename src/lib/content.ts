@@ -60,8 +60,14 @@ export const booksAndCourses: BookAndCourse[] = [
   },
 ];
 
-export const tools: { [key: string]: Tool[] } = {
-  backend: [
+type toolTypes = "languages" | "frameworks" | "tools";
+type Foo = {
+  languages: string;
+  frameworks: string;
+  tools: string;
+};
+export const tools: { [Foo]: Tool[] } = {
+  languages: [
     {
       id: "0",
       name: "Ruby",
@@ -83,7 +89,7 @@ export const tools: { [key: string]: Tool[] } = {
       logo: pgLogo,
     },
   ],
-  frontend: [
+  frameworks: [
     {
       id: "4",
       name: "JavaScript",
@@ -110,7 +116,7 @@ export const tools: { [key: string]: Tool[] } = {
       logo: bulmaLogo,
     },
   ],
-  miscellaneous: [
+  tools: [
     {
       id: "9",
       name: "Linux",
