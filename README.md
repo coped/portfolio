@@ -3,7 +3,7 @@
 ### About
 This is the source code for my web portfolio. 
 
-Visit it at: https://coped.dev
+Visit it at: https://cope.sh
 
 ### Built with
 - React - https://reactjs.org/
@@ -11,4 +11,4 @@ Visit it at: https://coped.dev
 - BulmaCSS - https://bulma.io/
 
 ### Created by
-Dennis Cope, https://coped.dev
+Dennis Cope
