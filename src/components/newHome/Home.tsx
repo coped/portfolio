@@ -1,9 +1,10 @@
-import { ReactElement } from 'react';
+import { ReactElement } from "react";
+import { HomeBanner } from "./HomeBanner";
 
 export function Home(): ReactElement {
   return (
     <div>
-      <p>Something</p>
+      <HomeBanner />
     </div>
-  )
+  );
 }
