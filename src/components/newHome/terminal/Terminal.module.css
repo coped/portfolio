@@ -4,13 +4,13 @@
   background-color: #272822;
   color: #f8f8f2;
   border-radius: 5px;
-  padding: 0.7rem;
+  padding: 0.7em;
   width: fit-content;
-  gap: 0.5rem;
+  gap: 0.5em;
 }
 
 .buttons {
   display: flex;
   flex-direction: row;
-  gap: 0.5rem;
+  gap: 0.5em;
 }

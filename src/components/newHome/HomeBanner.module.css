@@ -2,5 +2,6 @@
   display: flex;
   justify-content: center;
   background-color: #4a90e2;
-  padding: 3rem;
+  padding: 3em;
+  font-size: x-large;
 }

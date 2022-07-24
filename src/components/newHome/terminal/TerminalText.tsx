@@ -11,12 +11,12 @@ export function TerminalText(): ReactElement {
   useEffect(() => {
     const parser = Bowser.getParser(window.navigator.userAgent);
     setBrowser(parser.getBrowserName());
-  }, []);
+  }, [window.navigator.userAgent]);
 
   useEffect(() => {
     const path = window.location.pathname;
     setPath(path.length > 1 ? path : "");
-  }, []);
+  }, [window.location.pathname]);
 
   useEffect(() => {
     const interval = window.setInterval(setFlicker, 600);
