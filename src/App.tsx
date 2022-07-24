@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import "./App.css";
-import { Home } from "components/home/Home";
+import { Construction } from "components/construction/Construction";
 
 export default function App(): ReactElement {
-  return <Home />;
+  return <Construction />;
 }
