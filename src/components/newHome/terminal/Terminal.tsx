@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import styles from "./Terminal.module.css";
 import { TerminalButton } from "./TerminalButton";
+import { TerminalText } from "./TerminalText";
 
 export function Terminal(): ReactElement {
   return (
@@ -10,7 +11,7 @@ export function Terminal(): ReactElement {
         <TerminalButton type="yellow" />
         <TerminalButton type="green" />
       </div>
-      <p>guest@Firefox:~$ ./cope.sh {"\u2588"}</p>
+      <TerminalText />
     </div>
   );
 }

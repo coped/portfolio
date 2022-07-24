@@ -1,0 +1,27 @@
+.purple {
+  color: #bd93f9;
+}
+
+.cyan {
+  color: #8be9fd;
+}
+
+.green {
+  color: #50fa7b;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.monospace {
+  font-family: monospace;
+}
+
+.textWhite {
+  color: #f8f8f2;
+}
+
+.textBlack {
+  color: #272822;
+}
