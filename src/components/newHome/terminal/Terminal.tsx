@@ -3,7 +3,6 @@ import styles from "./Terminal.module.css";
 import { TerminalButton } from "./TerminalButton";
 
 export function Terminal(): ReactElement {
-        console.log('unallowed');
   return (
     <div className={styles.terminal}>
       <div className={styles.buttons}>

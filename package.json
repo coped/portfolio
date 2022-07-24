@@ -17,7 +17,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "npx eslint src",
+    "pretty": "npx prettier --write src"
   },
   "browserslist": {
     "production": [
@@ -53,9 +55,9 @@
     "workerDirectory": "public"
   },
   "lint-staged": {
-    "*.js, *.ts, *.tsx, *.css, *.json": [
-      "npx prettier --write",
-      "npx eslint src"
+    "*.(js|ts|tsx|css|json)": [
+      "npm run pretty",
+      "npm run lint"
     ]
   }
 }
