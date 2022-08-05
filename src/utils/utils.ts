@@ -12,7 +12,7 @@ export function randomNumber(min: number = 0, max: number = 100): number {
 
 /**
  * Returns a specified number of things as an array.
- * 
+ *
  * Ex.
  * make(3).of(() => randomNumber()); // -> [42, 9, 83];
  */
