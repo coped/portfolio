@@ -30,7 +30,7 @@ export function TerminalText(): ReactElement {
     <p className={styles.monospace}>
       <span className={joinClasses(styles.green, styles.bold)}>
         guest@{browser}
-      </span>
+      </span> 
       :<span className={styles.purple}>~{path}</span>$ ./cope.sh
       <span className={flicker ? styles.transparent : ""}>_</span>
     </p>

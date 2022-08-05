@@ -37,10 +37,12 @@ describe("IconButton", () => {
   });
 
   it("should handle onClick", () => {
+    const user = userEvent.setup();
+
     const spy = jest.fn();
     render({ onClick: spy });
 
-    userEvent.click(screen.getByRole("button"));
+    user.pointer({ keys: "[MouseLeft]", target: screen.getByRole("button") });
 
     expect(spy).toHaveBeenCalled();
   });
