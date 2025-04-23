@@ -4,6 +4,7 @@ import Head from "next/head";
 import styled from "styled-components";
 import { Lora } from "@next/font/google";
 import "../styles/reset.css";
+import "../styles/app.css";
 
 const font = Lora({
   weight: ["400"],

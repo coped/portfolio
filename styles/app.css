@@ -1,0 +1,12 @@
+.index__content-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1em;
+}
+
+.index__content-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}

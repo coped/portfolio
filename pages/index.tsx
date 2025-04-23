@@ -9,6 +9,10 @@ import { Copy } from "../src/components/Copy";
 import { VerticalDivider } from "../src/components/VerticalDivider";
 import { HideOnSmallScreens } from "../src/components/HideOnSmallScreens";
 import { SMALL_SCREEN_MAX_WIDTH } from "../src/lib/constants";
+import work from "../src/assets/work.svg";
+import resume from "../src/assets/description.svg";
+
+const INDEX_ICON_DIMENSION = 60;
 
 export default function Home(): ReactElement {
   return (
@@ -27,25 +31,37 @@ export default function Home(): ReactElement {
         <HideOnSmallScreens>
           <VerticalDivider />
         </HideOnSmallScreens>
-        <CopyContainer>
-          <Copy size="body">
-            Hi! I&apos;m Dennis, currently a software engineer at{" "}
-            <Link href="https://www.grubhub.com/">Grubhub</Link>.
-          </Copy>
-          <Copy size="body">
-            I enjoy creating maintainable and performant frontend applications
-            with tools like TypeScript and React.
-          </Copy>
-          <Copy size="body">
-            For a better idea of what I do, check out my{" "}
-            <Link href={process.env.NEXT_PUBLIC_RESUME_LINK ?? "/404"}>
-              resume
-            </Link>
-            .
-          </Copy>
-        </CopyContainer>
+        <div className="index__content-container">
+          <div className="index__content-row">
+            <Image
+              src={work}
+              alt="Icon representing a resume"
+              height={INDEX_ICON_DIMENSION}
+              width={INDEX_ICON_DIMENSION}
+            />
+            <Copy size="body">
+              Software engineer at{" "}
+              <Link href={process.env.NEXT_PUBLIC_EMPLOYER_LINK ?? "/404"}>
+                {process.env.NEXT_PUBLIC_EMPLOYER_NAME}
+              </Link>
+            </Copy>
+          </div>
+          <div className="index__content-row">
+            <Image
+              src={resume}
+              alt="Icon representing a resume"
+              height={INDEX_ICON_DIMENSION}
+              width={INDEX_ICON_DIMENSION}
+            />
+            <Copy size="body">
+              <Link href={process.env.NEXT_PUBLIC_RESUME_LINK ?? "/404"}>
+                Resume
+              </Link>
+            </Copy>
+          </div>
+        </div>
       </ContentContainer>
-      <Copy size="largeBody">You can find me on</Copy>
+      <Copy size="largeBody">Links</Copy>
       <SocialLinks />
     </StyledHome>
   );
@@ -56,7 +72,7 @@ const StyledHome = styled.div`
   flex-direction: column;
   width: 100%;
   align-items: center;
-  margin-bottom: 3em;
+  padding-bottom: 3em;
 `;
 
 const ContentContainer = styled.div`
@@ -68,14 +84,8 @@ const ContentContainer = styled.div`
 
   @media (max-width: ${SMALL_SCREEN_MAX_WIDTH}px) {
     flex-direction: column;
-    text-align: center;
     gap: 0.5em;
   }
-`;
-
-const CopyContainer = styled.div`
-  display: flex;
-  flex-direction: column;
 `;
 
 const StyledImage = styled(Image)`
