@@ -3,13 +3,13 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { HomeBanner } from "../src/feature/HomeBanner";
-import { SocialLinks } from "../src/feature/SocialLinks";
 import { Copy } from "../src/components/Copy/Copy";
 import { VerticalDivider } from "../src/components/VerticalDivider/VerticalDivider";
 import { HideOnSmallScreens } from "../src/components/HideOnSmallScreens/HideOnSmallScreens";
 import work from "../src/assets/work.svg";
 import resume from "../src/assets/description.svg";
 import { INDEX_ICON_DIMENSION } from "../src/lib/constants";
+import { Footer } from "../src/feature/Footer";
 
 export default function Home(): ReactElement {
   return (
@@ -59,8 +59,7 @@ export default function Home(): ReactElement {
           </div>
         </div>
       </div>
-      <Copy size="largeBody">Links</Copy>
-      <SocialLinks />
+      <Footer />
     </div>
   );
 }
