@@ -25,6 +25,7 @@ export default function Home(): ReactElement {
           height="450"
           src={process.env.NEXT_PUBLIC_PROFILE_LINK ?? "/404"}
           alt="Dennis Cope in front of his glorious Honda Fit"
+          priority
         />
         <HideOnSmallScreens>
           <VerticalDivider />
