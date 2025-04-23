@@ -1,34 +1,17 @@
 import { ReactElement } from "react";
-import styled from "styled-components";
 import { Button } from "./Button";
 import { Output } from "./Output";
+import styles from "./Terminal.module.css";
 
 export function Terminal(): ReactElement {
   return (
-    <Container>
-      <Buttons>
+    <div className={styles.container}>
+      <div className={styles.buttons}>
         <Button color="red" />
         <Button color="yellow" />
         <Button color="green" />
-      </Buttons>
+      </div>
       <Output />
-    </Container>
+    </div>
   );
 }
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: #272822;
-  color: #f8f8f2;
-  border-radius: 5px;
-  padding: 0.7em;
-  width: fit-content;
-  gap: 0.5em;
-`;
-
-const Buttons = styled.div`
-  display: flex;
-  flex-direction: row;
-  gap: 0.5em;
-`;

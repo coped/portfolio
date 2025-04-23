@@ -1,19 +1,14 @@
 import type { ReactElement } from "react";
-import styled from "styled-components";
 import { Banner } from "../../components/Banner/Banner";
 import { Terminal } from "../Terminal";
-import { BannerHeading } from "./BannerHeading";
+import styles from "./HomeBanner.module.css";
+import { Heading } from "../../components/Heading/Heading";
 
 export function HomeBanner(): ReactElement {
   return (
-    <StyledBanner>
+    <Banner className={styles.homeBanner}>
       <Terminal />
-      <BannerHeading>Dennis Cope</BannerHeading>
-    </StyledBanner>
+      <Heading className={styles.homeHeading}>Dennis Cope</Heading>
+    </Banner>
   );
 }
-
-const StyledBanner = styled(Banner)`
-  flex-direction: column;
-  align-items: center;
-`;
