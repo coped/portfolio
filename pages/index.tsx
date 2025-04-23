@@ -8,7 +8,7 @@ import { SocialLinks } from "../src/feature/SocialLinks";
 import { Copy } from "../src/components/Copy";
 import { VerticalDivider } from "../src/components/VerticalDivider";
 import { HideOnSmallScreens } from "../src/components/HideOnSmallScreens";
-import { SMALL_SCREEN_MAX_WIDTH } from "../src/lib/constants";
+
 import work from "../src/assets/work.svg";
 import resume from "../src/assets/description.svg";
 
@@ -16,13 +16,14 @@ const INDEX_ICON_DIMENSION = 60;
 
 export default function Home(): ReactElement {
   return (
-    <StyledHome>
+    <div className="index__home">
       <Head>
         <title>Dennis Cope | cope.sh</title>
       </Head>
       <HomeBanner />
-      <ContentContainer>
-        <StyledImage
+      <div className="index__content-container">
+        <Image
+          className="index__rounded-image"
           width="338"
           height="450"
           src={process.env.NEXT_PUBLIC_PROFILE_LINK ?? "/404"}
@@ -31,7 +32,7 @@ export default function Home(): ReactElement {
         <HideOnSmallScreens>
           <VerticalDivider />
         </HideOnSmallScreens>
-        <div className="index__content-container">
+        <div className="index__text-container">
           <div className="index__content-row">
             <Image
               src={work}
@@ -60,38 +61,9 @@ export default function Home(): ReactElement {
             </Copy>
           </div>
         </div>
-      </ContentContainer>
+      </div>
       <Copy size="largeBody">Links</Copy>
       <SocialLinks />
-    </StyledHome>
+    </div>
   );
 }
-
-const StyledHome = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  padding-bottom: 3em;
-`;
-
-const ContentContainer = styled.div`
-  display: flex;
-  gap: 5em;
-  max-width: 60em;
-  align-items: center;
-  margin: 1em 3em;
-
-  @media (max-width: ${SMALL_SCREEN_MAX_WIDTH}px) {
-    flex-direction: column;
-    gap: 0.5em;
-  }
-`;
-
-const StyledImage = styled(Image)`
-  clip-path: circle();
-
-  @media (max-width: ${SMALL_SCREEN_MAX_WIDTH}px) {
-    height: auto;
-  }
-`;

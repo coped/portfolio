@@ -1,7 +1,6 @@
 import type { ReactElement } from "react";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import styled from "styled-components";
 import { Lora } from "@next/font/google";
 import "../styles/reset.css";
 import "../styles/app.css";
@@ -19,20 +18,9 @@ export default function App({ Component, pageProps }: AppProps): ReactElement {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <StyledMain className={font.className}>
+      <main className={`app__main ${font.className}`}>
         <Component {...pageProps} />
-      </StyledMain>
+      </main>
     </>
   );
 }
-
-const StyledMain = styled.main`
-  a:link,
-  a:visited {
-    color: #5af;
-  }
-
-  a:hover {
-    color: #ffaa55;
-  }
-`;

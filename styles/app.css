@@ -1,12 +1,56 @@
+/* APP */
+
+.app__main {
+  a:link,
+  a:visited {
+    color: #5af;
+  }
+
+  a:hover {
+    color: #ffaa55;
+  }
+}
+
+/* INDEX */
+
 .index__content-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1em;
+}
+
+.index__text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.index__home {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 3em;
 }
 
 .index__content-container {
-    display: flex;
+  display: flex;
+  gap: 5em;
+  max-width: 60em;
+  align-items: center;
+  margin: 1em 3em;
+
+  @media (max-width: 900px) {
     flex-direction: column;
-    gap: 1.5em;
+    gap: 0.5em;
+  }
+}
+
+.index__rounded-image {
+  clip-path: circle();
+
+  @media (max-width: 900px) {
+    height: auto;
+  }
 }
