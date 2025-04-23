@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Heading } from "../../components/Heading";
+import { Heading } from "../../components/Heading/Heading";
 
 export const BannerHeading = styled(Heading)`
   ::selection {

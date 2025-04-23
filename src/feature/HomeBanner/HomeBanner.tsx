@@ -1,6 +1,6 @@
 import type { ReactElement } from "react";
 import styled from "styled-components";
-import { Banner } from "../../components/Banner";
+import { Banner } from "../../components/Banner/Banner";
 import { Terminal } from "../Terminal";
 import { BannerHeading } from "./BannerHeading";
 

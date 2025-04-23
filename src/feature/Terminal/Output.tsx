@@ -1,8 +1,8 @@
 import { ReactElement } from "react";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import { Flicker } from "../../components/Flicker";
-import { useBrowser } from "../../hooks/useBrowser";
+import { Flicker } from "../../components/Flicker/Flicker";
+import { useBrowser } from "../../hooks/useBrowser/useBrowser";
 
 export function Output(): ReactElement {
   const { asPath: path } = useRouter();

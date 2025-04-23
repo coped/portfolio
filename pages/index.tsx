@@ -1,18 +1,15 @@
 import type { ReactElement } from "react";
-import styled from "styled-components";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { HomeBanner } from "../src/feature/HomeBanner";
 import { SocialLinks } from "../src/feature/SocialLinks";
-import { Copy } from "../src/components/Copy";
-import { VerticalDivider } from "../src/components/VerticalDivider";
-import { HideOnSmallScreens } from "../src/components/HideOnSmallScreens";
-
+import { Copy } from "../src/components/Copy/Copy";
+import { VerticalDivider } from "../src/components/VerticalDivider/VerticalDivider";
+import { HideOnSmallScreens } from "../src/components/HideOnSmallScreens/HideOnSmallScreens";
 import work from "../src/assets/work.svg";
 import resume from "../src/assets/description.svg";
-
-const INDEX_ICON_DIMENSION = 60;
+import { INDEX_ICON_DIMENSION } from "../src/lib/constants";
 
 export default function Home(): ReactElement {
   return (

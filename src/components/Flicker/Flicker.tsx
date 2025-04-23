@@ -1,7 +1,7 @@
 import type { ReactElement, ReactNode } from "react";
 import { useEffect } from "react";
 import styled from "styled-components";
-import { useToggler } from "../hooks/useToggler";
+import { useToggler } from "../../hooks/useToggler/useToggler";
 
 export type Props = { children: ReactNode; interval: number };
 
