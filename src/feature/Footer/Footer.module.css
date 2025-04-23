@@ -4,6 +4,8 @@
   flex-direction: column;
   align-items: center;
   background-color: #f2f8ff;
+  padding-bottom: 2em;
+  height: 100%;
 }
 
 .container {
