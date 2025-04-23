@@ -6,7 +6,7 @@
 export const defined = <T>(item: T | null | undefined): T => {
   const throwError = () => {
     throw new Error(
-      `Expected ${item} to be defined, but was not a defined value`
+      `Expected ${item} to be defined, but was not a defined value`,
     );
   };
   return item ?? throwError();
