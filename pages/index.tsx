@@ -22,7 +22,7 @@ export default function Home(): ReactElement {
         <Image
           className="index__rounded-image"
           width="338"
-          height="450"
+          height="338"
           src={process.env.NEXT_PUBLIC_PROFILE_LINK ?? "/404"}
           alt="Dennis Cope in front of his glorious Honda Fit"
           priority
