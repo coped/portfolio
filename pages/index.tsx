@@ -8,7 +8,10 @@ import { VerticalDivider } from "../src/components/VerticalDivider/VerticalDivid
 import { HideOnSmallScreens } from "../src/components/HideOnSmallScreens/HideOnSmallScreens";
 import work from "../src/assets/work.svg";
 import resume from "../src/assets/description.svg";
-import { INDEX_ICON_DIMENSION } from "../src/lib/constants";
+import {
+  INDEX_ICON_DIMENSION,
+  INDEX_PROFILE_IMAGE_DIMENSION,
+} from "../src/lib/constants";
 import { Footer } from "../src/feature/Footer";
 
 export default function Home(): ReactElement {
@@ -21,8 +24,8 @@ export default function Home(): ReactElement {
       <div className="index__content-container">
         <Image
           className="index__rounded-image"
-          width="338"
-          height="338"
+          width={INDEX_PROFILE_IMAGE_DIMENSION}
+          height={INDEX_PROFILE_IMAGE_DIMENSION}
           src={process.env.NEXT_PUBLIC_PROFILE_LINK ?? "/404"}
           alt="Dennis Cope in front of his glorious Honda Fit"
           priority
@@ -34,7 +37,7 @@ export default function Home(): ReactElement {
           <div className="index__content-row">
             <Image
               src={work}
-              alt="Icon representing a resume"
+              alt="Icon representing a suitcase"
               height={INDEX_ICON_DIMENSION}
               width={INDEX_ICON_DIMENSION}
             />
