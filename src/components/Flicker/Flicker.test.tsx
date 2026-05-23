@@ -19,14 +19,14 @@ describe("Flicker", () => {
   it("should flicker", () => {
     render(<Flicker interval={1000}>Foobar</Flicker>);
     expect(screen.getByText("Foobar").className).toContain(
-      "flicker__transparent",
+      "flicker--transparent",
     );
 
     act(() => {
       vitest.advanceTimersByTime(1000);
     });
 
-    expect(screen.getByText("Foobar").className).toContain("flicker__opaque");
+    expect(screen.getByText("Foobar").className).toContain("flicker--opaque");
   });
 });
 
