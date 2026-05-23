@@ -84,7 +84,7 @@
 
 /** COMMON P **/
 
-.copy {
+.copy--body, .copy--large-body {
   font-weight: lighter;
   color: #454545;
   padding: 0.4em 0;
