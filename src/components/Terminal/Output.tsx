@@ -1,10 +1,10 @@
-import { ReactElement } from "react";
-import { useRouter } from "next/router";
+"use client";
+import { useRouter } from "next/navigation";
 import { Flicker } from "../Flicker/Flicker";
-import { useBrowser } from "../../hooks/useBrowser/useBrowser";
+import { useBrowser } from "@/hooks/useBrowser/useBrowser";
 import styles from "./Output.module.css";
 
-export function Output(): ReactElement {
+export function Output() {
   const { asPath: path } = useRouter();
   const browser = useBrowser();
 

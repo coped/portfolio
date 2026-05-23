@@ -1,66 +1,61 @@
 import Image from "next/image";
-import styles from "./page.module.css";
+import { HomeBanner } from "@/components/HomeBanner";
+import {
+  INDEX_ICON_DIMENSION,
+  INDEX_PROFILE_IMAGE_DIMENSION,
+} from "@/lib/constants";
+import work from "@/assets/work.svg";
+import Link from "next/link";
+import resume from "@/assets/description.svg";
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
+    <div className="index__home">
+      <HomeBanner />
+      <div className="index__content-container">
         <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          className="index__rounded-image"
+          width={INDEX_PROFILE_IMAGE_DIMENSION}
+          height={INDEX_PROFILE_IMAGE_DIMENSION}
+          src={process.env.NEXT_PUBLIC_PROFILE_LINK ?? "/404"}
+          alt="Dennis Cope in front of his glorious Honda Fit"
           priority
         />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        <div className="hide-on-small-screens">
+          <div className="vertical-divider" />
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+        <div className="index__text-container">
+          <div className="index__content-row">
             <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+              src={work}
+              alt="Icon representing a suitcase"
+              height={INDEX_ICON_DIMENSION}
+              width={INDEX_ICON_DIMENSION}
             />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <p className="copy--body">
+              Software engineer at{" "}
+              <Link href={process.env.NEXT_PUBLIC_EMPLOYER_LINK ?? "/404"}>
+                {process.env.NEXT_PUBLIC_EMPLOYER_NAME}
+              </Link>
+            </p>
+          </div>
+          <div className="index__content-row">
+            <Image
+              src={resume}
+              alt="Icon representing a resume"
+              height={INDEX_ICON_DIMENSION}
+              width={INDEX_ICON_DIMENSION}
+            />
+            <p className="copy--body">
+              <Link href={process.env.NEXT_PUBLIC_RESUME_LINK ?? "/404"}>
+                Resume
+              </Link>
+            </p>
+          </div>
         </div>
-      </main>
+      </div>
+      <Footer />
     </div>
   );
 }

@@ -1,6 +1,6 @@
-import type { Link } from "../../lib/types";
-import github from "public/images/github.svg";
-import linkedin from "public/images/linkedin.png";
+import type { Link } from "@/lib/types";
+import github from "@/assets/github.svg";
+import linkedin from "@/assets/linkedin.png";
 
 export const LINKS: Link[] = [
   {
