@@ -73,3 +73,11 @@
     display: none;
   }
 }
+
+/** COMMON HEADING **/
+
+.heading {
+  font-weight: lighter;
+  font-size: 3em;
+  line-height: 1;
+}
