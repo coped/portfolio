@@ -1,6 +1,9 @@
-import styled from "styled-components";
+import type { HTMLAttributes } from "react";
+import "./VerticalDivider.css";
+import { joinCSS } from "@/lib/utils";
 
-export const VerticalDivider = styled.div`
-  border-left: 1.5px solid rgba(0, 0, 0, 0.25);
-  height: 20em;
-`;
+export const VerticalDivider = (props: HTMLAttributes<HTMLDivElement>) => {
+  return (
+    <div {...props} className={joinCSS("vertical-divider", props.className)} />
+  );
+};
