@@ -1,4 +1,13 @@
-import { defined, isClientSide } from "./utils";
+import {
+  describe,
+  it,
+  expect,
+  beforeEach,
+  afterEach,
+  vitest,
+  Mock,
+} from "vitest";
+import { defined, isClientSide, joinCSS } from "./utils";
 
 describe("utils", () => {
   describe("defined", () => {
@@ -31,10 +40,10 @@ describe("utils", () => {
   });
 
   describe("isClientSide", () => {
-    let windowSpy: jest.SpyInstance;
+    let windowSpy: Mock<() => Window & typeof globalThis>;
 
     beforeEach(() => {
-      windowSpy = jest.spyOn(window, "window", "get");
+      windowSpy = vitest.spyOn(window, "window", "get");
     });
     afterEach(() => {
       windowSpy.mockRestore();
@@ -42,7 +51,7 @@ describe("utils", () => {
 
     describe("when client-side", () => {
       beforeEach(() => {
-        windowSpy.mockImplementation(() => ({}));
+        windowSpy.mockImplementation(() => ({}) as Window & typeof globalThis);
       });
 
       it("should return true", () => {
@@ -52,12 +61,24 @@ describe("utils", () => {
 
     describe("when not client-side", () => {
       beforeEach(() => {
-        windowSpy.mockImplementation(() => undefined);
+        windowSpy.mockImplementation(
+          () => undefined as unknown as Window & typeof globalThis,
+        );
       });
 
       it("should return false", () => {
         expect(isClientSide()).toEqual(false);
       });
+    });
+  });
+
+  describe("joinCSS", () => {
+    it("should correctly join classes", () => {
+      expect(joinCSS("a", "b")).toEqual("a b");
+    });
+
+    it("should handle undefined values", () => {
+      expect(joinCSS("a", undefined)).toEqual("a");
     });
   });
 });
