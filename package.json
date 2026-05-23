@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "autoformat": "prettier --write ./src",
-    "postinstall": "lefthook install"
+    "postinstall": "lefthook install",
+    "compile": "tsc --project tsconfig.json",
+    "compile-watch": "tsc --project tsconfig.json --watch"
   },
   "dependencies": {
     "next": "16.2.6",
