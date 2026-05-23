@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest";
 import type { ReactElement } from "react";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -19,16 +20,16 @@ describe("useToggler", () => {
     [setupAsFalse, "false"],
   ])("should have init value", (setup, expected) => {
     setup();
-    expect(screen.getByText(expected)).toBeInTheDocument();
+    expect(screen.getByText(expected)).toBeDefined();
   });
 
   it("should toggle", async () => {
     const { clickButton } = setupAsTrue();
-    expect(screen.getByText("true")).toBeInTheDocument();
+    expect(screen.getByText("true")).toBeDefined();
 
     await clickButton();
 
-    expect(screen.getByText("false")).toBeInTheDocument();
+    expect(screen.getByText("false")).toBeDefined();
   });
 });
 
