@@ -9,7 +9,6 @@ describe("Flicker", () => {
 
   afterEach(() => {
     vitest.useRealTimers();
-    cleanup();
   });
 
   it("should render children", () => {
