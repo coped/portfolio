@@ -1,0 +1,17 @@
+.button {
+  border-radius: 50%;
+  height: 0.75em;
+  width: 0.75em;
+}
+
+.button--red {
+  background-color: #ff5f56;
+}
+
+.button--green {
+  background-color: #27c93f;
+}
+
+.button--yellow {
+  background-color: #ffbd2e;
+}
