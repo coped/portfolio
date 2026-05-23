@@ -7,6 +7,9 @@ type Props = {
 
 export const Button = (props: Props) => {
   return (
-    <div {...props} className={joinCSS("button", `button--${props.color}`)} />
+    <div
+      {...props}
+      className={joinCSS("button", `button--${props.color}`, props.className)}
+    />
   );
 };
