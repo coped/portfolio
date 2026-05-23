@@ -1,6 +1,7 @@
 import type { ReactElement, ReactNode } from "react";
 import { useEffect } from "react";
 import { useToggler } from "@/hooks/useToggler/useToggler";
+import "./Flicker.css";
 
 export type Props = { children: ReactNode; interval: number };
 
@@ -13,7 +14,7 @@ export function Flicker({ children, interval }: Props): ReactElement {
   }, [toggleFlicker, interval]);
 
   return (
-    <span className={flicker ? "flicker__transparent" : "flicker__opaque"}>
+    <span className={flicker ? "flicker--transparent" : "flicker--opaque"}>
       {children}
     </span>
   );
