@@ -1,32 +1,33 @@
-import { render, screen, act } from "@testing-library/react";
-import { ReactElement } from "react";
+import { describe, it, expect, afterEach, vitest, beforeEach } from "vitest";
+import { render, screen, act, cleanup } from "@testing-library/react";
 import { Flicker } from "./Flicker";
 
 describe("Flicker", () => {
-  afterEach(() => {
-    jest.useRealTimers();
+  beforeEach(() => {
+    vitest.useFakeTimers();
   });
 
-  const setup = (ui: ReactElement) => {
-    jest.useFakeTimers();
-    const utils = render(ui);
-    return { ...utils };
-  };
+  afterEach(() => {
+    vitest.useRealTimers();
+    cleanup();
+  });
 
   it("should render children", () => {
-    setup(<Flicker interval={1000}>Foobar</Flicker>);
-    expect(screen.getByText("Foobar")).toBeInTheDocument();
+    render(<Flicker interval={1000}>Foobar</Flicker>);
+    expect(screen.getByText("Foobar")).toBeDefined();
   });
 
   it("should flicker", () => {
-    setup(<Flicker interval={1000}>Foobar</Flicker>);
-    expect(getOpacity(screen.getByText("Foobar"))).toEqual("0");
+    render(<Flicker interval={1000}>Foobar</Flicker>);
+    expect(screen.getByText("Foobar").className).toContain(
+      "flicker__transparent",
+    );
 
     act(() => {
-      jest.advanceTimersByTime(1000);
+      vitest.advanceTimersByTime(1000);
     });
 
-    expect(getOpacity(screen.getByText("Foobar"))).toEqual("");
+    expect(screen.getByText("Foobar").className).toContain("flicker__opaque");
   });
 });
 

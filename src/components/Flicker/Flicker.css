@@ -1,0 +1,7 @@
+.flicker__transparent {
+  opacity: 0;
+}
+
+.flicker__opaque {
+  opacity: initial;
+}

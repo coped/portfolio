@@ -1,7 +1,6 @@
 import type { ReactElement, ReactNode } from "react";
 import { useEffect } from "react";
-import styled from "styled-components";
-import { useToggler } from "../../hooks/useToggler/useToggler";
+import { useToggler } from "@/hooks/useToggler/useToggler";
 
 export type Props = { children: ReactNode; interval: number };
 
@@ -13,10 +12,9 @@ export function Flicker({ children, interval }: Props): ReactElement {
     return () => window.clearInterval(id);
   }, [toggleFlicker, interval]);
 
-  return <StyledSpan isTransparent={flicker}>{children}</StyledSpan>;
+  return (
+    <span className={flicker ? "flicker__transparent" : "flicker__opaque"}>
+      {children}
+    </span>
+  );
 }
-
-export type StyledSpanProps = { isTransparent: boolean };
-export const StyledSpan = styled.span<StyledSpanProps>`
-  opacity: ${(props) => (props.isTransparent ? 0 : "initial")};
-`;

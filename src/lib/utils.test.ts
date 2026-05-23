@@ -5,7 +5,7 @@ import {
   beforeEach,
   afterEach,
   vitest,
-  Mock,
+  type Mock,
 } from "vitest";
 import { defined, isClientSide, joinCSS } from "./utils";
 
