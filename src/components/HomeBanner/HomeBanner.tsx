@@ -1,14 +1,12 @@
 import type { ReactElement } from "react";
-import { Banner } from "../../components/Banner/Banner";
 import { Terminal } from "../Terminal";
-import styles from "./HomeBanner.module.css";
+import "./HomeBanner.css";
 
 export function HomeBanner(): ReactElement {
   return (
-    <Banner className={styles.homeBanner}>
+    <header className="banner banner--home">
       <Terminal />
-      <Heading className={styles.homeHeading}>Dennis Cope</Heading>
-      <h1 className="heading">Dennis Cope</h1>
-    </Banner>
+      <h1 className="heading heading--home">Dennis Cope</h1>
+    </header>
   );
 }
