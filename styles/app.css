@@ -81,3 +81,29 @@
   font-size: 3em;
   line-height: 1;
 }
+
+/** COMMON P **/
+
+.copy {
+  font-weight: lighter;
+  color: #454545;
+  padding: 0.4em 0;
+}
+
+.copy--body {
+  font-size: 1.5em;
+}
+
+.copy--large-body {
+  font-size: 2.25em;
+}
+
+/** COMMON HEADER **/
+
+.banner {
+  display: flex;
+  background-color: #5af;
+  padding: 2em;
+  width: 100%;
+  font-size: x-large;
+}
