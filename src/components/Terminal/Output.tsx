@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { useRouter } from "next/router";
-import { Flicker } from "../../components/Flicker/Flicker";
+import { Flicker } from "../Flicker/Flicker";
 import { useBrowser } from "../../hooks/useBrowser/useBrowser";
 import styles from "./Output.module.css";
 
