@@ -1,5 +1,6 @@
 import { joinCSS } from "@/lib/utils";
 import type { HTMLAttributes } from "react";
+import "./Button.css";
 
 type Props = {
   color: "red" | "yellow" | "green";
