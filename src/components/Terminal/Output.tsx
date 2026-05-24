@@ -1,11 +1,11 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { Flicker } from "../Flicker/Flicker";
 import { useBrowser } from "@/hooks/useBrowser/useBrowser";
 import styles from "./Output.module.css";
 
 export function Output() {
-  const { asPath: path } = useRouter();
+  const pathname = usePathname();
   const browser = useBrowser();
 
   return (
@@ -13,7 +13,7 @@ export function Output() {
       <span className={styles.green}>
         <span className={styles.strong}>guest@{browser}</span>
       </span>
-      :<span className={styles.purple}>~{path}</span>$ ./cope.sh
+      :<span className={styles.purple}>~{pathname}</span>$ ./cope.sh
       <Flicker interval={600}>_</Flicker>
     </p>
   );
