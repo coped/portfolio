@@ -11,11 +11,11 @@ import { Footer } from "@/components/Footer/Footer";
 
 export default function Home() {
   return (
-    <div className="index__home">
+    <div className="home">
       <HomeBanner />
-      <div className="index__content-container">
+      <div className="home__content-container">
         <Image
-          className="index__rounded-image"
+          className="home__rounded-image"
           width={INDEX_PROFILE_IMAGE_DIMENSION}
           height={INDEX_PROFILE_IMAGE_DIMENSION}
           src={process.env.NEXT_PUBLIC_PROFILE_LINK ?? "/404"}
@@ -25,8 +25,8 @@ export default function Home() {
         <div className="hide-on-small-screens">
           <div className="vertical-divider" />
         </div>
-        <div className="index__text-container">
-          <div className="index__content-row">
+        <div className="home__text-container">
+          <div className="home__content-row">
             <Image
               src={work}
               alt="Icon representing a suitcase"
@@ -40,7 +40,7 @@ export default function Home() {
               </Link>
             </p>
           </div>
-          <div className="index__content-row">
+          <div className="home__content-row">
             <Image
               src={resume}
               alt="Icon representing a resume"
