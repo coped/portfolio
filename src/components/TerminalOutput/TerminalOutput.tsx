@@ -16,10 +16,10 @@ export function TerminalOutput() {
 
   return (
     <p className="monospace">
-      <span className="terminal-output-green">
+      <span className="terminal__output-green">
         <span className="strong">guest@{browser}</span>
       </span>
-      :<span className="terminal-output-purple">~{pathname}</span>$ ./cope.sh
+      :<span className="terminal__output-purple">~{pathname}</span>$ ./cope.sh
       <Flicker interval={600}>_</Flicker>
     </p>
   );
