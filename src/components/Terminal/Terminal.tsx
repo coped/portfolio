@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { TerminalButton } from "@/components/TerminalButton/TerminalButton";
-import { Output } from "./Output";
+import { TerminalOutput } from "../TerminalOutput/TerminalOutput";
 import styles from "./Terminal.module.css";
 
 export function Terminal(): ReactElement {
@@ -11,7 +11,7 @@ export function Terminal(): ReactElement {
         <TerminalButton color="yellow" />
         <TerminalButton color="green" />
       </div>
-      <Output />
+      <TerminalOutput />
     </div>
   );
 }

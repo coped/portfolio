@@ -2,9 +2,9 @@
 import { usePathname } from "next/navigation";
 import { Flicker } from "../Flicker/Flicker";
 import { useBrowser } from "@/hooks/useBrowser/useBrowser";
-import styles from "./Output.module.css";
+import styles from "./TerminalOutput.module.css";
 
-export function Output() {
+export function TerminalOutput() {
   const pathname = usePathname();
   const browser = useBrowser();
 
