@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div className="home">
       <HomeBanner />
-      <div className="home__content-container">
+      <main className="home__content-container">
         <Image
           className="home__rounded-image"
           width={INDEX_PROFILE_IMAGE_DIMENSION}
@@ -54,7 +54,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </div>
+      </main>
       <Footer />
     </div>
   );

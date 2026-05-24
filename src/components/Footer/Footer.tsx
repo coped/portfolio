@@ -5,7 +5,7 @@ import "./Footer.css";
 
 export function Footer() {
   return (
-    <div className="footer">
+    <footer className="footer">
       <p className="copy copy--larger">Links</p>
       <div className="footer__container">
         {FOOTER_LINKS.map((link) => (
@@ -19,6 +19,6 @@ export function Footer() {
           </Link>
         ))}
       </div>
-    </div>
+    </footer>
   );
 }
