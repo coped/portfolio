@@ -1,4 +1,3 @@
-"use client";
 import type { PropsWithChildren } from "react";
 import { useEffect } from "react";
 import { useToggler } from "@/hooks/useToggler/useToggler";

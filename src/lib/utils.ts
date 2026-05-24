@@ -1,19 +1,9 @@
-/**
- * Ensures a provided item is a defined value. Otherwise an error is thrown.
- * @param item - Item whose existence we're checking
- * @returns Provided item if it exists.
- */
-export const defined = <T>(item: T | null | undefined): T => {
-  const throwError = () => {
-    throw new Error(
-      `Expected ${item} to be defined, but was not a defined value`,
-    );
-  };
-  return item ?? throwError();
-};
+import Bowser from "bowser";
 
 /**
- * Returns true if code is client-side.
- * @returns
+ * Returns the name of the user's browser
  */
-export const isClientSide = (): boolean => typeof window !== "undefined";
+export const getBrowser = () => {
+  const parser = Bowser.getParser(window.navigator.userAgent);
+  return parser.getBrowserName();
+};

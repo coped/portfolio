@@ -1,12 +1,11 @@
-"use client";
 import { usePathname } from "next/navigation";
 import { Flicker } from "../Flicker/Flicker";
-import { useBrowser } from "@/hooks/useBrowser/useBrowser";
 import "./TerminalOutput.css";
+import { getBrowser } from "@/lib/utils";
 
 export function TerminalOutput() {
   const pathname = usePathname();
-  const browser = useBrowser();
+  const browser = getBrowser();
 
   return (
     <p className="monospace">
