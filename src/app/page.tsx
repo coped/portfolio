@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { HomeBanner } from "@/components/HomeBanner";
+import { HomeBanner } from "@/components/HomeBanner/HomeBanner";
 import {
   INDEX_ICON_DIMENSION,
   INDEX_PROFILE_IMAGE_DIMENSION,
@@ -7,7 +7,7 @@ import {
 import work from "@/assets/work.svg";
 import Link from "next/link";
 import resume from "@/assets/description.svg";
-import { Footer } from "@/components/Footer";
+import { Footer } from "@/components/Footer/Footer";
 
 export default function Home() {
   return (

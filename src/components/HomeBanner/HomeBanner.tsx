@@ -1,5 +1,5 @@
 import type { ReactElement } from "react";
-import { Terminal } from "../Terminal";
+import { Terminal } from "@/components/Terminal/Terminal";
 import "./HomeBanner.css";
 
 export function HomeBanner(): ReactElement {
