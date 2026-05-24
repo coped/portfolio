@@ -1,14 +1,14 @@
-import { describe, it, expect, afterEach, vitest, beforeEach } from "vitest";
-import { render, screen, act, cleanup } from "@testing-library/react";
+import { describe, it, expect, afterEach, vi, beforeEach } from "vitest";
+import { render, screen, act } from "@testing-library/react";
 import { Flicker } from "./Flicker";
 
 describe("Flicker", () => {
   beforeEach(() => {
-    vitest.useFakeTimers();
+    vi.useFakeTimers();
   });
 
   afterEach(() => {
-    vitest.useRealTimers();
+    vi.useRealTimers();
   });
 
   it("should render children", () => {
@@ -23,12 +23,9 @@ describe("Flicker", () => {
     );
 
     act(() => {
-      vitest.advanceTimersByTime(1000);
+      vi.advanceTimersByTime(1000);
     });
 
     expect(screen.getByText("Foobar").className).toContain("flicker--opaque");
   });
 });
-
-const getOpacity = (element: HTMLElement): string =>
-  window.getComputedStyle(element).opacity;

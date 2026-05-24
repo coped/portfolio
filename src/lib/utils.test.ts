@@ -4,7 +4,7 @@ import {
   expect,
   beforeEach,
   afterEach,
-  vitest,
+  vi,
   type Mock,
 } from "vitest";
 import { defined, isClientSide, joinCSS } from "./utils";
@@ -43,7 +43,7 @@ describe("utils", () => {
     let windowSpy: Mock<() => Window & typeof globalThis>;
 
     beforeEach(() => {
-      windowSpy = vitest.spyOn(window, "window", "get");
+      windowSpy = vi.spyOn(window, "window", "get");
     });
     afterEach(() => {
       windowSpy.mockRestore();
