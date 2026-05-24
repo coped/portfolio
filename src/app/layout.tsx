@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
-import { LORA_FONT } from "@/lib/constants";
 import "./reset.css";
 import "./app.css";
+import { Lora } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Dennis Cope | cope.sh",
@@ -14,13 +14,18 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+const lora = Lora({
+  weight: ["400"],
+  subsets: ["latin"],
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: ReactNode;
 }>) {
   return (
-    <html lang="en" className={`app ${LORA_FONT.variable}`}>
+    <html lang="en" className={`app ${lora.className}`}>
       <body>{children}</body>
     </html>
   );
