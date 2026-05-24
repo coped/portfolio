@@ -1,15 +1,13 @@
-import { ReactElement } from "react";
-import { TerminalButton } from "@/components/TerminalButton/TerminalButton";
-import { TerminalOutput } from "../TerminalOutput/TerminalOutput";
-import styles from "./Terminal.module.css";
+import { TerminalOutput } from "@/components/TerminalOutput/TerminalOutput";
+import "./Terminal.css";
 
-export function Terminal(): ReactElement {
+export function Terminal() {
   return (
-    <div className={styles.container}>
-      <div className={styles.buttons}>
-        <TerminalButton color="red" />
-        <TerminalButton color="yellow" />
-        <TerminalButton color="green" />
+    <div className="terminal">
+      <div className="terminal__buttons">
+        <div className="terminal__button terminal__button--red" />
+        <div className="terminal__button terminal__button--yellow" />
+        <div className="terminal__button terminal__button--green" />
       </div>
       <TerminalOutput />
     </div>

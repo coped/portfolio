@@ -1,0 +1,34 @@
+.terminal {
+  display: flex;
+  flex-direction: column;
+  background-color: #272822;
+  color: #f8f8f2;
+  border-radius: 5px;
+  padding: 0.7em;
+  width: fit-content;
+  gap: 0.5em;
+}
+
+.terminal__buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5em;
+}
+
+.terminal__button {
+  border-radius: 50%;
+  height: 0.75em;
+  width: 0.75em;
+}
+
+.terminal__button--red {
+  background-color: #ff5f56;
+}
+
+.terminal__button--green {
+  background-color: #27c93f;
+}
+
+.terminal__button--yellow {
+  background-color: #ffbd2e;
+}

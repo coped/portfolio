@@ -1,12 +1,12 @@
 "use client";
-import type { ReactElement, PropsWithChildren } from "react";
+import type { PropsWithChildren } from "react";
 import { useEffect } from "react";
 import { useToggler } from "@/hooks/useToggler/useToggler";
 import "./Flicker.css";
 
 export type Props = { interval: number } & PropsWithChildren;
 
-export function Flicker({ children, interval }: Props): ReactElement {
+export function Flicker({ children, interval }: Props) {
   const [flicker, toggleFlicker] = useToggler(true);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export function Flicker({ children, interval }: Props): ReactElement {
   }, [toggleFlicker, interval]);
 
   return (
-    <span className={flicker ? "flicker--transparent" : "flicker--opaque"}>
+    <span className={flicker ? "flicker-transparent" : "flicker-opaque"}>
       {children}
     </span>
   );

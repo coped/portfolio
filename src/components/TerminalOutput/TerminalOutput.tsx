@@ -2,18 +2,18 @@
 import { usePathname } from "next/navigation";
 import { Flicker } from "../Flicker/Flicker";
 import { useBrowser } from "@/hooks/useBrowser/useBrowser";
-import styles from "./TerminalOutput.module.css";
+import "./TerminalOutput.css";
 
 export function TerminalOutput() {
   const pathname = usePathname();
   const browser = useBrowser();
 
   return (
-    <p className={styles.monospace}>
-      <span className={styles.green}>
-        <span className={styles.strong}>guest@{browser}</span>
+    <p className="monospace">
+      <span className="terminal-output-green">
+        <span className="strong">guest@{browser}</span>
       </span>
-      :<span className={styles.purple}>~{pathname}</span>$ ./cope.sh
+      :<span className="terminal-output-purple">~{pathname}</span>$ ./cope.sh
       <Flicker interval={600}>_</Flicker>
     </p>
   );

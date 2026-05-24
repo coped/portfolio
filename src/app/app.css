@@ -84,19 +84,23 @@
 
 /** p elements **/
 
-.copy--body,
-.copy--large-body {
+.copy {
   font-weight: lighter;
   color: #454545;
   padding: 0.4em 0;
-}
-
-.copy--body {
   font-size: 1.5em;
 }
 
-.copy--large-body {
+.copy--larger {
   font-size: 2.25em;
+}
+
+.monospace {
+  font-family: monospace;
+}
+
+.strong {
+  font-weight: bold;
 }
 
 /** header elements **/

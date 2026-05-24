@@ -33,7 +33,7 @@ export default function Home() {
               height={INDEX_ICON_DIMENSION}
               width={INDEX_ICON_DIMENSION}
             />
-            <p className="copy--body">
+            <p className="copy">
               Software engineer at{" "}
               <Link href={process.env.NEXT_PUBLIC_EMPLOYER_LINK ?? "/404"}>
                 {process.env.NEXT_PUBLIC_EMPLOYER_NAME}
@@ -47,7 +47,7 @@ export default function Home() {
               height={INDEX_ICON_DIMENSION}
               width={INDEX_ICON_DIMENSION}
             />
-            <p className="copy--body">
+            <p className="copy">
               <Link href={process.env.NEXT_PUBLIC_RESUME_LINK ?? "/404"}>
                 Resume
               </Link>

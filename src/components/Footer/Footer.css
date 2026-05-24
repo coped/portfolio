@@ -9,7 +9,7 @@
   justify-content: center;
 }
 
-.container {
+.footer__container {
   display: flex;
   gap: 2em;
 }
