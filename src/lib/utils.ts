@@ -17,7 +17,3 @@ export const defined = <T>(item: T | null | undefined): T => {
  * @returns
  */
 export const isClientSide = (): boolean => typeof window !== "undefined";
-
-export const joinCSS = (...ns: (string | undefined)[]) => {
-  return ns.filter((s) => s ?? false).join(" ");
-};

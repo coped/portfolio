@@ -7,7 +7,7 @@ import {
   vi,
   type Mock,
 } from "vitest";
-import { defined, isClientSide, joinCSS } from "./utils";
+import { defined, isClientSide } from "./utils";
 
 describe("utils", () => {
   describe("defined", () => {
@@ -69,16 +69,6 @@ describe("utils", () => {
       it("should return false", () => {
         expect(isClientSide()).toEqual(false);
       });
-    });
-  });
-
-  describe("joinCSS", () => {
-    it("should correctly join classes", () => {
-      expect(joinCSS("a", "b")).toEqual("a b");
-    });
-
-    it("should handle undefined values", () => {
-      expect(joinCSS("a", undefined)).toEqual("a");
     });
   });
 });
