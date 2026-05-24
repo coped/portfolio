@@ -1,4 +1,3 @@
-import { Lora } from "next/font/google";
 import type { Link } from "@/lib/types";
 import github from "@/assets/github.svg";
 import linkedin from "@/assets/linkedin.png";
