@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { Button } from "./Button";
+import { TerminalButton } from "@/components/TerminalButton/TerminalButton";
 import { Output } from "./Output";
 import styles from "./Terminal.module.css";
 
@@ -7,9 +7,9 @@ export function Terminal(): ReactElement {
   return (
     <div className={styles.container}>
       <div className={styles.buttons}>
-        <Button color="red" />
-        <Button color="yellow" />
-        <Button color="green" />
+        <TerminalButton color="red" />
+        <TerminalButton color="yellow" />
+        <TerminalButton color="green" />
       </div>
       <Output />
     </div>

@@ -1,16 +1,20 @@
 import { joinCSS } from "@/lib/utils";
 import type { HTMLAttributes } from "react";
-import "./Button.css";
+import "./TerminalButton.css";
 
 type Props = {
   color: "red" | "yellow" | "green";
 } & HTMLAttributes<HTMLDivElement>;
 
-export const Button = (props: Props) => {
+export const TerminalButton = (props: Props) => {
   return (
     <div
       {...props}
-      className={joinCSS("button", `button--${props.color}`, props.className)}
+      className={joinCSS(
+        "terminal-button",
+        `terminal-button--${props.color}`,
+        props.className,
+      )}
     />
   );
 };

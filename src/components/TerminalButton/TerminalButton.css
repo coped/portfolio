@@ -1,17 +1,17 @@
-.button {
+.terminal-button {
   border-radius: 50%;
   height: 0.75em;
   width: 0.75em;
 }
 
-.button--red {
+.terminal-button--red {
   background-color: #ff5f56;
 }
 
-.button--green {
+.terminal-button--green {
   background-color: #27c93f;
 }
 
-.button--yellow {
+.terminal-button--yellow {
   background-color: #ffbd2e;
 }
