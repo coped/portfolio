@@ -23,16 +23,17 @@
   align-items: center;
 }
 
-.home__content-row {
+.home__content-ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding-left: 0;
+}
+
+.home__content-li {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1em;
-}
-
-.home__text-container {
-  display: flex;
-  flex-direction: column;
   gap: 1em;
 }
 

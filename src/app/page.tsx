@@ -25,8 +25,8 @@ export default function Home() {
         <div className="hide-on-small-screens">
           <div className="vertical-divider" />
         </div>
-        <div className="home__text-container">
-          <div className="home__content-row">
+        <ul className="home__content-ul">
+          <li className="home__content-li">
             <Image
               src={work}
               alt="Icon representing a suitcase"
@@ -39,8 +39,8 @@ export default function Home() {
                 {process.env.NEXT_PUBLIC_EMPLOYER_NAME}
               </Link>
             </p>
-          </div>
-          <div className="home__content-row">
+          </li>
+          <li className="home__content-li">
             <Image
               src={resume}
               alt="Icon representing a resume"
@@ -52,8 +52,8 @@ export default function Home() {
                 Resume
               </Link>
             </p>
-          </div>
-        </div>
+          </li>
+        </ul>
       </main>
       <Footer />
     </div>
