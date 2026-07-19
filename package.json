@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "autoformat": "prettier --write ./src",
+    "autoformat": "prettier --write ./src ./e2e ./__mocks__",
     "postinstall": "lefthook install",
     "compile": "tsc --project tsconfig.json",
     "compile-watch": "tsc --project tsconfig.json --watch",
